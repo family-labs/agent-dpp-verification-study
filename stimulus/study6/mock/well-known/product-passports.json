@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "organisation": "Oskvale",
+  "website": "https://oskvale.com",
+  "account": "0x04b816af69b6497829938e3204e85046f85f5589",
+  "network": {
+    "name": "LUKSO testnet",
+    "chainId": 4201
+  },
+  "collections": [
+    {
+      "address": "0xcec4247d4e7de11023c8c55e2a773876de0c80ae",
+      "product": "Oskvale Trailcell 500 e-bike battery"
+    },
+    {
+      "address": "0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3",
+      "product": "Oskvale Basecamp 2500 portable power station"
+    },
+    {
+      "address": "0x0c4e5516378511df038c2fe069c75da12123bce8",
+      "product": "Oskvale Homecell 5 home battery"
+    }
+  ]
+}

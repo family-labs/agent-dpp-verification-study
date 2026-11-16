@@ -1,0 +1,100 @@
+
+=== STUDY 2 NATIVE PREFLIGHT (A28 §5 gates 1-4) — 2026-10-15T05:36:34.440Z ===
+verifier base: https://api.universalgoods.xyz   resolver: https://ugpdpp.xyz/01/
+
+[PASS] gate 0 fixtures recorded in conditions.json
+  ok   A (TV5K-6271): productId=6d88082d-22bc-4724-9c85-77a77923bdca gtin=04012346627106
+  ok   B (TV5K-2834): productId=2910ac46-d79d-4d72-ba50-eb07ba734d46 gtin=04012346283401
+  ok   C (TV5K-8456): productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896 gtin=04012346845609
+
+[PASS] gate 1 live verdicts
+  ok   A: HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged (expected verified)
+  ok   B: HTTP 200 verdict=unverified reason=no_credential_published (expected unverified)
+  ok   C: HTTP 200 verdict=invalid reason=data_changed_since_anchoring (expected invalid/data_changed_since_anchoring)
+
+[PASS] gate 2 resolver advertises the verification link identically
+       A: resolved -> kind=variant id=8ed4bcee-c922-45d4-aeea-94c70e806dc7; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7?kind=variant&format=jsonld"
+         link subject = {"requestedId":"8ed4bcee-c922-45d4-aeea-94c70e806dc7","requestedKind":"variant","productId":"6d88082d-22bc-4724-9c85-77a77923bdca"}
+  ok   A: link -> HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged
+       B: resolved -> kind=variant id=be54f83c-5057-443c-97bc-ac58fb3121d5; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5?kind=variant&format=jsonld"
+         link subject = {"requestedId":"be54f83c-5057-443c-97bc-ac58fb3121d5","requestedKind":"variant","productId":"2910ac46-d79d-4d72-ba50-eb07ba734d46"}
+  ok   B: link -> HTTP 200 verdict=unverified reason=no_credential_published
+       C: resolved -> kind=variant id=e1402ddf-f5a8-454c-b375-e6e330691c84; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84?kind=variant&format=jsonld"
+         link subject = {"requestedId":"e1402ddf-f5a8-454c-b375-e6e330691c84","requestedKind":"variant","productId":"ec1946b0-f69b-47a0-b6f1-c5c884b07896"}
+  ok   C: link -> HTTP 200 verdict=invalid reason=data_changed_since_anchoring
+  ok   advertised identically: $.links.verificationUrl :: https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify
+
+[PASS] gate 3 resolver payload matchedness
+       own ids, GTIN and SKU masked by value; 2 logged path exemption(s) applied
+       exempted $.dpp.lastUpdated
+       exempted $.sections[3].data.renewableContentShare
+  ok   payloads matched
+
+[PASS] gate 4 no served field names the condition
+  ok   no label found in 6 served bodies
+
+OVERALL: PASS
+
+=== STUDY 4 PREFLIGHT (gates Q1-Q6) — 2026-10-15T05:36:39.488Z ===
+
+[PASS] gate Q1 live verdicts via each dpp block's verification_url (P verified, T invalid, U unverified)
+  ok   P (fixture A): GET https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify -> HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged subject.productId=6d88082d-22bc-4724-9c85-77a77923bdca (expected verified, 6d88082d-22bc-4724-9c85-77a77923bdca)
+  ok   P: GET https://ugpdpp.xyz/01/04012346627106 -> HTTP 200, links.verificationUrl = the block's verification_url
+  ok   P: GET passport_url -> HTTP 200, id=8ed4bcee-c922-45d4-aeea-94c70e806dc7
+  ok   T (fixture C): GET https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify -> HTTP 200 verdict=invalid reason=data_changed_since_anchoring subject.productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896 (expected invalid/data_changed_since_anchoring, ec1946b0-f69b-47a0-b6f1-c5c884b07896)
+  ok   T: GET https://ugpdpp.xyz/01/04012346845609 -> HTTP 200, links.verificationUrl = the block's verification_url
+  ok   T: GET passport_url -> HTTP 200, id=e1402ddf-f5a8-454c-b375-e6e330691c84
+  ok   U (fixture B): GET https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify -> HTTP 200 verdict=unverified reason=no_credential_published subject.productId=2910ac46-d79d-4d72-ba50-eb07ba734d46 (expected unverified, 2910ac46-d79d-4d72-ba50-eb07ba734d46)
+  ok   U: GET https://ugpdpp.xyz/01/04012346283401 -> HTTP 200, links.verificationUrl = the block's verification_url
+  ok   U: GET passport_url -> HTTP 200, id=be54f83c-5057-443c-97bc-ac58fb3121d5
+
+[PASS] gate Q2 the three dpp blocks are the stored served bytes and today's live lookup returns them unchanged
+  ok   all 6 stored Study 3 served files match stimulus/ucp/manifest.json
+  ok   P (fixture A): stored block = served substring (ucp/served/lookup-A-04012346627106.json) = today's live block
+  ok   T (fixture C): stored block = served substring (ucp/served/lookup-C-04012346845609.json) = today's live block
+  ok   U (fixture B): stored block = served substring (ucp/served/lookup-B-04012346283401.json) = today's live block
+
+[PASS] gate Q3 fetch_url serves every listing's product page (no passport on any page)
+  ok   tarnvale-5000: https://shop.tarnvale.example/products/tarnvale-5000 -> stored_page 200 sha256=f60a05e96538…
+  ok   halvesta-hb5200: https://shop.halvesta.example/products/hb-5200 -> stored_page 200 sha256=0229d244ae6f…
+  ok   corrandel-ps5000: https://shop.corrandel.example/products/ps5000 -> stored_page 200 sha256=ce3690638743…
+  ok   wexmoor-w5: https://shop.wexmoor.example/products/w5 -> stored_page 200 sha256=bba05695fc0b…
+  ok   another path on a shop host -> stored_404 404
+
+[PASS] gate Q4 every Study 4 listing and page matches its hash and is reproduced from its inputs
+  ok   4 listings of ours, 3 competitor listings and 4 pages match stimulus/study4/manifest.json
+  ok   every page and listing reproduced byte for byte (S1-A minus one line; the same template for the competitors; the stored dpp blocks)
+       ours-P  82ee9fe9c745e1229706819e64de5439fb01a68924051b46812b3ec005cfab12  1410 B
+       ours-T  8d5fc58aa1b71bf87ab863d58eb8d00c7d55d078351855abdceebfdfbeefbe7e  1410 B
+       ours-U  4aae85fed220a9fda5386998a78f93765fa007c130c08528ab2391689ad7c785  1410 B
+       ours-N  ec426a101605d38a709e889235ea8a17d4195ff9aafca3c23e31d23fe964cedf  1093 B
+       halvesta-hb5200  81f4c390cf904ccaf1a2f728e8f90b10d2e3347d221327bdfcd2a9ed7db61099  1097 B
+       corrandel-ps5000  5a3dc13204455084181bd5e1776b0e4445231ea07a0f6fd1c2e2eb52a38a4393  1094 B
+       wexmoor-w5  ca63dcf261d1290dbadd518fc044d6cabb38f4b62b62b25d18f0f114ccd76420  1069 B
+       page tarnvale-5000  f60a05e96538862b770fdba2851c0de8af84766def9d9cd0fd2bb42355d3afb3
+       page halvesta-hb5200  0229d244ae6f82f9bb70f7f447c05c608dc0f594d069bb5e32988c4c8165ec82
+       page corrandel-ps5000  ce369063874307f9031b4d915eb04a806753b123c9ccc7fe4b46d17535d2f015
+       page wexmoor-w5  bba05695fc0b48b621c63744e4c18420e3ddefe70bc118be111aa9226eeea154
+
+[PASS] gate Q5 ours identical across P/T/U/N except the dpp block; no listing names a condition
+  ok   every listing is canonical compact JSON (JSON.stringify, as the server serialises)
+  ok   ours-P, ours-T, ours-U are byte-identical to ours-N once their own dpp block is removed (N = P minus dpp)
+  ok   dpp blocks identical across P/T/U once ids are masked: {"upi":"https://ugpdpp.xyz/01/<gtin>","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify","granularity":"model"}
+  ok   no merchant field says passport/verif*/credential/token/blockchain/dpp; no listing says fixture/condition/study/tamper*/genuine/unsigned/control
+  ok   the three competitor listings have ours-N's key structure and no dpp block
+
+[PASS] gate Q6 every dpp link is inside fetch_url's allow-list
+  ok   upi, passport_url and verification_url of P, T, U are reachable by fetch_url
+
+STUDY 4 OVERALL: PASS
+
+STUDY 4 COMBINED (gates 0-4 + Q1-Q6): PASS

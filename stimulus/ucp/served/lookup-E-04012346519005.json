@@ -1,0 +1,1 @@
+{"ucp":{"version":"2026-08-25","capabilities":{"dev.ucp.shopping.catalog.lookup":[{"version":"2026-08-25"}],"xyz.universalgoods.api.shopping.dpp":[{"version":"2026-10-14"}]}},"products":[],"messages":[{"type":"info","code":"not_found","content":"04012346519005"}]}

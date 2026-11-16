@@ -1,0 +1,35 @@
+Study 6: explorer JSON shape, measured on the LUKSO TESTNET explorer only (no mainnet request). 2026-10-20T07:23:56Z
+Method: plain GET, headers Accept: */* (fetch_url's own), curl. Collection = testnet collection B (Study 2-5), owner = the Study 2-5 brand profile.
+
+1. ITEM RECORD (current holder): GET https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3/instances/1961cbea6c975e1b6473befb5cf25aa071a4ba605a009cbfde43e69533b2f56c
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+{"animation_url":null,"external_app_url":null,"id":"1961cbea6c975e1b6473befb5cf25aa071a4ba605a009cbfde43e69533b2f56c","image_url":null,"is_unique":true,"media_type":null,"media_url":null,"metadata":null,"owner":{"ens_domain_name":null,"hash":"0x04B816Af69b6497829938e3204e85046F85f5589","implementations":[{"address_hash":"0x7Cae2A2FaF164446618282196f08A3b8C13a87F9","name":null}],"is_contract":true,"is_scam":false,"is_verified":false,"metadata":null,"name":null,"private_tags":[],"proxy_type":"eip1167","public_tags":[],"reputation":"ok","watchlist_names":[]},"thumbnails":null,"token":{"address_hash":"0x1f881A95c77aa5d88B70C727D9b7aAf419eD88f3","circulating_market_cap":null,"decimals":null,"exchange_rate":null,"holders_count":"1","icon_url":null,"name":"Tarnvale 5000 Portable Power Station (TV5K-2834)","reputation":"ok","symbol":"RWA","total_supply":"1","type":"LSP8","volume_24h":null}}
+
+   -> fields used: owner.hash (the current holder), id (token id, 64 hex without 0x), token.address_hash, token.type (LSP8), token.holders_count, token.total_supply
+
+2. COLLECTION RECORD (collection owner): GET https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3/logs
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+   body 12801 bytes; decoded events, newest first:
+    Transfer {'from': '0x0000000000000000000000000000000000000000', 'to': '0x04B816Af69b6497829938e3204e85046F85f5589'} 0x37fbd9949c...
+    DataChanged {} 0x50b77e5fec...
+    DataChanged {} 0x50b77e5fec...
+    DataChanged {} 0x50b77e5fec...
+    DataChanged {} 0x50b77e5fec...
+    DataChanged {} 0x50b77e5fec...
+    OwnershipTransferred {'previousOwner': '0x11d51E1253f3962eDDf09A3D3dc6c29E533E0FDE', 'newOwner': '0x04B816Af69b6497829938e3204e85046F85f5589'} 0x50b77e5fec...
+    OwnershipTransferred {'previousOwner': '0x0000000000000000000000000000000000000000', 'newOwner': '0x11d51E1253f3962eDDf09A3D3dc6c29E533E0FDE'} 0x50b77e5fec...
+   -> the newest OwnershipTransferred(newOwner) is the collection owner. No plain owner field exists elsewhere:
+
+3. GET https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3 (token endpoint):
+{"address_hash":"0x1f881A95c77aa5d88B70C727D9b7aAf419eD88f3","circulating_market_cap":null,"decimals":null,"exchange_rate":null,"holders_count":"1","icon_url":null,"name":"Tarnvale 5000 Portable Power Station (TV5K-2834)","reputation":"ok","symbol":"RWA","total_supply":"1","type":"LSP8","volume_24h":null}
+   -> no owner field (name, symbol, type, holders_count, total_supply only).
+
+4. The decimal token id is refused: GET https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3/instances/11480612754437078108365283093733671161245717304335227318685082973186435511660
+{"message":"Invalid parameter(s)"} -> HTTP 422
+
+5. The HTML page is a JavaScript shell (not used): GET https://explorer.execution.testnet.lukso.network/token/0x1f881a95c77aa5d88b70c727d9b7aaf419ed88f3/instance/1961cbea6c975e1b6473befb5cf25aa071a4ba605a009cbfde43e69533b2f56c
+   HTTP 200 text/html; charset=utf-8
+
+MAINNET host (config, UNVERIFIED, never requested by this build): explorer.execution.mainnet.lukso.network. Same Blockscout API version is ASSUMED; preflight-study6 --live gate L1 must pass on it before any counted trial.

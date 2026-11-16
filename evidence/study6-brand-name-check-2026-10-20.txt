@@ -1,0 +1,32 @@
+Study 6: fictional brand name check (2026-10-20)
+
+Chosen name: Oskvale (a fictional lifestyle brand selling clothing, consumer electronics and furniture).
+Hosts: oskvale.example (store, passport pages, declaration), www.parcelmart.example (marketplace),
+www.secondround.example (reserved for the optional reseller condition R; not built). All .example
+names are reserved by RFC 2606 / RFC 6761 and cannot belong to anyone.
+
+Method: web searches (standard web search tool, US index) for the exact name, with and without
+category and trademark words. No paid trademark database was queried; this is a collision screen,
+not a legal clearance. A formal search (IP Australia ATMOSS, EUIPO eSearch, USPTO) is advised if
+the name will ever appear on a public, non-.example site.
+
+Searches and results:
+1. "Oskvale"                                                   -> no result for the name; nearest: "Olkvale" (a fantasy-setting page), Oskava (a Czech village), Oskaloosa (Iowa).
+2. Oskvale trademark OR store OR shop OR furniture OR apparel   -> no result for the name; only unrelated marks (Trademark, Osshale, Outsy).
+3. "Oskvale" OR "Osk Vale" company                              -> no company of that name; nearest: Owlvale Limited (UK company 03806527, no stated link), Oshkosh Corp (ticker OSK).
+4. "Oskvale" Australia OR UK OR EU homewares lifestyle          -> no result; nearest: Oski + Lottie (an Australian homewares label; different name).
+
+Candidates considered and rejected:
+- "Wrenmoor": no exact hit, but "Wren" is Wren Kitchens (UK fitted kitchens and bedrooms, i.e. furniture), too close in a study category.
+- "Calderwick": no exact hit, but near "Cadewick", a furniture collection sold through Ashley Furniture stockists.
+
+Why Oskvale is safe for the study: no existing brand, trademark or company of that name was found in
+any of the three categories or as a company; the nearest names (Oski + Lottie, Owlvale, Olkvale)
+differ visibly. Like Studies 2-5's "Tarnvale", it is an invented compound. Note: the shared "-vale"
+ending is a house style, not a link; no Study 6 stimulus names Tarnvale (the MOCK stimuli point at
+testnet collections whose on-ledger names are the Tarnvale power stations, which is one reason mock
+stimuli are never counted).
+
+GTINs: 9520606000019 (clothing), 9520606000026 (electronics), 9520606000033 (furniture), EAN-13 under
+GS1 prefix 952, which GS1 reserves for demonstrations and examples; check digits computed by
+stimulus/study6.ts ean13() and tested (preflight-study6 S6, selftest-study6).

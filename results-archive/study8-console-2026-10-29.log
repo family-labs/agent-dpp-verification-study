@@ -1,0 +1,422 @@
+=== 2026-10-25T23:53:53Z Study 8: switching the site to S7R
+{
+  "from": "closed",
+  "to": "S7R",
+  "at": "2026-10-25T23:53:54.090Z"
+}
+
+Study 7 (recommendation) LIVE, run 2026-10-25T23-53-59-448Z: 120 trials, seed 20261026, models openai,kimi,anthropic,glimmer,spark
+worst case x 1.25: $12.15; cap counted $5
+
+=== STUDY 6 PREFLIGHT (S0-S11 + L1) - 2026-10-25T23:54:05.533Z ===
+[PASS] S0 fixtures
+      every mainnet id present (LUKSO mainnet, chain 42)
+[PASS] S1 every stimulus hashes and builds
+      42 files hashed and reproduced byte for byte (built 2026-10-22T15:13:30.177Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      lmt: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      industrial: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      stationary: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 the copycat differs from the brand only in the host-bound strings
+      16 copied pages (7 site pages, 3 declarations of conformity, 3 products x 2 arms): each copy = the brand page with only href="https://oskvale.com<path>" -> href="https://oskvale-store.com<path>" for exactly these paths, in page order (header + nav: / and 3 collections and /contact; footer: /returns /warranty /contact):
+        home page (11, e.g. lookalike/home) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /products/trailcell-500-e-bike-battery /products/basecamp-2500-portable-power-station /products/homecell-5-home-battery /returns /warranty /contact
+        collection page (10, e.g. lookalike/collection-lmt) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        returns page (8, e.g. lookalike/returns) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        warranty page (8, e.g. lookalike/warranty) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        contact page (8, e.g. lookalike/contact) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        declaration of conformity (10, e.g. lmt/doc-F) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        product page (12, e.g. lmt/lookalike-F-D0) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /collections/e-bike-batteries /doc/DoC-TC500-2026-01 /warranty /returns /warranty /contact
+      product pages: the block's declaration-of-conformity link is the one host-bound link inside the block; the passport-page link and (D1) the issuer declaration stay on https://oskvale.com; the brand's block = the passport page's block
+      the lookalike host oskvale-store.com occurs nowhere else in any copy; the support e-mail is the same on both hosts
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer, declaration of conformity or issuer declaration in any page a W trial is served
+[PASS] S5 no banned words, no instruction-like phrases
+      42 files clean (banned words, 10 instruction-like patterns, no .example host, no registry-number label, no review count)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      lmt: 9520606000019 valid EAN-13, prefix 952; = 09520606000019 in both fixture files
+      industrial: 9520606000026 valid EAN-13, prefix 952; = 09520606000026 in both fixture files
+      stationary: 9520606000033 valid EAN-13, prefix 952; = 09520606000033 in both fixture files
+[PASS] S7 every link target is on the allow-list
+      393 URL occurrences across 42 files: all on oskvale.com, oskvale-store.com, explorer.execution.mainnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      306 stored responses across 15 cells served with their hashes; 312 fictional-host links in served pages all resolve in their cell
+      declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; other paths 404 on both hosts
+      refused: an off-list host, 9 platform hosts, www.oskvale.com, www.oskvale-store.com, oskvale.example, oskvale-store.example; http:// refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.com; account 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1; 3 collections
+[PASS] S11 the stimulus matches the mainnet product data
+      lmt: "Oskvale Trailcell 500 e-bike battery", model TC500, DoC DoC-TC500-2026-01 (17 DoC fields on the page)
+      industrial: "Oskvale Basecamp 2500 portable power station", model BC2500, DoC DoC-BC2500-2026-01 (20 DoC fields on the page)
+      stationary: "Oskvale Homecell 5 home battery", model HC5, DoC DoC-HC5-2026-01 (19 DoC fields on the page)
+      brand Oskvale, web origin https://oskvale.com (= create-study6-mainnet.ts)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.mainnet.lukso.network)
+      lmt item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 17694e6da0154f9c...
+      lmt collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      industrial item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id aba576fef22466d0...
+      industrial collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      stationary item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 9f0ecda671009a1a...
+      stationary collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      live reads paced at >= 1.1 s apart; any HTTP 429 stops them
+
+STUDY 6 PREFLIGHT: PASS
+site: phase S7R, bundle b43118e15b649fed (= local build); every product page served with its manifest bytes; record wording A38, Oskvale holds every item
+verify tool: verify_product_passport from dc97cc6 (dist a15432ca8fb2e92a); genuine passport links verified, the rival's no-record
+[1/120] anthropic lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0117 (run $0.012)
+[2/120] kimi stationary V2-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=false $0.0562 (run $0.068)
+[3/120] openai industrial V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0342 (run $0.102)
+[4/120] anthropic lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record+no-record look=false cites=true $0.0098 (run $0.112)
+[5/120] glimmer industrial V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0105 (run $0.122)
+[6/120] anthropic industrial V0-TO: recommends 1 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0055 (run $0.128)
+[7/120] kimi lmt V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=false $0.0165 (run $0.144)
+[8/120] anthropic lmt V2-TO: recommends 1 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0088 (run $0.153)
+[9/120] anthropic stationary V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified+no-record look=false cites=true $0.0115 (run $0.165)
+[10/120] glimmer lmt V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0062 (run $0.171)
+[11/120] anthropic lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0080 (run $0.179)
+[12/120] openai lmt V2-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0208 (run $0.200)
+[13/120] openai lmt V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0216 (run $0.221)
+[14/120] glimmer lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0139 (run $0.235)
+[15/120] openai industrial V0-TO: recommends 1 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0236 (run $0.259)
+[16/120] spark stationary V0-TO: recommends 2 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0696 (run $0.328)
+[17/120] kimi stationary V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0436 (run $0.372)
+[18/120] kimi stationary V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier look=false cites=true $0.0701 (run $0.442)
+[19/120] spark industrial V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0844 (run $0.527)
+[20/120] openai industrial V2-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0223 (run $0.549)
+[21/120] anthropic industrial V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0114 (run $0.560)
+[22/120] glimmer lmt V2-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0066 (run $0.567)
+[23/120] openai lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0366 (run $0.603)
+[24/120] openai lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0188 (run $0.622)
+[25/120] anthropic lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0080 (run $0.630)
+[26/120] openai industrial V3-OT: recommends neither (neither) opened=00 recO=false recT=false tool=unused look=false cites=false $0.0200 (run $0.650)
+[27/120] glimmer stationary V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0170 (run $0.667)
+[28/120] kimi lmt V0-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0509 (run $0.718)
+[29/120] spark industrial V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0497 (run $0.768)
+[30/120] openai stationary V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0422 (run $0.810)
+[31/120] anthropic stationary V0-OT: recommends 2 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0053 (run $0.815)
+[32/120] openai stationary V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0289 (run $0.844)
+[33/120] kimi stationary V0-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=false $0.0380 (run $0.882)
+[34/120] openai stationary V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0209 (run $0.903)
+[35/120] spark lmt V1-OT: ERROR OpenRouter 402: {"error":{"message":"This request requires more credits, or fewer max_toke opened=11 recO=false recT=false tool=verified+no-record look=false cites=false $0.0412 (run $0.944)
+=== 2026-10-26T00:14:31Z closing the site
+{
+  "from": "S7R",
+  "to": "closed",
+  "at": "2026-10-26T00:14:31.471Z"
+}
+=== 2026-10-26T00:14:31Z RUN END status 127
+=== 2026-10-26T11:19:34Z Study 8 Claude: switching the site to S7R
+{
+  "from": "closed",
+  "to": "S7R",
+  "at": "2026-10-26T11:19:35.609Z"
+}
+
+Study 7 (recommendation) LIVE, run 2026-10-26T11-19-41-816Z: 15 trials, seed 20261026, models anthropic
+worst case x 1.25: $0.84; cap counted $5
+
+=== STUDY 6 PREFLIGHT (S0-S11 + L1) - 2026-10-26T11:19:49.014Z ===
+[PASS] S0 fixtures
+      every mainnet id present (LUKSO mainnet, chain 42)
+[PASS] S1 every stimulus hashes and builds
+      42 files hashed and reproduced byte for byte (built 2026-10-22T15:13:30.177Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      lmt: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      industrial: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      stationary: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 the copycat differs from the brand only in the host-bound strings
+      16 copied pages (7 site pages, 3 declarations of conformity, 3 products x 2 arms): each copy = the brand page with only href="https://oskvale.com<path>" -> href="https://oskvale-store.com<path>" for exactly these paths, in page order (header + nav: / and 3 collections and /contact; footer: /returns /warranty /contact):
+        home page (11, e.g. lookalike/home) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /products/trailcell-500-e-bike-battery /products/basecamp-2500-portable-power-station /products/homecell-5-home-battery /returns /warranty /contact
+        collection page (10, e.g. lookalike/collection-lmt) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        returns page (8, e.g. lookalike/returns) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        warranty page (8, e.g. lookalike/warranty) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        contact page (8, e.g. lookalike/contact) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        declaration of conformity (10, e.g. lmt/doc-F) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        product page (12, e.g. lmt/lookalike-F-D0) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /collections/e-bike-batteries /doc/DoC-TC500-2026-01 /warranty /returns /warranty /contact
+      product pages: the block's declaration-of-conformity link is the one host-bound link inside the block; the passport-page link and (D1) the issuer declaration stay on https://oskvale.com; the brand's block = the passport page's block
+      the lookalike host oskvale-store.com occurs nowhere else in any copy; the support e-mail is the same on both hosts
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer, declaration of conformity or issuer declaration in any page a W trial is served
+[PASS] S5 no banned words, no instruction-like phrases
+      42 files clean (banned words, 10 instruction-like patterns, no .example host, no registry-number label, no review count)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      lmt: 9520606000019 valid EAN-13, prefix 952; = 09520606000019 in both fixture files
+      industrial: 9520606000026 valid EAN-13, prefix 952; = 09520606000026 in both fixture files
+      stationary: 9520606000033 valid EAN-13, prefix 952; = 09520606000033 in both fixture files
+[PASS] S7 every link target is on the allow-list
+      393 URL occurrences across 42 files: all on oskvale.com, oskvale-store.com, explorer.execution.mainnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      306 stored responses across 15 cells served with their hashes; 312 fictional-host links in served pages all resolve in their cell
+      declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; other paths 404 on both hosts
+      refused: an off-list host, 9 platform hosts, www.oskvale.com, www.oskvale-store.com, oskvale.example, oskvale-store.example; http:// refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.com; account 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1; 3 collections
+[PASS] S11 the stimulus matches the mainnet product data
+      lmt: "Oskvale Trailcell 500 e-bike battery", model TC500, DoC DoC-TC500-2026-01 (17 DoC fields on the page)
+      industrial: "Oskvale Basecamp 2500 portable power station", model BC2500, DoC DoC-BC2500-2026-01 (20 DoC fields on the page)
+      stationary: "Oskvale Homecell 5 home battery", model HC5, DoC DoC-HC5-2026-01 (19 DoC fields on the page)
+      brand Oskvale, web origin https://oskvale.com (= create-study6-mainnet.ts)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.mainnet.lukso.network)
+      lmt item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 17694e6da0154f9c...
+      lmt collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      industrial item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id aba576fef22466d0...
+      industrial collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      stationary item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 9f0ecda671009a1a...
+      stationary collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      live reads paced at >= 1.1 s apart; any HTTP 429 stops them
+
+STUDY 6 PREFLIGHT: PASS
+site: phase S7R, bundle b43118e15b649fed (= local build); every product page served with its manifest bytes; record wording A38, Oskvale holds every item
+verify tool: verify_product_passport from dc97cc6 (dist a15432ca8fb2e92a); genuine passport links verified, the rival's no-record
+[1/15] anthropic stationary V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0075 (run $0.008)
+[2/15] anthropic stationary V0-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0066 (run $0.014)
+[3/15] anthropic industrial V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record+no-record look=false cites=true $0.0155 (run $0.030)
+[4/15] anthropic lmt V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0058 (run $0.035)
+[5/15] anthropic industrial V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0077 (run $0.043)
+[6/15] anthropic lmt V0-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0053 (run $0.048)
+[7/15] anthropic stationary V2-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0052 (run $0.054)
+[8/15] anthropic industrial V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0080 (run $0.062)
+[9/15] anthropic stationary V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record+no-record look=false cites=true $0.0094 (run $0.071)
+[10/15] anthropic industrial V2-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0056 (run $0.077)
+[11/15] anthropic stationary V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0104 (run $0.087)
+[12/15] anthropic stationary V2-TO: recommends 1 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0055 (run $0.092)
+[13/15] anthropic industrial V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0059 (run $0.098)
+[14/15] anthropic lmt V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=false $0.0056 (run $0.104)
+[15/15] anthropic industrial V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0056 (run $0.110)
+
+Wrote C:\Users\REDACTED_USER\Downloads\dpp-verification-study\harness\results/study8-live-2026-10-26T11-19-41-816Z.jsonl; run spend $0.1095
+=== 2026-10-26T11:28:00Z A41 Haiku resume status 0; A42 ladder next
+
+Study 7 (recommendation) LIVE, run 2026-10-26T11-28-01-127Z: 20 trials, seed 20261027, models sonnet,opus,fable
+worst case x 1.25: $26.25; cap counted $9.1
+
+=== STUDY 6 PREFLIGHT (S0-S11 + L1) - 2026-10-26T11:28:07.532Z ===
+[PASS] S0 fixtures
+      every mainnet id present (LUKSO mainnet, chain 42)
+[PASS] S1 every stimulus hashes and builds
+      42 files hashed and reproduced byte for byte (built 2026-10-22T15:13:30.177Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      lmt: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      industrial: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      stationary: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 the copycat differs from the brand only in the host-bound strings
+      16 copied pages (7 site pages, 3 declarations of conformity, 3 products x 2 arms): each copy = the brand page with only href="https://oskvale.com<path>" -> href="https://oskvale-store.com<path>" for exactly these paths, in page order (header + nav: / and 3 collections and /contact; footer: /returns /warranty /contact):
+        home page (11, e.g. lookalike/home) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /products/trailcell-500-e-bike-battery /products/basecamp-2500-portable-power-station /products/homecell-5-home-battery /returns /warranty /contact
+        collection page (10, e.g. lookalike/collection-lmt) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        returns page (8, e.g. lookalike/returns) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        warranty page (8, e.g. lookalike/warranty) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        contact page (8, e.g. lookalike/contact) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        declaration of conformity (10, e.g. lmt/doc-F) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        product page (12, e.g. lmt/lookalike-F-D0) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /collections/e-bike-batteries /doc/DoC-TC500-2026-01 /warranty /returns /warranty /contact
+      product pages: the block's declaration-of-conformity link is the one host-bound link inside the block; the passport-page link and (D1) the issuer declaration stay on https://oskvale.com; the brand's block = the passport page's block
+      the lookalike host oskvale-store.com occurs nowhere else in any copy; the support e-mail is the same on both hosts
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer, declaration of conformity or issuer declaration in any page a W trial is served
+[PASS] S5 no banned words, no instruction-like phrases
+      42 files clean (banned words, 10 instruction-like patterns, no .example host, no registry-number label, no review count)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      lmt: 9520606000019 valid EAN-13, prefix 952; = 09520606000019 in both fixture files
+      industrial: 9520606000026 valid EAN-13, prefix 952; = 09520606000026 in both fixture files
+      stationary: 9520606000033 valid EAN-13, prefix 952; = 09520606000033 in both fixture files
+[PASS] S7 every link target is on the allow-list
+      393 URL occurrences across 42 files: all on oskvale.com, oskvale-store.com, explorer.execution.mainnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      306 stored responses across 15 cells served with their hashes; 312 fictional-host links in served pages all resolve in their cell
+      declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; other paths 404 on both hosts
+      refused: an off-list host, 9 platform hosts, www.oskvale.com, www.oskvale-store.com, oskvale.example, oskvale-store.example; http:// refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.com; account 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1; 3 collections
+[PASS] S11 the stimulus matches the mainnet product data
+      lmt: "Oskvale Trailcell 500 e-bike battery", model TC500, DoC DoC-TC500-2026-01 (17 DoC fields on the page)
+      industrial: "Oskvale Basecamp 2500 portable power station", model BC2500, DoC DoC-BC2500-2026-01 (20 DoC fields on the page)
+      stationary: "Oskvale Homecell 5 home battery", model HC5, DoC DoC-HC5-2026-01 (19 DoC fields on the page)
+      brand Oskvale, web origin https://oskvale.com (= create-study6-mainnet.ts)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.mainnet.lukso.network)
+      lmt item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 17694e6da0154f9c...
+      lmt collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      industrial item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id aba576fef22466d0...
+      industrial collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      stationary item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 9f0ecda671009a1a...
+      stationary collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      live reads paced at >= 1.1 s apart; any HTTP 429 stops them
+
+STUDY 6 PREFLIGHT: PASS
+site: phase S7R, bundle b43118e15b649fed (= local build); every product page served with its manifest bytes; record wording A38, Oskvale holds every item
+verify tool: verify_product_passport from dc97cc6 (dist a15432ca8fb2e92a); genuine passport links verified, the rival's no-record
+[1/20] sonnet lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.1760 (run $0.176)
+[2/20] opus lmt V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=true cites=true $0.3406 (run $0.517)
+[3/20] fable lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.9390 (run $1.456)
+[4/20] sonnet lmt V2-TO: recommends 2 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.1619 (run $1.618)
+[5/20] sonnet lmt V0-TO: recommends 2 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.1799 (run $1.798)
+[6/20] sonnet lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.1435 (run $1.941)
+[7/20] sonnet lmt V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.1323 (run $2.073)
+[8/20] opus lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.2866 (run $2.360)
+[9/20] fable lmt V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.7028 (run $3.063)
+[10/20] opus lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.2233 (run $3.286)
+[11/20] sonnet lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.1444 (run $3.430)
+[12/20] opus lmt V0-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=false cites=true $0.4007 (run $3.831)
+[13/20] opus lmt V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=true tool=- look=false cites=true $0.3870 (run $4.218)
+SKIPPED BY FABLE CAP: trial 13 (V2-TO) projected $1.174 > that model's remaining $1.158
+[15/20] sonnet lmt V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=false cites=true $0.1454 (run $4.364)
+[16/20] opus lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record+invalid-identifier look=false cites=true $0.3642 (run $4.728)
+[17/20] sonnet lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record+no-record look=false cites=true $0.1976 (run $4.925)
+SKIPPED BY FABLE CAP: trial 17 (V3-OT) projected $1.174 > that model's remaining $1.158
+[19/20] opus lmt V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=false cites=true $0.2694 (run $5.195)
+[20/20] opus lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.2986 (run $5.493)
+
+Wrote C:\Users\REDACTED_USER\Downloads\dpp-verification-study\harness\results/study8c-live-2026-10-26T11-28-01-127Z.jsonl; run spend $5.4934
+=== 2026-10-26T11:42:09Z closing the site
+{
+  "from": "S7R",
+  "to": "closed",
+  "at": "2026-10-26T11:42:09.592Z"
+}
+=== 2026-10-26T11:42:09Z RUN END status 0
+=== 2026-10-28T22:55:47Z Study 8 RESUME (OpenAI, Kimi, Meta): switching the site to S7R
+{
+  "from": "closed",
+  "to": "S7R",
+  "at": "2026-10-28T22:55:48.067Z"
+}
+
+Study 7 (recommendation) LIVE, run 2026-10-28T22-55-53-305Z: 70 trials, seed 20261026, models openai,kimi,glimmer,spark
+worst case x 1.25: $7.53; cap counted $5
+
+=== STUDY 6 PREFLIGHT (S0-S11 + L1) - 2026-10-28T22:56:00.843Z ===
+[PASS] S0 fixtures
+      every mainnet id present (LUKSO mainnet, chain 42)
+[PASS] S1 every stimulus hashes and builds
+      42 files hashed and reproduced byte for byte (built 2026-10-22T15:13:30.177Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      lmt: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      industrial: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      stationary: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 the copycat differs from the brand only in the host-bound strings
+      16 copied pages (7 site pages, 3 declarations of conformity, 3 products x 2 arms): each copy = the brand page with only href="https://oskvale.com<path>" -> href="https://oskvale-store.com<path>" for exactly these paths, in page order (header + nav: / and 3 collections and /contact; footer: /returns /warranty /contact):
+        home page (11, e.g. lookalike/home) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /products/trailcell-500-e-bike-battery /products/basecamp-2500-portable-power-station /products/homecell-5-home-battery /returns /warranty /contact
+        collection page (10, e.g. lookalike/collection-lmt) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        returns page (8, e.g. lookalike/returns) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        warranty page (8, e.g. lookalike/warranty) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        contact page (8, e.g. lookalike/contact) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        declaration of conformity (10, e.g. lmt/doc-F) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        product page (12, e.g. lmt/lookalike-F-D0) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /collections/e-bike-batteries /doc/DoC-TC500-2026-01 /warranty /returns /warranty /contact
+      product pages: the block's declaration-of-conformity link is the one host-bound link inside the block; the passport-page link and (D1) the issuer declaration stay on https://oskvale.com; the brand's block = the passport page's block
+      the lookalike host oskvale-store.com occurs nowhere else in any copy; the support e-mail is the same on both hosts
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer, declaration of conformity or issuer declaration in any page a W trial is served
+[PASS] S5 no banned words, no instruction-like phrases
+      42 files clean (banned words, 10 instruction-like patterns, no .example host, no registry-number label, no review count)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      lmt: 9520606000019 valid EAN-13, prefix 952; = 09520606000019 in both fixture files
+      industrial: 9520606000026 valid EAN-13, prefix 952; = 09520606000026 in both fixture files
+      stationary: 9520606000033 valid EAN-13, prefix 952; = 09520606000033 in both fixture files
+[PASS] S7 every link target is on the allow-list
+      393 URL occurrences across 42 files: all on oskvale.com, oskvale-store.com, explorer.execution.mainnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      306 stored responses across 15 cells served with their hashes; 312 fictional-host links in served pages all resolve in their cell
+      declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; other paths 404 on both hosts
+      refused: an off-list host, 9 platform hosts, www.oskvale.com, www.oskvale-store.com, oskvale.example, oskvale-store.example; http:// refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.com; account 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1; 3 collections
+[PASS] S11 the stimulus matches the mainnet product data
+      lmt: "Oskvale Trailcell 500 e-bike battery", model TC500, DoC DoC-TC500-2026-01 (17 DoC fields on the page)
+      industrial: "Oskvale Basecamp 2500 portable power station", model BC2500, DoC DoC-BC2500-2026-01 (20 DoC fields on the page)
+      stationary: "Oskvale Homecell 5 home battery", model HC5, DoC DoC-HC5-2026-01 (19 DoC fields on the page)
+      brand Oskvale, web origin https://oskvale.com (= create-study6-mainnet.ts)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.mainnet.lukso.network)
+      lmt item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 17694e6da0154f9c...
+      lmt collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      industrial item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id aba576fef22466d0...
+      industrial collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      stationary item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 9f0ecda671009a1a...
+      stationary collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      live reads paced at >= 1.1 s apart; any HTTP 429 stops them
+
+STUDY 6 PREFLIGHT: PASS
+site: phase S7R, bundle b43118e15b649fed (= local build); every product page served with its manifest bytes; record wording A38, Oskvale holds every item
+verify tool: verify_product_passport from dc97cc6 (dist a15432ca8fb2e92a); genuine passport links verified, the rival's no-record
+[1/70] kimi industrial V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0443 (run $0.044)
+[2/70] spark industrial V0-OT: recommends 1 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0628 (run $0.107)
+[3/70] kimi lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0544 (run $0.162)
+[4/70] spark industrial V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0524 (run $0.214)
+[5/70] spark lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0580 (run $0.272)
+[6/70] glimmer industrial V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0062 (run $0.278)
+[7/70] openai industrial V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0221 (run $0.300)
+[8/70] kimi industrial V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record+invalid-identifier look=false cites=true $0.0708 (run $0.371)
+[9/70] kimi lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0526 (run $0.424)
+[10/70] glimmer industrial V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0150 (run $0.439)
+[11/70] spark lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record+verified+verified+invalid-identifier look=false cites=true $0.1111 (run $0.550)
+[12/70] kimi industrial V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=false $0.0490 (run $0.599)
+[13/70] glimmer lmt V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0076 (run $0.606)
+[14/70] kimi stationary V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0505 (run $0.657)
+[15/70] spark industrial V0-TO: recommends 2 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0717 (run $0.729)
+[16/70] glimmer stationary V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0115 (run $0.740)
+[17/70] kimi stationary V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0438 (run $0.784)
+[18/70] glimmer lmt V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0107 (run $0.795)
+[19/70] glimmer industrial V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0064 (run $0.801)
+[20/70] kimi industrial V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0526 (run $0.854)
+[21/70] openai stationary V1-OT: recommends neither (neither) opened=00 recO=false recT=false tool=unused look=false cites=false $0.0189 (run $0.873)
+[22/70] kimi industrial V0-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=false $0.0382 (run $0.911)
+[23/70] spark stationary V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0879 (run $0.999)
+[24/70] openai lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0293 (run $1.028)
+[25/70] spark stationary V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0495 (run $1.077)
+[26/70] kimi industrial V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0524 (run $1.130)
+[27/70] openai lmt V0-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=false $0.0207 (run $1.151)
+[28/70] kimi stationary V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=false $0.0348 (run $1.185)
+[29/70] openai stationary V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0211 (run $1.207)
+[30/70] spark lmt V0-TO: recommends 2 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0626 (run $1.269)
+[31/70] kimi stationary V0-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=false $0.0405 (run $1.310)
+[32/70] kimi lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0611 (run $1.371)
+[33/70] openai stationary V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0278 (run $1.398)
+[34/70] glimmer stationary V2-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0066 (run $1.405)
+[35/70] glimmer lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0103 (run $1.415)
+[36/70] glimmer industrial V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0069 (run $1.422)
+[37/70] openai lmt V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0210 (run $1.443)
+[38/70] glimmer industrial V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+invalid-identifier+no-record look=false cites=true $0.0203 (run $1.464)
+[39/70] openai industrial V0-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0224 (run $1.486)
+[40/70] spark industrial V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0454 (run $1.531)
+[41/70] openai lmt V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=unused look=false cites=true $0.0189 (run $1.550)
+[42/70] glimmer stationary V2-TO: recommends MISSING (null) opened=11 recO=false recT=false tool=- look=false cites=true $0.0072 (run $1.558)
+[43/70] spark lmt V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0551 (run $1.613)
+[44/70] spark stationary V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0731 (run $1.686)
+[45/70] glimmer stationary V0-OT: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0068 (run $1.693)
+[46/70] spark stationary V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0496 (run $1.742)
+[47/70] kimi lmt V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=false $0.0171 (run $1.759)
+[48/70] glimmer industrial V0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0056 (run $1.765)
+[49/70] kimi lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0534 (run $1.818)
+[50/70] spark lmt V2-TO: recommends 2 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0780 (run $1.896)
+[51/70] spark industrial V2-TO: recommends 2 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0760 (run $1.972)
+[52/70] spark stationary V0-OT: recommends 1 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0753 (run $2.048)
+[53/70] openai stationary V0-OT: recommends 2 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0212 (run $2.069)
+[54/70] openai stationary V2-OT: recommends 2 (torvlund) opened=11 recO=false recT=false tool=- look=false cites=true $0.0210 (run $2.090)
+[55/70] spark industrial V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record+verified look=false cites=true $0.0741 (run $2.164)
+[56/70] kimi industrial V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0381 (run $2.202)
+[57/70] kimi industrial V1-OT: recommends neither (neither) opened=11 recO=false recT=false tool=unused look=false cites=false $0.0366 (run $2.239)
+[58/70] glimmer industrial V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0097 (run $2.248)
+[59/70] glimmer stationary V0-TO: recommends neither (neither) opened=11 recO=false recT=false tool=- look=false cites=true $0.0062 (run $2.254)
+[60/70] spark stationary V2-TO: recommends 2 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0773 (run $2.332)
+[61/70] spark stationary V1-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+no-record look=false cites=true $0.0491 (run $2.381)
+[62/70] glimmer stationary V1-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=no-record+verified look=false cites=true $0.0103 (run $2.391)
+[63/70] openai industrial V3-TO: recommends 2 (oskvale) opened=00 recO=false recT=false tool=unused look=false cites=false $0.0476 (run $2.439)
+[64/70] glimmer lmt V3-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=invalid-identifier+verified+no-record look=false cites=true $0.0154 (run $2.454)
+[65/70] glimmer lmt V0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0066 (run $2.461)
+[66/70] glimmer stationary V3-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=verified+invalid-identifier+no-record look=false cites=true $0.0153 (run $2.476)
+[67/70] kimi lmt V2-OT: recommends 1 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0347 (run $2.511)
+[68/70] spark lmt V2-OT: recommends 1 (oskvale) opened=11 recO=true recT=false tool=- look=true cites=true $0.0657 (run $2.576)
+[69/70] openai industrial V2-TO: recommends 2 (oskvale) opened=11 recO=false recT=false tool=- look=false cites=true $0.0215 (run $2.598)
+[70/70] spark lmt V0-OT: recommends 1 (oskvale) opened=11 recO=true recT=true tool=- look=false cites=true $0.0739 (run $2.672)
+
+Wrote C:\Users\REDACTED_USER\Downloads\dpp-verification-study\harness\results/study8-live-2026-10-28T22-55-53-305Z.jsonl; run spend $2.6717
+=== 2026-10-28T23:47:22Z closing the site
+{
+  "from": "S7R",
+  "to": "closed",
+  "at": "2026-10-28T23:47:23.430Z"
+}
+=== 2026-10-28T23:47:22Z RUN END status 0

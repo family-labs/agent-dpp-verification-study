@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f7f7"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+<linearGradient id="alu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset=".45" stop-color="#1c1c1c"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
+<linearGradient id="grey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9fa3"/><stop offset="1" stop-color="#6e7377"/></linearGradient>
+<linearGradient id="white" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3e3e3"/></linearGradient>
+<radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="1200" fill="url(#bg)"/>
+<ellipse cx="560" cy="840" rx="330" ry="34" fill="url(#shadow)"/>
+<rect x="300" y="520" width="520" height="300" rx="56" fill="url(#alu)"/>
+<text x="560" y="690" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="7.48" fill="#bdbdbd" text-anchor="middle">TORVLUND</text>
+<path d="M820 640 C 930 640, 960 500, 880 430 S 820 300, 900 260" stroke="#1a1a1a" stroke-width="18" fill="none" stroke-linecap="round"/>
+<rect x="850" y="190" width="120" height="90" rx="20" fill="#1a1a1a"/>
+<rect x="878" y="150" width="14" height="50" rx="7" fill="#9a9a9a"/><rect x="928" y="150" width="14" height="50" rx="7" fill="#9a9a9a"/>
+<path d="M300 700 C 200 700, 170 820, 250 900" stroke="#1a1a1a" stroke-width="18" fill="none" stroke-linecap="round"/>
+<circle cx="268" cy="915" r="30" fill="#1a1a1a"/>
+</svg>

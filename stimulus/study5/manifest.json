@@ -1,0 +1,131 @@
+{
+  "_comment": "Study 5 stimuli (stimulus/build-study5.ts, rules in stimulus/study5.ts). sha256 over the exact UTF-8 bytes. sources = the live resolver JSON L and F were built from, stored byte for byte. url = where fetch_url serves the stimulus.",
+  "builtAt": "2026-10-15T23:53:02.141Z",
+  "contractLive": true,
+  "contractProblems": [],
+  "inputs": {
+    "S1A": {
+      "file": "pages/main/S1-A.html",
+      "sha256": "e59773b4317aced59813dafe2342fcf2d34376d203e1825f9b0c945784dcc1e0",
+      "bytes": 2087
+    },
+    "S1E": {
+      "file": "pages/followup/S1-E.html",
+      "sha256": "71561f3429ec59846cac1f3902e2c9f3b0c5d4e50cb1666523ea97a308185776",
+      "bytes": 2105
+    },
+    "E": {
+      "file": "passports/E-04012346519005.json",
+      "sha256": "23a6ae1c48cffde5c89c2768677801c43f5719bce190daf56e5fe626dd660978",
+      "bytes": 8345
+    }
+  },
+  "sources": {
+    "A": {
+      "file": "study5/source/A-live.json",
+      "sha256": "3bf062accf50e7914a7bcea2f41b3f2888b5cf30f3a7e32f87ddda9a055f0ff8",
+      "bytes": 11645,
+      "url": "https://ugpdpp.xyz/01/04012346627106",
+      "fetchedAt": "2026-10-15T23:53:01.646Z"
+    },
+    "G": {
+      "file": "study5/source/G-live.json",
+      "sha256": "f0ddcf5e385bf8c3298a8cde68d4f30e5f88a8b69b451d26b3a06cecf3ab350e",
+      "bytes": 11929,
+      "url": "https://ugpdpp.xyz/01/04012346627106/21/000001",
+      "fetchedAt": "2026-10-15T23:53:02.139Z"
+    }
+  },
+  "stimuli": {
+    "T1-H-page": {
+      "file": "study5/pages/T1-H.html",
+      "sha256": "fa202e9abcdfb3f53173f2d42285939cb8490a9035efe3a7099e84323fff73f6",
+      "bytes": 2113,
+      "url": "https://shop.tarnvale.example/products/tarnvale-5000",
+      "contentType": "text/html; charset=utf-8",
+      "condition": "H"
+    },
+    "T1-L-page": {
+      "file": "study5/pages/T1-L.html",
+      "sha256": "fa202e9abcdfb3f53173f2d42285939cb8490a9035efe3a7099e84323fff73f6",
+      "bytes": 2113,
+      "url": "https://shop.tarnvale.example/products/tarnvale-5000",
+      "contentType": "text/html; charset=utf-8",
+      "condition": "L"
+    },
+    "T1-W-page": {
+      "file": "study5/pages/T1-W.html",
+      "sha256": "71561f3429ec59846cac1f3902e2c9f3b0c5d4e50cb1666523ea97a308185776",
+      "bytes": 2105,
+      "url": "https://shop.tarnvale.example/products/tarnvale-5000",
+      "contentType": "text/html; charset=utf-8",
+      "condition": "W"
+    },
+    "W-passport": {
+      "file": "study5/passports/W.json",
+      "sha256": "6193ce84c80d12f0b84a132f8e89f625aeb2bd0ae262afab588dda996851999c",
+      "bytes": 8361,
+      "url": "https://id.tarnvale.example/01/04012346519005",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "W"
+    },
+    "W-passport-id": {
+      "file": "study5/passports/W.json",
+      "sha256": "6193ce84c80d12f0b84a132f8e89f625aeb2bd0ae262afab588dda996851999c",
+      "bytes": 8361,
+      "url": "https://id.tarnvale.example/api/passport/5df1654d-e8b2-4bec-8f11-2a50494c9593",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "W"
+    },
+    "W2-page": {
+      "file": "study5/pages/W2.html",
+      "sha256": "540f22baafee096446ff8af5c90fcc694c9fa73ddfd63744b810c59fed917d6c",
+      "bytes": 1362,
+      "url": "https://www.secondlife-power.example/p/tarnvale-5000/000001",
+      "contentType": "text/html; charset=utf-8",
+      "condition": "W2"
+    },
+    "H-passport": {
+      "file": "study5/passports/H.json",
+      "sha256": "982e636aba0c768239349bc50547472c0f852e83e4d849113360b509420dd22b",
+      "bytes": 11430,
+      "url": "https://passport-viewer.example/01/04012346627106",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "H"
+    },
+    "L-passport": {
+      "file": "study5/passports/L.json",
+      "sha256": "8f5901aa4d10b0c1cace7d5ae410587612b893a363906610bd1fc51a80405140",
+      "bytes": 11430,
+      "url": "https://passport-viewer.example/01/04012346627106",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "L"
+    },
+    "G-passport": {
+      "file": "study5/passports/G.json",
+      "sha256": "ab7d54cc3502b64eba1eadea46a8f1e97bd912263596393ed030b2c59129fc49",
+      "bytes": 11714,
+      "url": "https://passport-viewer.example/01/04012346627106/21/000001",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "G"
+    },
+    "F-passport": {
+      "file": "study5/passports/F.json",
+      "sha256": "93e06be552609f30c5cd107cac4a4f0da4184bdbe2d9e2c2f5339161489bafdf",
+      "bytes": 11714,
+      "url": "https://passport-viewer.example/01/04012346627106/21/000001",
+      "contentType": "application/json; charset=utf-8",
+      "condition": "F"
+    }
+  },
+  "facts": {
+    "realFingerprint": "0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44",
+    "lFingerprint": "0x8b18f528f7b4ada54acd558148d404852093b52679f3f5044998a27fbec1f25b",
+    "lRule": "L fingerprint = \"0x\" + sha256(utf8(lowercase(real recorded_fingerprint) + \"/r2\"))",
+    "provenancePath": "$.passportCheck.evidence.provenance",
+    "realCollection": "0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae",
+    "realDeployTx": "0x47237bf24779091f422a61c2a5d0fdab4f2df815ee6a1ac5ad3c8115f0c54340",
+    "foreignCollection": "0x750DC5Ba0a639f5340Bf23Bb5Cd16119A8e50B79",
+    "foreignDeployTx": "0xb2cd3ce511b80eb3ed0c5037ad8a8e2f0a135927f6f708bf6d5f4168bca5ef77"
+  }
+}

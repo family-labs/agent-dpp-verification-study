@@ -1,0 +1,600 @@
+{
+  "_comment": [
+    "Study 6 mainnet fixture data: three synthetic batteries for the fictional brand in create-study6-mainnet.ts (BRAND, WEB_ORIGIN). Every '{brand}' and '{web}' below is filled from those two constants at run time, so a spelling or host correction is a one-line change. All values are invented for a research study; no real organisation, laboratory, notified body, recycler or address is named. Real EU acts and standards are cited only as document titles. The words 'compliant' and 'certified' are refused by the script's checks.",
+    "Address: postalAddress carries a placeholder street ('Eksempelvej 1', the Danish 'Example Road'), locality Copenhagen and country DK, and no postal code, so it cannot pair with a real address. 'Studiestraede 1' was suggested in the brief but Studiestraede is a real street in central Copenhagen, so it was not used.",
+    "Shapes and keys follow the platform's battery section schemas on universal-goods-testnet origin/main (sectionSchema() in apps/server/scripts/gen-battery-schema-sql.ts over apps/server/src/scout/battery/annex-xiii-corpus.ts, plus the served-schema patches of migrations 0102 and 0128), and the field shapes that Study 2's tarnvale-5000.battery.json had accepted by the live registry.",
+    "Units: weight in kg (the platform's fixed unit, migration 0128). capacity (Annex VI A.6) has no fixed unit; Ah is used because the Commission guidance the platform follows treats rated capacity (Ah) as a repeat of it. Energy in Wh/kWh is stated in the descriptions and the declaration text.",
+    "OMITTED, all three categories, because the platform marks them pending_act (they wait on a delegated or implementing act; a passport without them is not incomplete): materialComposition.materialComposition, materialComposition.criticalRawMaterialsPresent (gate G-GUIDANCE-DUPLICATE); performanceAndDurability.ratedCapacity (G-GUIDANCE-DUPLICATE); every batteryCircularity key except renewableContentShare (carbon footprint G-CF-DECL and G-CF-CLASS, due diligence G-DD, recycled content G-RC).",
+    "OMITTED because not_applicable for lmt, industrial and stationary: performanceAndDurability.capacityThresholdForExhaustion (EV batteries only).",
+    "OMITTED, conditional and the condition does not hold: batteryIdentification.manufacturer.emailAddress (no mailbox exists at the brand host); endOfLife.heavyMetalSymbols (no Cd or Pb above the marking thresholds); conformity.declarationOfConformity.authorisedRepresentative (manufacturer is in the EU); notifiedBody, notifiedBodyIntervention and certificates (no notified body is involved: internal production control).",
+    "OMITTED, optional: conformity.declarationOfConformity.objectImage and additionalInformation; batteryIdentification.gtin (the GTIN is written to the variant's _identity row, which is what sealing reads).",
+    "INCLUDED although conditional for industrial and stationary: expectedLifetime, roundTripEfficiency and cRateOfCycleLifeTest. Their condition is 'rechargeable industrial battery above 2 kWh' (Art. 10(1)); both products are above it (2.56 kWh and 5.12 kWh). For lmt they are required.",
+    "NOT FILLED, item-level sections: batteryHistory and stateOfHealth are per-battery (Annex XIII point 4) and are not written at product level by this script.",
+    "Per-product: identifyingElement and the batch description use the lot code '<model>-2610' (October 2026)."
+  ],
+  "products": {
+    "lmt": {
+      "categoryId": "c0000000-0000-4000-8000-000000000202",
+      "title": "{brand} Trailcell 500 e-bike battery",
+      "description": "36 V e-bike battery pack, 500 Wh, NMC cells, 2-year warranty.",
+      "model": "TC500",
+      "gtin": "09520606000019",
+      "sections": {
+        "batteryIdentification": {
+          "title": "Battery information",
+          "data": {
+            "manufacturer": {
+              "name": "{brand}",
+              "postalAddress": { "streetAddress": "Eksempelvej 1", "locality": "Copenhagen", "country": "DK" },
+              "singleContactPoint": "{brand} customer service, {web}/contact",
+              "webAddress": "{web}"
+            },
+            "batteryCategory": "lmt",
+            "modelIdentification": "TC500",
+            "identifyingElement": "Lot TC500-2610",
+            "manufacturingPlace": "Odense, Denmark",
+            "manufacturingDate": "2026-10",
+            "weight": 2.9,
+            "capacity": 13.9
+          }
+        },
+        "materialComposition": {
+          "title": "Material composition",
+          "data": {
+            "chemistry": "Lithium nickel manganese cobalt oxide (NMC 622)",
+            "hazardousSubstances": [
+              "Lithium nickel manganese cobalt oxide",
+              "Lithium hexafluorophosphate (LiPF6)",
+              "Dimethyl carbonate",
+              "Ethyl methyl carbonate"
+            ],
+            "usableExtinguishingAgent": ["Water in large quantities", "Aqueous vermiculite dispersion"],
+            "criticalRawMaterialsAboveThreshold": ["Lithium", "Nickel", "Cobalt", "Manganese", "Natural graphite", "Copper", "Aluminium"]
+          }
+        },
+        "performanceAndDurability": {
+          "title": "Performance & Durability",
+          "data": {
+            "voltage": {
+              "minimal": 30,
+              "nominal": 36,
+              "maximum": 42,
+              "temperatureRange": { "minimum": -10, "maximum": 50, "unit": "°C" }
+            },
+            "power": {
+              "originalCapability": 720,
+              "limits": {
+                "maximumContinuousDischargePower": { "value": 720, "unit": "W" },
+                "maximumPeakDischargePower": { "value": 1080, "unit": "W", "duration": "10 s" },
+                "maximumChargePower": { "value": 170, "unit": "W" }
+              },
+              "temperatureRange": { "minimum": -10, "maximum": 50, "unit": "°C" }
+            },
+            "expectedLifetime": {
+              "cycles": 800,
+              "referenceTest": "Manufacturer cycle endurance test TS-TC500-01: 0.5C charge and discharge at 25 °C, end of life at 80 % of rated capacity"
+            },
+            "cRateOfCycleLifeTest": 0.5,
+            "idleTemperature": {
+              "range": { "minimum": -20, "maximum": 45, "unit": "°C" },
+              "referenceTest": "Manufacturer storage test TS-TC500-03: 30 days at each limit, 50 % state of charge"
+            },
+            "commercialWarrantyPeriod": "2 years",
+            "roundTripEfficiency": { "initial": 95, "atFiftyPercentCycleLife": 92 },
+            "internalResistance": { "cell": 0.018, "pack": 0.06 }
+          }
+        },
+        "batteryCircularity": {
+          "title": "Circularity",
+          "data": { "renewableContentShare": 0 }
+        },
+        "conformity": {
+          "title": "Conformity",
+          "data": {
+            "declarationOfConformity": {
+              "identificationNumber": "DoC-TC500-2026-01",
+              "batteryModel": {
+                "product": "{brand} Trailcell 500 e-bike battery, model TC500",
+                "category": "LMT battery",
+                "batchOrSerialNumber": "All production lots from 2026-10"
+              },
+              "manufacturer": { "name": "{brand}", "address": "Eksempelvej 1, Copenhagen, Denmark" },
+              "soleResponsibilityStatement": "This declaration of conformity is issued under the sole responsibility of the manufacturer.",
+              "objectOfDeclaration": [
+                {
+                  "value": "{brand} Trailcell 500 e-bike battery, model TC500: rechargeable lithium-ion battery for an electric bicycle, NMC cells, 36 V nominal, 13.9 Ah, about 500 Wh, with integrated battery management system.",
+                  "language": "en"
+                }
+              ],
+              "unionHarmonisationLegislation": [
+                "Regulation (EU) 2023/1542 (OJ L 191, 28.7.2023, p. 1)",
+                "Directive 2014/30/EU (OJ L 96, 29.3.2014, p. 79)",
+                "Directive 2011/65/EU (OJ L 174, 1.7.2011, p. 88)"
+              ],
+              "standardsAndSpecifications": [
+                "EN 50604-1:2016+A1:2021",
+                "UN Manual of Tests and Criteria, Part III, sub-section 38.3"
+              ],
+              "placeAndDateOfIssue": { "place": "Copenhagen", "date": "2026-10-01" },
+              "signatory": { "name": "M. Holm", "function": "Head of Product Safety" },
+              "signature": {
+                "url": "{web}/doc/DoC-TC500-2026-01.pdf",
+                "contentType": "application/pdf",
+                "resourceTitle": "EU declaration of conformity DoC-TC500-2026-01 (signed)",
+                "language": "en"
+              }
+            }
+          }
+        },
+        "endOfLife": {
+          "title": "End of life",
+          "data": {
+            "separateCollectionSymbol": { "applied": true, "placement": "battery" },
+            "endUserRoleInWastePrevention": [
+              { "value": "Store the battery at 30 to 60 % charge in a cool, dry place when the bike is not in use for several weeks. Have a faulty pack repaired rather than replaced.", "language": "en" }
+            ],
+            "endUserRoleInSeparateCollection": [
+              { "value": "Do not dispose of this battery with household waste. Hand it in for separate collection free of charge at a bike shop or a municipal collection point.", "language": "en" }
+            ],
+            "collectionAndTreatmentAvailable": [
+              { "value": "Free take-back at the point of sale and through the {brand} take-back service ({web}/returns). Returned packs are checked for repair first; packs that cannot be reused are sent for recycling.", "language": "en" }
+            ],
+            "wasteBatteryHandlingSafetyInstructions": [
+              { "value": "Tape over the terminals before transport. Do not open, puncture or crush the pack. Keep a damaged or swollen pack outdoors, away from combustible material, and contact the take-back service.", "language": "en" }
+            ],
+            "meaningOfLabelsAndSymbols": [
+              { "value": "Crossed-out wheeled bin: collect separately, never in household waste. QR code: links to this product information.", "language": "en" }
+            ],
+            "substanceImpacts": [
+              { "value": "The cathode contains nickel and cobalt compounds and the electrolyte a fluorinated lithium salt in flammable organic solvents. If released they can harm health, form toxic gases and contaminate soil and water, which is why the battery must be collected separately and treated.", "language": "en" }
+            ]
+          }
+        },
+        "safetyAndDocumentation": {
+          "title": "Safety & documentation",
+          "data": {
+            "detailedComposition": {
+              "cells": "40 cylindrical 21700 lithium-ion cells, 3.6 V 3.5 Ah",
+              "cathode": "Lithium nickel manganese cobalt oxide (NMC 622) on aluminium foil, PVDF binder",
+              "anode": "Natural graphite on copper foil, CMC/SBR binder",
+              "electrolyte": "LiPF6 in ethylene carbonate, dimethyl carbonate and ethyl methyl carbonate",
+              "separator": "Ceramic-coated polyethylene",
+              "housing": "Aluminium tube with glass-fibre reinforced polyamide end caps",
+              "electronics": "Battery management system with fuel gauge"
+            },
+            "cathodeMaterials": ["Lithium nickel manganese cobalt oxide (NMC 622)", "Aluminium foil", "Polyvinylidene fluoride (PVDF)", "Carbon black"],
+            "anodeMaterials": ["Natural graphite", "Copper foil", "Carboxymethyl cellulose (CMC)", "Styrene-butadiene rubber (SBR)"],
+            "electrolyteMaterials": ["Lithium hexafluorophosphate (LiPF6)", "Ethylene carbonate", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+            "componentPartNumbers": [
+              "TC500-CM-10S4P: cell module, 10S4P",
+              "TC500-BMS-01: battery management board",
+              "TC500-HSG-01: housing tube and end caps",
+              "TC500-CON-01: discharge connector and lock"
+            ],
+            "replacementSourceContacts": ["{brand} spare parts service, {web}/parts"],
+            "explodedDiagrams": {
+              "url": "{web}/service/TC500/exploded-view.pdf",
+              "contentType": "application/pdf",
+              "resourceTitle": "TC500 exploded view",
+              "language": "en"
+            },
+            "disassemblySequences": [
+              { "value": "1. Remove the pack from the bike and discharge it below 30 %. 2. Remove the four end-cap screws and pull off the end caps. 3. Disconnect the discharge connector from the BMS board. 4. Slide the cell module out of the housing tube.", "language": "en" }
+            ],
+            "fasteningTechniques": ["Screws (Torx T10)", "Snap-fit connectors", "Adhesive foam pads"],
+            "toolsRequired": ["Torx T10 screwdriver", "Plastic spudger", "Insulated gloves"],
+            "damageRiskWarnings": [
+              { "value": "Do not pull the cell module by its wiring. Short-circuiting the module terminals can cause fire.", "language": "en" }
+            ],
+            "cellCountAndLayout": { "cellCount": 40, "layout": "10S4P, cylindrical cells in two staggered rows" },
+            "safetyMeasures": [
+              { "value": "Battery management system with cell-level over-voltage, under-voltage, over-current, short-circuit and temperature protection. Charge only with the supplied charger, between 0 °C and 45 °C.", "language": "en" }
+            ]
+          }
+        },
+        "testReports": {
+          "title": "Test evidence",
+          "data": {
+            "results": [
+              "TR-TC500-2609-01: cycle endurance, 800 cycles to 80 % of rated capacity at 0.5C, 25 °C",
+              "TR-TC500-2609-02: safety tests to EN 50604-1:2016+A1:2021",
+              "TR-TC500-2609-03: UN 38.3 transport tests T1 to T8"
+            ],
+            "requirementEvidenced": [
+              "Regulation (EU) 2023/1542, Article 10 and Annex IV",
+              "Transport of dangerous goods, UN 38.3"
+            ]
+          }
+        }
+      }
+    },
+    "industrial": {
+      "categoryId": "c0000000-0000-4000-8000-000000000204",
+      "title": "{brand} Basecamp 2500 portable power station",
+      "description": "Portable power station, 2.56 kWh, LFP cells, 2000 W AC output, 5-year warranty.",
+      "model": "BC2500",
+      "gtin": "09520606000026",
+      "sections": {
+        "batteryIdentification": {
+          "title": "Battery information",
+          "data": {
+            "manufacturer": {
+              "name": "{brand}",
+              "postalAddress": { "streetAddress": "Eksempelvej 1", "locality": "Copenhagen", "country": "DK" },
+              "singleContactPoint": "{brand} customer service, {web}/contact",
+              "webAddress": "{web}"
+            },
+            "batteryCategory": "industrial",
+            "modelIdentification": "BC2500",
+            "identifyingElement": "Lot BC2500-2610",
+            "manufacturingPlace": "Odense, Denmark",
+            "manufacturingDate": "2026-10",
+            "weight": 24,
+            "capacity": 100
+          }
+        },
+        "materialComposition": {
+          "title": "Material composition",
+          "data": {
+            "chemistry": "Lithium iron phosphate (LiFePO4)",
+            "hazardousSubstances": ["Lithium hexafluorophosphate (LiPF6)", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+            "usableExtinguishingAgent": ["Water in large quantities", "Aqueous vermiculite dispersion"],
+            "criticalRawMaterialsAboveThreshold": ["Lithium", "Natural graphite", "Phosphorus", "Aluminium", "Copper"]
+          }
+        },
+        "performanceAndDurability": {
+          "title": "Performance & Durability",
+          "data": {
+            "voltage": {
+              "minimal": 20,
+              "nominal": 25.6,
+              "maximum": 29.2,
+              "temperatureRange": { "minimum": -10, "maximum": 45, "unit": "°C" }
+            },
+            "power": {
+              "originalCapability": 2560,
+              "limits": {
+                "maximumContinuousDischargePower": { "value": 2560, "unit": "W" },
+                "maximumPeakDischargePower": { "value": 3840, "unit": "W", "duration": "10 s" },
+                "maximumChargePower": { "value": 1280, "unit": "W" }
+              },
+              "temperatureRange": { "minimum": -10, "maximum": 45, "unit": "°C" }
+            },
+            "expectedLifetime": {
+              "cycles": 4000,
+              "referenceTest": "Manufacturer cycle endurance test TS-BC2500-01: 0.5C charge and discharge at 25 °C, end of life at 70 % of rated capacity"
+            },
+            "cRateOfCycleLifeTest": 0.5,
+            "idleTemperature": {
+              "range": { "minimum": -20, "maximum": 45, "unit": "°C" },
+              "referenceTest": "Manufacturer storage test TS-BC2500-03: 30 days at each limit, 50 % state of charge"
+            },
+            "commercialWarrantyPeriod": "5 years",
+            "roundTripEfficiency": { "initial": 95, "atFiftyPercentCycleLife": 93 },
+            "internalResistance": { "cell": 0.0003, "pack": 0.006 }
+          }
+        },
+        "batteryCircularity": {
+          "title": "Circularity",
+          "data": { "renewableContentShare": 0 }
+        },
+        "conformity": {
+          "title": "Conformity",
+          "data": {
+            "declarationOfConformity": {
+              "identificationNumber": "DoC-BC2500-2026-01",
+              "batteryModel": {
+                "product": "{brand} Basecamp 2500 portable power station, model BC2500",
+                "category": "Industrial battery",
+                "batchOrSerialNumber": "All production lots from 2026-10"
+              },
+              "manufacturer": { "name": "{brand}", "address": "Eksempelvej 1, Copenhagen, Denmark" },
+              "soleResponsibilityStatement": "This declaration of conformity is issued under the sole responsibility of the manufacturer.",
+              "objectOfDeclaration": [
+                {
+                  "value": "{brand} Basecamp 2500 portable power station, model BC2500: rechargeable lithium iron phosphate industrial battery, 25.6 V nominal, 100 Ah, 2.56 kWh, with integrated inverter and charger.",
+                  "language": "en"
+                }
+              ],
+              "unionHarmonisationLegislation": [
+                "Regulation (EU) 2023/1542 (OJ L 191, 28.7.2023, p. 1)",
+                "Directive 2014/35/EU (OJ L 96, 29.3.2014, p. 357)",
+                "Directive 2014/30/EU (OJ L 96, 29.3.2014, p. 79)",
+                "Directive 2011/65/EU (OJ L 174, 1.7.2011, p. 88)"
+              ],
+              "standardsAndSpecifications": [
+                "EN IEC 62619:2022",
+                "EN IEC 62620:2015+A1:2023",
+                "UN Manual of Tests and Criteria, Part III, sub-section 38.3",
+                "EN IEC 62368-1:2024"
+              ],
+              "placeAndDateOfIssue": { "place": "Copenhagen", "date": "2026-10-01" },
+              "signatory": { "name": "M. Holm", "function": "Head of Product Safety" },
+              "signature": {
+                "url": "{web}/doc/DoC-BC2500-2026-01.pdf",
+                "contentType": "application/pdf",
+                "resourceTitle": "EU declaration of conformity DoC-BC2500-2026-01 (signed)",
+                "language": "en"
+              }
+            }
+          }
+        },
+        "endOfLife": {
+          "title": "End of life",
+          "data": {
+            "separateCollectionSymbol": { "applied": true, "placement": "battery" },
+            "endUserRoleInWastePrevention": [
+              { "value": "Use and store the unit within the stated temperature range and recharge it every three months when not in use. Have faults repaired rather than replacing the unit.", "language": "en" }
+            ],
+            "endUserRoleInSeparateCollection": [
+              { "value": "Do not dispose of this battery with household waste. Hand it in for separate collection free of charge.", "language": "en" }
+            ],
+            "collectionAndTreatmentAvailable": [
+              { "value": "Free take-back at the point of sale and through the {brand} take-back service ({web}/returns). Returned units are checked for repair or repurposing first; units that cannot be reused are sent for recycling.", "language": "en" }
+            ],
+            "wasteBatteryHandlingSafetyInstructions": [
+              { "value": "Switch the unit off and discharge it below 30 % before transport. Do not open, puncture or crush the battery module. Keep a damaged unit outdoors, away from combustible material, and contact the take-back service.", "language": "en" }
+            ],
+            "meaningOfLabelsAndSymbols": [
+              { "value": "Crossed-out wheeled bin: collect separately, never in household waste. QR code: links to this product information.", "language": "en" }
+            ],
+            "substanceImpacts": [
+              { "value": "The electrolyte contains a fluorinated lithium salt and flammable organic solvents. If released they can form toxic and corrosive gases and contaminate soil and water, which is why the battery must be collected separately and treated.", "language": "en" }
+            ]
+          }
+        },
+        "safetyAndDocumentation": {
+          "title": "Safety & documentation",
+          "data": {
+            "detailedComposition": {
+              "cells": "8 prismatic LiFePO4 cells, 3.2 V 100 Ah",
+              "cathode": "Lithium iron phosphate on aluminium foil, PVDF binder",
+              "anode": "Natural graphite on copper foil, CMC/SBR binder",
+              "electrolyte": "LiPF6 in ethylene carbonate, dimethyl carbonate and ethyl methyl carbonate",
+              "separator": "Ceramic-coated polyethylene",
+              "housing": "Aluminium frame with polycarbonate shell",
+              "electronics": "Battery management system, 2000 W inverter, charger"
+            },
+            "cathodeMaterials": ["Lithium iron phosphate (LiFePO4)", "Aluminium foil", "Polyvinylidene fluoride (PVDF)", "Carbon black"],
+            "anodeMaterials": ["Natural graphite", "Copper foil", "Carboxymethyl cellulose (CMC)", "Styrene-butadiene rubber (SBR)"],
+            "electrolyteMaterials": ["Lithium hexafluorophosphate (LiPF6)", "Ethylene carbonate", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+            "componentPartNumbers": [
+              "BC2500-BM-8S: battery module, 8S1P",
+              "BC2500-BMS-01: battery management board",
+              "BC2500-INV-20: 2000 W inverter",
+              "BC2500-CHG-12: charger board",
+              "BC2500-FAN-01: cooling fan"
+            ],
+            "replacementSourceContacts": ["{brand} spare parts service, {web}/parts"],
+            "explodedDiagrams": {
+              "url": "{web}/service/BC2500/exploded-view.pdf",
+              "contentType": "application/pdf",
+              "resourceTitle": "BC2500 exploded view",
+              "language": "en"
+            },
+            "disassemblySequences": [
+              { "value": "1. Disconnect all inputs and outputs and switch off. 2. Remove the six side-panel screws and the side panels. 3. Disconnect the module harness from the BMS board. 4. Remove the four module bracket bolts and lift the battery module out.", "language": "en" }
+            ],
+            "fasteningTechniques": ["Screws (Torx T20)", "Bolts (M6 hex)", "Snap-fit connectors"],
+            "toolsRequired": ["Torx T20 screwdriver", "10 mm socket wrench", "Insulated gloves"],
+            "damageRiskWarnings": [
+              { "value": "Do not pry the module out by its terminals. Short-circuiting the module terminals can cause fire.", "language": "en" }
+            ],
+            "cellCountAndLayout": { "cellCount": 8, "layout": "8S1P, one row of eight prismatic cells" },
+            "safetyMeasures": [
+              { "value": "Battery management system with cell-level over-voltage, under-voltage, over-current, short-circuit and temperature protection. Fused module output. Operate between -10 °C and 45 °C; keep ventilation openings clear.", "language": "en" }
+            ]
+          }
+        },
+        "testReports": {
+          "title": "Test evidence",
+          "data": {
+            "results": [
+              "TR-BC2500-2609-01: cycle endurance, 4000 cycles to 70 % of rated capacity at 0.5C, 25 °C",
+              "TR-BC2500-2609-02: safety tests to EN IEC 62619:2022",
+              "TR-BC2500-2609-03: UN 38.3 transport tests T1 to T8"
+            ],
+            "requirementEvidenced": [
+              "Regulation (EU) 2023/1542, Article 10 and Annex IV",
+              "Transport of dangerous goods, UN 38.3"
+            ]
+          }
+        }
+      }
+    },
+    "stationary": {
+      "categoryId": "c0000000-0000-4000-8000-000000000203",
+      "title": "{brand} Homecell 5 home battery",
+      "description": "Wall-mounted home battery, 5.12 kWh, LFP cells, 51.2 V, 10-year warranty.",
+      "model": "HC5",
+      "gtin": "09520606000033",
+      "sections": {
+        "batteryIdentification": {
+          "title": "Battery information",
+          "data": {
+            "manufacturer": {
+              "name": "{brand}",
+              "postalAddress": { "streetAddress": "Eksempelvej 1", "locality": "Copenhagen", "country": "DK" },
+              "singleContactPoint": "{brand} customer service, {web}/contact",
+              "webAddress": "{web}"
+            },
+            "batteryCategory": "stationary",
+            "modelIdentification": "HC5",
+            "identifyingElement": "Lot HC5-2610",
+            "manufacturingPlace": "Odense, Denmark",
+            "manufacturingDate": "2026-10",
+            "weight": 48,
+            "capacity": 100
+          }
+        },
+        "materialComposition": {
+          "title": "Material composition",
+          "data": {
+            "chemistry": "Lithium iron phosphate (LiFePO4)",
+            "hazardousSubstances": ["Lithium hexafluorophosphate (LiPF6)", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+            "usableExtinguishingAgent": ["Water in large quantities", "Aqueous vermiculite dispersion"],
+            "criticalRawMaterialsAboveThreshold": ["Lithium", "Natural graphite", "Phosphorus", "Aluminium", "Copper"]
+          }
+        },
+        "performanceAndDurability": {
+          "title": "Performance & Durability",
+          "data": {
+            "voltage": {
+              "minimal": 40,
+              "nominal": 51.2,
+              "maximum": 58.4,
+              "temperatureRange": { "minimum": -10, "maximum": 50, "unit": "°C" }
+            },
+            "power": {
+              "originalCapability": 2560,
+              "limits": {
+                "maximumContinuousDischargePower": { "value": 2560, "unit": "W" },
+                "maximumPeakDischargePower": { "value": 5120, "unit": "W", "duration": "10 s" },
+                "maximumChargePower": { "value": 2560, "unit": "W" }
+              },
+              "temperatureRange": { "minimum": -10, "maximum": 50, "unit": "°C" }
+            },
+            "expectedLifetime": {
+              "cycles": 6000,
+              "referenceTest": "Manufacturer cycle endurance test TS-HC5-01: 0.5C charge and discharge at 25 °C, end of life at 70 % of rated capacity"
+            },
+            "cRateOfCycleLifeTest": 0.5,
+            "idleTemperature": {
+              "range": { "minimum": -20, "maximum": 50, "unit": "°C" },
+              "referenceTest": "Manufacturer storage test TS-HC5-03: 30 days at each limit, 50 % state of charge"
+            },
+            "commercialWarrantyPeriod": "10 years",
+            "roundTripEfficiency": { "initial": 95, "atFiftyPercentCycleLife": 93 },
+            "internalResistance": { "cell": 0.00025, "pack": 0.008 }
+          }
+        },
+        "batteryCircularity": {
+          "title": "Circularity",
+          "data": { "renewableContentShare": 0 }
+        },
+        "conformity": {
+          "title": "Conformity",
+          "data": {
+            "declarationOfConformity": {
+              "identificationNumber": "DoC-HC5-2026-01",
+              "batteryModel": {
+                "product": "{brand} Homecell 5 home battery, model HC5",
+                "category": "Stationary battery energy storage system",
+                "batchOrSerialNumber": "All production lots from 2026-10"
+              },
+              "manufacturer": { "name": "{brand}", "address": "Eksempelvej 1, Copenhagen, Denmark" },
+              "soleResponsibilityStatement": "This declaration of conformity is issued under the sole responsibility of the manufacturer.",
+              "objectOfDeclaration": [
+                {
+                  "value": "{brand} Homecell 5 home battery, model HC5: rechargeable lithium iron phosphate stationary battery energy storage system, 51.2 V nominal, 100 Ah, 5.12 kWh, for wall mounting indoors.",
+                  "language": "en"
+                }
+              ],
+              "unionHarmonisationLegislation": [
+                "Regulation (EU) 2023/1542 (OJ L 191, 28.7.2023, p. 1)",
+                "Directive 2014/35/EU (OJ L 96, 29.3.2014, p. 357)",
+                "Directive 2014/30/EU (OJ L 96, 29.3.2014, p. 79)",
+                "Directive 2011/65/EU (OJ L 174, 1.7.2011, p. 88)"
+              ],
+              "standardsAndSpecifications": [
+                "EN IEC 62619:2022",
+                "EN IEC 62620:2015+A1:2023",
+                "UN Manual of Tests and Criteria, Part III, sub-section 38.3"
+              ],
+              "placeAndDateOfIssue": { "place": "Copenhagen", "date": "2026-10-01" },
+              "signatory": { "name": "M. Holm", "function": "Head of Product Safety" },
+              "signature": {
+                "url": "{web}/doc/DoC-HC5-2026-01.pdf",
+                "contentType": "application/pdf",
+                "resourceTitle": "EU declaration of conformity DoC-HC5-2026-01 (signed)",
+                "language": "en"
+              }
+            }
+          }
+        },
+        "endOfLife": {
+          "title": "End of life",
+          "data": {
+            "separateCollectionSymbol": { "applied": true, "placement": "battery" },
+            "endUserRoleInWastePrevention": [
+              { "value": "Keep the installation location within the stated temperature range and keep the system's software up to date. Have faults repaired by an installer rather than replacing the unit.", "language": "en" }
+            ],
+            "endUserRoleInSeparateCollection": [
+              { "value": "Do not dispose of this battery with household waste. Have it removed by an installer or hand it in for separate collection free of charge.", "language": "en" }
+            ],
+            "collectionAndTreatmentAvailable": [
+              { "value": "Free take-back through the installer and through the {brand} take-back service ({web}/returns). Returned units are checked for repair or second-life use first; units that cannot be reused are sent for recycling.", "language": "en" }
+            ],
+            "wasteBatteryHandlingSafetyInstructions": [
+              { "value": "Only a qualified installer may disconnect and remove the unit. Discharge it below 30 % before transport. Do not open, puncture or crush the battery module. Keep a damaged unit outdoors, away from combustible material, and contact the take-back service.", "language": "en" }
+            ],
+            "meaningOfLabelsAndSymbols": [
+              { "value": "Crossed-out wheeled bin: collect separately, never in household waste. QR code: links to this product information.", "language": "en" }
+            ],
+            "substanceImpacts": [
+              { "value": "The electrolyte contains a fluorinated lithium salt and flammable organic solvents. If released they can form toxic and corrosive gases and contaminate soil and water, which is why the battery must be collected separately and treated.", "language": "en" }
+            ]
+          }
+        },
+        "safetyAndDocumentation": {
+          "title": "Safety & documentation",
+          "data": {
+            "detailedComposition": {
+              "cells": "16 prismatic LiFePO4 cells, 3.2 V 100 Ah",
+              "cathode": "Lithium iron phosphate on aluminium foil, PVDF binder",
+              "anode": "Natural graphite on copper foil, CMC/SBR binder",
+              "electrolyte": "LiPF6 in ethylene carbonate, dimethyl carbonate and ethyl methyl carbonate",
+              "separator": "Ceramic-coated polyethylene",
+              "housing": "Powder-coated steel enclosure",
+              "electronics": "Battery management system, contactor, communication board"
+            },
+            "cathodeMaterials": ["Lithium iron phosphate (LiFePO4)", "Aluminium foil", "Polyvinylidene fluoride (PVDF)", "Carbon black"],
+            "anodeMaterials": ["Natural graphite", "Copper foil", "Carboxymethyl cellulose (CMC)", "Styrene-butadiene rubber (SBR)"],
+            "electrolyteMaterials": ["Lithium hexafluorophosphate (LiPF6)", "Ethylene carbonate", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+            "componentPartNumbers": [
+              "HC5-BM-16S: battery module, 16S1P",
+              "HC5-BMS-02: battery management board",
+              "HC5-CTR-01: main contactor and fuse assembly",
+              "HC5-COM-01: communication board",
+              "HC5-BRK-01: wall bracket"
+            ],
+            "replacementSourceContacts": ["{brand} spare parts service, {web}/parts"],
+            "explodedDiagrams": {
+              "url": "{web}/service/HC5/exploded-view.pdf",
+              "contentType": "application/pdf",
+              "resourceTitle": "HC5 exploded view",
+              "language": "en"
+            },
+            "disassemblySequences": [
+              { "value": "1. Switch off the system and isolate it from the inverter. 2. Remove the front cover (six screws). 3. Disconnect the module harness and the communication cable from the BMS board. 4. Remove the four module bracket bolts and lift the battery module out with two people.", "language": "en" }
+            ],
+            "fasteningTechniques": ["Screws (Torx T25)", "Bolts (M8 hex)", "Snap-fit connectors"],
+            "toolsRequired": ["Torx T25 screwdriver", "13 mm socket wrench", "Insulated gloves", "Voltage tester"],
+            "damageRiskWarnings": [
+              { "value": "The module weighs about 40 kg; lift it with two people. Do not pry the module out by its terminals. Short-circuiting the module terminals can cause fire.", "language": "en" }
+            ],
+            "cellCountAndLayout": { "cellCount": 16, "layout": "16S1P, two rows of eight prismatic cells" },
+            "safetyMeasures": [
+              { "value": "Battery management system with cell-level over-voltage, under-voltage, over-current, short-circuit and temperature protection. Main contactor and fused output. Install indoors between -10 °C and 50 °C, outside escape routes, with the clearances given in the installation manual.", "language": "en" }
+            ]
+          }
+        },
+        "testReports": {
+          "title": "Test evidence",
+          "data": {
+            "results": [
+              "TR-HC5-2609-01: cycle endurance, 6000 cycles to 70 % of rated capacity at 0.5C, 25 °C",
+              "TR-HC5-2609-02: safety tests to EN IEC 62619:2022",
+              "TR-HC5-2609-03: UN 38.3 transport tests T1 to T8"
+            ],
+            "requirementEvidenced": [
+              "Regulation (EU) 2023/1542, Article 10 and Annex IV",
+              "Regulation (EU) 2023/1542, Article 12 and Annex V",
+              "Transport of dangerous goods, UN 38.3"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

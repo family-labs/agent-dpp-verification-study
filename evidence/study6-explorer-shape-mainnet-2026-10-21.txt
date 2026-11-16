@@ -1,0 +1,44 @@
+Study 6: explorer JSON shape, measured READ-ONLY on the LUKSO MAINNET explorer (chain 42). 2026-10-21, 07:33:56Z to 07:34:02Z.
+Method: plain GET (Python urllib), headers exactly fetch_url's own: Accept: */*, User-Agent: Mozilla/5.0 (compatible; fetch_url/1.0).
+Paced at one request per 1.5 s; the script stops on HTTP 429 (none seen). 5 requests in total. No write, no signing, no API key.
+Sample collection: 0x767244f34d4899b5e94309bdd718381816118ca5 (an existing mainnet RWA collection, symbol RWA, supply 1; NOT a Study 6 fixture).
+Purpose: confirm the exact URL shapes the Study 6 stimuli use (stimulus/study6.ts itemRecordUrl, collectionRecordUrl) answer JSON on mainnet,
+as they did on testnet (evidence/study6-explorer-shape-testnet-2026-10-20.txt). RESULT: identical shapes; no adaptation needed.
+
+0. INSTANCE LIST (to find a token id): GET https://explorer.execution.mainnet.lukso.network/api/v2/tokens/0x767244f34d4899b5e94309bdd718381816118ca5/instances
+   HTTP 200 application/json; charset=utf-8, 914 B; items 1; id d4cca9a2ef6519ceac7a63cc6ad51555103ba8891c5aeab238f44fa9bc4c5859 (64 hex, no 0x); next_page_params None
+
+1. ITEM RECORD (current holder), the stimulus shape itemRecordUrl(): GET https://explorer.execution.mainnet.lukso.network/api/v2/tokens/0x767244f34d4899b5e94309bdd718381816118ca5/instances/d4cca9a2ef6519ceac7a63cc6ad51555103ba8891c5aeab238f44fa9bc4c5859
+   HTTP 200 application/json; charset=utf-8, 878 B, sha256 08bbe1f3b7e55100116485d1365eff403851d545ef9d84433e6c3239a236bd30
+   body (verbatim):
+   {"animation_url":null,"external_app_url":null,"id":"d4cca9a2ef6519ceac7a63cc6ad51555103ba8891c5aeab238f44fa9bc4c5859","image_url":null,"is_unique":true,"media_type":null,"media_url":null,"metadata":null,"owner":{"ens_domain_name":null,"hash":"0x829ac225ad1d3388fFbcC0A83dC3DE702b298F42","implementations":[{"address_hash":"0x7Cae2A2FaF164446618282196f08A3b8C13a87F9","name":null}],"is_contract":true,"is_scam":false,"is_verified":false,"metadata":null,"name":null,"private_tags":[],"proxy_type":"eip1167","public_tags":[],"reputation":"ok","watchlist_names":[]},"thumbnails":null,"token":{"address_hash":"0x767244f34d4899B5e94309Bdd718381816118ca5","circulating_market_cap":null,"decimals":null,"exchange_rate":null,"holders_count":"1","icon_url":null,"name":"Battery Pack (Testing Purposes)","reputation":"ok","symbol":"RWA","total_supply":"1","type":"LSP8","volume_24h":null}}
+   -> owner.hash = 0x829ac225ad1d3388fFbcC0A83dC3DE702b298F42 (the current holder; is_contract True, a Universal Profile proxy); owner.name = null
+   -> id = d4cca9a2ef6519ceac7a63cc6ad51555103ba8891c5aeab238f44fa9bc4c5859; token.type = LSP8; token.symbol = RWA; holders_count = 1; total_supply = 1
+
+2. COLLECTION RECORD (collection owner), the stimulus shape collectionRecordUrl(): GET https://explorer.execution.mainnet.lukso.network/api/v2/addresses/0x767244f34d4899b5e94309bdd718381816118ca5/logs
+   HTTP 200 application/json; charset=utf-8, 14637 B, sha256 664a42c79b7cd1c9977e331eb452a414430ce1b55d5e51e70b0afc97ca7c3842; top-level keys ['items', 'next_page_params']; next_page_params None
+   item keys: ['address', 'block_hash', 'block_number', 'data', 'decoded', 'index', 'smart_contract', 'topics', 'transaction_hash']
+   decoded events, newest first (decoded.method_call; decoded.parameters by name):
+    block 8466437  OperatorAuthorizationChanged   {}
+    block 8466300  Transfer                       {'from': '0x0000000000000000000000000000000000000000', 'to': '0x829ac225ad1d3388fFbcC0A83dC3DE702b298F42'}
+    block 8466299  DataChanged                    {}
+    block 8466299  DataChanged                    {}
+    block 8466299  DataChanged                    {}
+    block 8466299  DataChanged                    {}
+    block 8466299  DataChanged                    {}
+    block 8466299  OwnershipTransferred           {'previousOwner': '0x2787f9a97A1C6CA0D201D3B6333208F1a749E8BC', 'newOwner': '0x829ac225ad1d3388fFbcC0A83dC3DE702b298F42'}
+    block 8466299  OwnershipTransferred           {'previousOwner': '0x0000000000000000000000000000000000000000', 'newOwner': '0x2787f9a97A1C6CA0D201D3B6333208F1a749E8BC'}
+   -> newest OwnershipTransferred newOwner = 0x829ac225ad1d3388fFbcC0A83dC3DE702b298F42 = the collection owner (equals the item holder above). This is what gate L1 reads.
+
+3. TOKEN ENDPOINT: GET https://explorer.execution.mainnet.lukso.network/api/v2/tokens/0x767244f34d4899b5e94309bdd718381816118ca5
+   HTTP 200 application/json; charset=utf-8; body (verbatim): {"address_hash":"0x767244f34d4899B5e94309Bdd718381816118ca5","circulating_market_cap":null,"decimals":null,"exchange_rate":null,"holders_count":"1","icon_url":null,"name":"Battery Pack (Testing Purposes)","reputation":"ok","symbol":"RWA","total_supply":"1","type":"LSP8","volume_24h":null}
+   -> no owner field (as on testnet).
+
+4. ADDRESS ENDPOINT (another documented field, checked): GET https://explorer.execution.mainnet.lukso.network/api/v2/addresses/0x767244f34d4899b5e94309bdd718381816118ca5
+   HTTP 200 application/json; charset=utf-8; owner-like fields: creator_address_hash = 0x2787f9a97A1C6CA0D201D3B6333208F1a749E8BC, creation_transaction_hash = 0x8befbd891249ad4e7cbc413f9595d8bc6a7c98f6d471af7cbb332aa978511a8b; no 'owner' key
+   -> creator_address_hash is the DEPLOYER (it equals the first OwnershipTransferred's newOwner, which then handed ownership on), NOT the current owner.
+      So the logs endpoint stays the collection record; the stimuli are unchanged.
+
+Comparison with testnet (20 Oct): same paths, same 64-hex token id form, same owner.hash field, same decoded OwnershipTransferred(previousOwner,newOwner)
+event in the logs, same token endpoint without an owner. MAINNET_EXPLORER_VERIFIED is set true in stimulus/study6.ts on this evidence.
+Gate L1 (preflight-study6 --live) still has to pass on the Study 6 fixture ids once James creates them.

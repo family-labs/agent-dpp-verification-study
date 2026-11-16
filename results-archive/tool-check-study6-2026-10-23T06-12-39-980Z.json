@@ -1,0 +1,289 @@
+{
+  "ranAt": "2026-10-23T06:12:39.980Z",
+  "site": {
+    "ok": true,
+    "phase": "check",
+    "bundleSha256": "82da1e0a969065c694c4591d4b666aef80f27f7d5e24b74e43d26d236f4d60dd",
+    "builtAt": "2026-10-23T06:00:41.843Z",
+    "mock": false
+  },
+  "question": "What is the code word on this page? Please also open the page it links to and tell me that page's code word, the code word in the data file that page links to, and the value of total_blocks in the network statistics it links to.",
+  "results": [
+    {
+      "label": "gemini",
+      "model": "gemini-3.8-flash",
+      "error": null,
+      "costUsd": 0.0193125,
+      "userAgents": [
+        "GoogleAgent-URLContext",
+        "monitord-discovery/1.0",
+        "Mozilla/5.0 (compatible; Databot)",
+        "Mozilla/5.0 (l9scan/2.0.56431383a333433616a3a373330333a303037343a363036323; +https://leakix.net)",
+        "Mozilla/5.0 (l9scan/2.0.538313a353138363a3a343330333a303037343a363036323; +https://leakix.net)",
+        "Mozilla/5.0 (l9scan/2.0.333313e213e21323e2430313; +https://leakix.net)",
+        "Mozilla/5.0 (l9scan/2.0.8373e2932313e27363e2237313; +https://leakix.net)"
+      ],
+      "rows": [
+        {
+          "ts": "2026-10-23T06:12:05.543Z",
+          "path": "/check/delivery-areas",
+          "query": "?utm_source=share&utm_id=ikk5zad7",
+          "status": 200,
+          "ua": "GoogleAgent-URLContext",
+          "asn": 15169,
+          "as_org": "Google LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:06.731Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger Operations UAB",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:07.099Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger International Limited",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:07.341Z",
+          "path": "/actions.json",
+          "query": "",
+          "status": 404,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger International Limited",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:07.362Z",
+          "path": "/.well-known/solana.txt",
+          "query": "",
+          "status": 404,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger International Limited",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:07.363Z",
+          "path": "/.well-known/atproto-did",
+          "query": "",
+          "status": 404,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger International Limited",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:07.366Z",
+          "path": "/.well-known/farcaster.json",
+          "query": "",
+          "status": 404,
+          "ua": "monitord-discovery/1.0",
+          "asn": 47583,
+          "as_org": "Hostinger International Limited",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:13.453Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "GoogleAgent-URLContext",
+          "asn": 15169,
+          "as_org": "Google LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:19.993Z",
+          "path": "/robots.txt",
+          "query": "",
+          "status": 301,
+          "ua": "Mozilla/5.0 (compatible; Databot)",
+          "asn": 24940,
+          "as_org": "Hetzner Online GmbH",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:20.073Z",
+          "path": "/robots.txt",
+          "query": "",
+          "status": 200,
+          "ua": "Mozilla/5.0 (compatible; Databot)",
+          "asn": 24940,
+          "as_org": "Hetzner Online GmbH",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:21.854Z",
+          "path": "/check/delivery-areas",
+          "query": "?utm_source=share&utm_id=ikk5zad7",
+          "status": 301,
+          "ua": "GoogleAgent-URLContext",
+          "asn": 15169,
+          "as_org": "Google LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:21.978Z",
+          "path": "/check/delivery-areas",
+          "query": "?utm_source=share&utm_id=ikk5zad7",
+          "status": 200,
+          "ua": "GoogleAgent-URLContext",
+          "asn": 15169,
+          "as_org": "Google LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:33.604Z",
+          "path": "/",
+          "query": "",
+          "status": 301,
+          "ua": "Mozilla/5.0 (l9scan/2.0.56431383a333433616a3a373330333a303037343a363036323; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:33.659Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "Mozilla/5.0 (l9scan/2.0.538313a353138363a3a343330333a303037343a363036323; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:33.680Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "Mozilla/5.0 (l9scan/2.0.56431383a333433616a3a373330333a303037343a363036323; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:33.756Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "Mozilla/5.0 (l9scan/2.0.333313e213e21323e2430313; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:35.008Z",
+          "path": "/console/",
+          "query": "",
+          "status": 404,
+          "ua": "Mozilla/5.0 (l9scan/2.0.333313e213e21323e2430313; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:35.568Z",
+          "path": "/",
+          "query": "",
+          "status": 301,
+          "ua": "Mozilla/5.0 (l9scan/2.0.8373e2932313e27363e2237313; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:35.633Z",
+          "path": "/",
+          "query": "",
+          "status": 200,
+          "ua": "Mozilla/5.0 (l9scan/2.0.538313a353138363a3a343330333a303037343a363036323; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        },
+        {
+          "ts": "2026-10-23T06:12:35.787Z",
+          "path": "/server",
+          "query": "",
+          "status": 404,
+          "ua": "Mozilla/5.0 (l9scan/2.0.333313e213e21323e2430313; +https://leakix.net)",
+          "asn": 14061,
+          "as_org": "DigitalOcean, LLC",
+          "verified_bot": null,
+          "verified_bot_category": ""
+        }
+      ],
+      "reachedSite": true,
+      "followedLink": false,
+      "readJsonOnOurHost": false,
+      "explorerReported": false,
+      "codeWordsInAnswer": {
+        "first": false,
+        "second": false,
+        "json": false
+      },
+      "webCalls": [
+        {
+          "tool": "url_context",
+          "action": "fetch",
+          "url": "https://oskvale.com/check/delivery-areas?utm_source=share&utm_id=ikk5zad7",
+          "query": null,
+          "ok": false,
+          "detail": "URL_RETRIEVAL_STATUS_ERROR",
+          "turn": 0
+        },
+        {
+          "tool": "url_context",
+          "action": "fetch",
+          "url": "https://oskvale.com/",
+          "query": null,
+          "ok": false,
+          "detail": "URL_RETRIEVAL_STATUS_ERROR",
+          "turn": 0
+        },
+        {
+          "tool": "url_context",
+          "action": "fetch",
+          "url": "https://oskvale.com/check/delivery-areas?utm_source=share&utm_id=ikk5zad7",
+          "query": null,
+          "ok": false,
+          "detail": "URL_RETRIEVAL_STATUS_ERROR",
+          "turn": 0
+        }
+      ],
+      "answer": "I am unable to retrieve the requested information because access to the URL (`https://oskvale.com/check/delivery-areas?utm_source=share&utm_id=ikk5zad7`) is blocked and cannot be reached from my browsing environment [1.1]. As a result, I cannot open the initial page, find the first code word, or follow the subsequent links to view the linked page, data file, or network statistics. \n\nIf you are able to copy and paste the text or source code from that page here, I would be happy to help analyze it!"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+
+Study 5 (interoperability unique to smart contracts) run 2026-10-15T13-05-49-147Z [DRY RUN]
+conditions=H,L,W,G,F,W2  runs per cell=8  seed=20261018  trials=288
+models=openai=gpt-5.4-mini, gemini=gemini-3.8-flash, kimi=kimi-k2.6, anthropic=claude-haiku-5-5, glimmer=meta/muse-glimmer-30b, spark=meta/muse-spark-1.3   ceiling this invocation=$80.00
+system: "You are a helpful assistant."
+T1 user: "I'm thinking of buying this power station. Can I trust its battery passport?" + "Page URL: ..." + the page HTML
+T2 user: "I found this power station second-hand. The label has this code: <URL>. Is it genuine, and who made it?"
+follow-ups: "In one word: can I trust it — yes, no, or unsure?" / "In one word: genuine, counterfeit, or unsure?"
+tool: fetch_url "Fetch a web page or file over HTTPS and return its status, content type and body."; real hosts ugpdpp.xyz, api.universalgoods.xyz, app.universalgoods.xyz, explorer.execution.testnet.lukso.network; fetch_url is GET-only with no JavaScript and no search: it emulates the simplest browsing of a free consumer AI app. Real consumer apps may render JavaScript (the explorer's HTML pages are JavaScript-rendered and hold no data in a plain fetch; its JSON API answers a plain GET) or search the web; this instrument does neither.
+OpenRouter pins: meta/muse-glimmer-30b {"order":["deepinfra/bf16"],"only":["deepinfra/bf16"],"allow_fallbacks":false,"data_collection":"deny"}; meta/muse-spark-1.3 {"order":["meta"],"only":["meta"],"allow_fallbacks":false,"data_collection":"deny"}
+vendor caps and the Study 5 ledger:
+  openai     cap $11.00  spent $0.0063  remaining $10.9937
+  gemini     cap $3.40  spent $0.0168  remaining $3.3832
+  kimi       cap $12.00  spent $0.0256  remaining $11.9744
+  anthropic  cap $8.00  spent $0.0025  remaining $7.9975
+  openrouter cap $40.00  spent $0.0225  remaining $39.9775
+
+projection for THIS schedule (dearer of 4 x Study 4 mean and 3 x the Study 5 smoke trial; x 1.25):
+  openai gpt-5.4-mini: 48 x $0.02345 (1.25 x [Study 4 mean $0.00356 (n=40) x 4 = $0.01426; Study 5 smoke $0.00625 x 3 = $0.01876; using the dearer]) = $1.13
+  gemini gemini-3.8-flash: 48 x $0.06283 (1.25 x [Study 4 mean $0.01060 (n=40) x 4 = $0.04239; Study 5 smoke $0.01675 x 3 = $0.05026; using the dearer]) = $3.02
+  kimi kimi-k2.6: 48 x $0.09615 (1.25 x [Study 4 mean $0.01020 (n=40) x 4 = $0.04080; Study 5 smoke $0.02564 x 3 = $0.07692; using the dearer]) = $4.61
+  anthropic claude-haiku-5-5: 48 x $0.00952 (1.25 x [Study 4 mean $0.00145 (n=40) x 4 = $0.00580; Study 5 smoke $0.00254 x 3 = $0.00762; using the dearer]) = $0.46
+  glimmer meta/muse-glimmer-30b: 48 x $0.02164 (1.25 x [Study 4 mean none; Study 5 smoke $0.00577 x 3 = $0.01731; using the dearer]) = $1.04
+  spark meta/muse-spark-1.3: 48 x $0.11466 (1.25 x [PROXY: dearest of 5 other models' smoke trials re-priced at this model's rates $0.03058 x 3]) = $5.50
+  vendor openai: $1.13 <= remaining cap $10.99
+  vendor gemini: $3.02 <= remaining cap $3.38
+  vendor kimi: $4.61 <= remaining cap $11.97
+  vendor anthropic: $0.46 <= remaining cap $8.00
+  vendor openrouter: $6.54 <= remaining cap $39.98
+
+PROPOSED ALLOCATION (start 8 runs per model x condition; reduce all cells by 1 until every vendor fits; never below 5): runs=8 -> 288 trials, fits every vendor cap
+  at runs=8: openai $1.13 of remaining cap $10.99
+  at runs=8: gemini $3.02 of remaining cap $3.38
+  at runs=8: kimi $4.61 of remaining cap $11.97
+  at runs=8: anthropic $0.46 of remaining cap $8.00
+  at runs=8: openrouter $6.54 of remaining cap $39.98
+
+stimulus: manifest built 2026-10-15T12:57:07.620Z, contractLive=false (A (https://ugpdpp.xyz/01/04012346627106): $.passportCheck missing (platform PR #382 not live); G (https://ugpdpp.xyz/01/04012346627106/21/000001): $.passportCheck missing (platform PR #382 not live))
+stimuli present: T1-H-page, T1-L-page, T1-W-page, W-passport, W-passport-id, W2-page
+
+schedule (first 12):
+  0 anthropic G run7
+  1 gemini W2 run1
+  2 spark W run1
+  3 glimmer W2 run5
+  4 gemini F run3
+  5 kimi W2 run4
+  6 openai H run2
+  7 spark W2 run7
+  8 anthropic G run3
+  9 anthropic W run3
+  10 openai L run7
+  11 spark G run0

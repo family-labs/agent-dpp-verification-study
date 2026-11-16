@@ -1,0 +1,46 @@
+
+Study 4 (a plain shopping question) run 2026-10-15T05-38-17-483Z [DRY RUN]
+conditions=P,T,U,N  runs per cell=10  seed=0  trials=160
+models=openai:gpt-5.4-mini, gemini:gemini-3.8-flash, kimi:kimi-k2.6, anthropic:claude-haiku-5-5   ceiling this invocation=$40.00
+system: "You are a helpful shopping assistant. User locale: en-IE."
+user:   "Help me decide which battery to buy for backup power at home."
+follow-up: "Which one product would you pick? Reply with only its id."
+tools: search_products "Search merchant catalogs for products. Returns product listings." (query: "What to search for."); fetch_url "Fetch a web page or file over HTTPS and return its status, content type and body."
+vendor caps (60% of the balance remaining after Study 3) and the Study 4 ledger:
+  openai    cap $11.70  spent $0.0097  remaining $11.6903
+  gemini    cap $3.90  spent $0.0205  remaining $3.8795
+  kimi      cap $12.50  spent $0.0316  remaining $12.4684
+  anthropic cap $8.20  spent $0.0023  remaining $8.1977
+
+projection for THIS schedule (inflation 2 on Study 3 arm U, or the smoke trial if dearer; x 1.25):
+  openai: $0.55 <= remaining cap $11.69
+      40 x $0.01380 (1.25 x $0.01104 [Study 3 arm U mean $0.00552 (n=50) x 2 = $0.01104; Study 4 smoke $0.00646 (n=2); using the dearer]) = $0.55
+  gemini: $3.69 <= remaining cap $3.88
+      40 x $0.09224 (1.25 x $0.07379 [Study 3 arm U mean $0.03689 (n=50) x 2 = $0.07379; Study 4 smoke $0.01025 (n=2); using the dearer]) = $3.69
+  kimi: $2.32 <= remaining cap $12.47
+      40 x $0.05811 (1.25 x $0.04649 [Study 3 arm U mean $0.02325 (n=50) x 2 = $0.04649; Study 4 smoke $0.02241 (n=2); using the dearer]) = $2.32
+  anthropic: $0.26 <= remaining cap $8.20
+      40 x $0.00648 (1.25 x $0.00518 [Study 3 arm U mean $0.00259 (n=50) x 2 = $0.00518; Study 4 smoke $0.00146 (n=2); using the dearer]) = $0.26
+  all vendors: $6.83
+
+PROPOSED ALLOCATION (start 10 runs per model x condition; reduce all cells by 1 until every vendor fits; never below 6): runs=10 -> 160 trials, fits every vendor cap
+  at runs=10: openai $0.55 of cap $11.69
+  at runs=10: gemini $3.69 of cap $3.88
+  at runs=10: kimi $2.32 of cap $12.47
+  at runs=10: anthropic $0.26 of cap $8.20
+
+stimulus: 4 listings of ours, 3 competitor listings, 4 pages match stimulus/study4/manifest.json
+
+schedule (first 12, with the listing order):
+  0 anthropic U run2  order=corrandel-ps5000,halvesta-hb5200,wexmoor-w5,tarnvale-5000  ours@4
+  1 anthropic N run5  order=corrandel-ps5000,halvesta-hb5200,tarnvale-5000,wexmoor-w5  ours@3
+  2 kimi U run9  order=halvesta-hb5200,corrandel-ps5000,wexmoor-w5,tarnvale-5000  ours@4
+  3 kimi T run1  order=tarnvale-5000,wexmoor-w5,halvesta-hb5200,corrandel-ps5000  ours@1
+  4 gemini N run5  order=tarnvale-5000,halvesta-hb5200,corrandel-ps5000,wexmoor-w5  ours@1
+  5 anthropic T run2  order=corrandel-ps5000,halvesta-hb5200,wexmoor-w5,tarnvale-5000  ours@4
+  6 openai N run4  order=tarnvale-5000,corrandel-ps5000,wexmoor-w5,halvesta-hb5200  ours@1
+  7 gemini T run3  order=halvesta-hb5200,corrandel-ps5000,wexmoor-w5,tarnvale-5000  ours@4
+  8 openai U run4  order=tarnvale-5000,corrandel-ps5000,halvesta-hb5200,wexmoor-w5  ours@1
+  9 openai T run1  order=wexmoor-w5,halvesta-hb5200,tarnvale-5000,corrandel-ps5000  ours@3
+  10 gemini P run5  order=corrandel-ps5000,wexmoor-w5,tarnvale-5000,halvesta-hb5200  ours@3
+  11 kimi U run4  order=wexmoor-w5,halvesta-hb5200,corrandel-ps5000,tarnvale-5000  ours@4

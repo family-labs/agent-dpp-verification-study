@@ -1,0 +1,87 @@
+Study 6 instrument checks after the 21 Oct 2026 revision (lookalike F, pooled primary, mainnet chain 42). No model API call; no network write.
+
+1. bun run src/selftest-study6.ts
+84 checks ok
+wrote 40 canned rows to analysis/study6-selftest-rows.jsonl
+
+all Study 6 rule self-tests pass
+exit 0
+
+2. python -I analysis/selftest_study6.py
+50 checks ok
+all Study 6 analysis self-tests pass
+exit 0
+
+3. bun run ../stimulus/build-study6.ts --check --mock
+Rebuild reproduces all 22 stored Study 6 MOCK stimuli byte for byte.
+exit 0
+
+4. bun run ../stimulus/build-study6.ts --write   (counted stimuli: must refuse, fixtures not created yet)
+BUILD-STUDY6 REFUSED: fixtures/study6-conditions.json has 7 null or malformed id(s): organisation.profileAddress is null; products.clothing.collection is null; products.clothing.tokenId is null; products.electronics.collection is null; products.electronics.tokenId is null; products.furniture.collection is null; products.furniture.tokenId is null.
+Counted stimuli are never built from incomplete fixtures. Use --mock to exercise the pipeline on the testnet collections.
+exit 3
+
+5. bun run src/preflight-study6.ts --mock   (offline)
+
+=== STUDY 6 PREFLIGHT (S0-S10) [MOCK STIMULI] - 2026-10-21T07:46:28.588Z ===
+[PASS] S0 fixtures
+      MOCK: testnet collections A/B/C (never counted); fixtures/study6-conditions.json still has 7 null id(s): organisation.profileAddress is null; products.clothing.collection is null; products.clothing.tokenId is null; products.electronics.collection is null; products.electronics.tokenId is null; products.furniture.collection is null; products.furniture.tokenId is null
+[PASS] S1 every stimulus hashes and builds
+      22 files hashed and reproduced byte for byte (built 2026-10-21T07:38:28.081Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      clothing: store, lookalike and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      electronics: store, lookalike and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      furniture: store, lookalike and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 F differs from G only in the host-bound strings
+      6 of 6 (3 products x 2 arms): G, F and passport-page blocks byte-identical (D1 blocks carry the same issuer declaration line)
+      F = G with exactly these 6 strings changed, each once (header brand link; nav x3; footer x2):
+        href="https://oskvale.example/"  ->  href="https://oskvale-store.example/"
+        href="https://oskvale.example/clothing"  ->  href="https://oskvale-store.example/clothing"
+        href="https://oskvale.example/sound"  ->  href="https://oskvale-store.example/sound"
+        href="https://oskvale.example/home"  ->  href="https://oskvale-store.example/home"
+        href="https://oskvale.example/contact"  ->  href="https://oskvale-store.example/contact"
+        href="https://oskvale.example/returns"  ->  href="https://oskvale-store.example/returns"
+      the lookalike host oskvale-store.example occurs nowhere else in F; paths / /clothing /sound /home /contact /returns
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer or declaration
+[PASS] S5 no banned words, no instruction-like phrases
+      22 files clean (banned words and 10 instruction-like patterns)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      clothing: 9520606000019 valid EAN-13, prefix 952
+      electronics: 9520606000026 valid EAN-13, prefix 952
+      furniture: 9520606000033 valid EAN-13, prefix 952
+[PASS] S7 every link target is on the allow-list
+      160 URL occurrences across 22 files: all on oskvale.example, oskvale-store.example, explorer.execution.testnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      39 stored responses across 15 cells served with their hashes; declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; 9 platform hosts and an off-list host refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.example; account 0x04b816af69b6497829938e3204e85046f85f5589; 3 collections
+
+STUDY 6 PREFLIGHT: PASS (mock stimuli: never sufficient for a trial)
+exit 0
+
+6. bun run src/preflight-study6.ts --mock --live   (L1 on the TESTNET explorer, read-only)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.testnet.lukso.network)
+      clothing item record -> 200 application/json; charset=utf-8; owner 0x04b816af69b6497829938e3204e85046f85f5589 (owner.name null); id 6b89c485dbc2d078...
+      clothing collection record -> 200; newest OwnershipTransferred newOwner 0x04b816af69b6497829938e3204e85046f85f5589
+      electronics item record -> 200 application/json; charset=utf-8; owner 0x04b816af69b6497829938e3204e85046f85f5589 (owner.name null); id 1961cbea6c975e1b...
+      electronics collection record -> 200; newest OwnershipTransferred newOwner 0x04b816af69b6497829938e3204e85046f85f5589
+      furniture item record -> 200 application/json; charset=utf-8; owner 0x04b816af69b6497829938e3204e85046f85f5589 (owner.name null); id cea5cf264a1e9f7a...
+      furniture collection record -> 200; newest OwnershipTransferred newOwner 0x04b816af69b6497829938e3204e85046f85f5589
+
+STUDY 6 PREFLIGHT: PASS (mock stimuli: never sufficient for a trial)
+exit 0
+
+7. bun run src/preflight-study6.ts   (counted, offline: must fail, fixtures not created yet)
+[FAIL] S0 fixtures
+[FAIL] S1 every stimulus hashes and builds
+STUDY 6 PREFLIGHT: FAIL
+exit 1
+
+8. bun run src/run-study6.ts --dry-run --mock
+products=clothing,electronics,furniture conditions=G-D0,F-D0,G-D1,F-D1,W runs per cell=4 seed=20261020 trials=360
+  total: $8.77 <= remaining $10.00
+cells: 15 (each 24 trials)
+exit 0

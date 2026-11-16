@@ -1,0 +1,74 @@
+$ bun run src/preflight-native.ts --study5   (2026-10-15T12-58Z)
+
+=== STUDY 2 NATIVE PREFLIGHT (A28 §5 gates 1-4) — 2026-10-15T12:58:27.566Z ===
+verifier base: https://api.universalgoods.xyz   resolver: https://ugpdpp.xyz/01/
+
+[PASS] gate 0 fixtures recorded in conditions.json
+  ok   A (TV5K-6271): productId=6d88082d-22bc-4724-9c85-77a77923bdca gtin=04012346627106
+  ok   B (TV5K-2834): productId=2910ac46-d79d-4d72-ba50-eb07ba734d46 gtin=04012346283401
+  ok   C (TV5K-8456): productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896 gtin=04012346845609
+
+[PASS] gate 1 live verdicts
+  ok   A: HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged (expected verified)
+  ok   B: HTTP 200 verdict=unverified reason=no_credential_published (expected unverified)
+  ok   C: HTTP 200 verdict=invalid reason=data_changed_since_anchoring (expected invalid/data_changed_since_anchoring)
+
+[PASS] gate 2 resolver advertises the verification link identically
+       A: resolved -> kind=variant id=8ed4bcee-c922-45d4-aeea-94c70e806dc7; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7?kind=variant&format=jsonld"
+         link subject = {"requestedId":"8ed4bcee-c922-45d4-aeea-94c70e806dc7","requestedKind":"variant","productId":"6d88082d-22bc-4724-9c85-77a77923bdca"}
+  ok   A: link -> HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged
+       B: resolved -> kind=variant id=be54f83c-5057-443c-97bc-ac58fb3121d5; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5?kind=variant&format=jsonld"
+         link subject = {"requestedId":"be54f83c-5057-443c-97bc-ac58fb3121d5","requestedKind":"variant","productId":"2910ac46-d79d-4d72-ba50-eb07ba734d46"}
+  ok   B: link -> HTTP 200 verdict=unverified reason=no_credential_published
+       C: resolved -> kind=variant id=e1402ddf-f5a8-454c-b375-e6e330691c84; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84?kind=variant&format=jsonld"
+         link subject = {"requestedId":"e1402ddf-f5a8-454c-b375-e6e330691c84","requestedKind":"variant","productId":"ec1946b0-f69b-47a0-b6f1-c5c884b07896"}
+  ok   C: link -> HTTP 200 verdict=invalid reason=data_changed_since_anchoring
+  ok   advertised identically: $.links.verificationUrl :: https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify
+
+[PASS] gate 3 resolver payload matchedness
+       own ids, GTIN and SKU masked by value; 2 logged path exemption(s) applied
+       exempted $.dpp.lastUpdated
+       exempted $.sections[3].data.renewableContentShare
+  ok   payloads matched
+
+[PASS] gate 4 no served field names the condition
+  ok   no label found in 6 served bodies
+
+OVERALL: PASS
+
+=== STUDY 5 PREFLIGHT (V0-V7) — 2026-10-15T12:58:29.557Z ===
+[FAIL] V0 platform contract live (PR #382)
+      A: $.passportCheck missing (platform PR #382 not live); G: $.passportCheck missing (platform PR #382 not live)
+[FAIL] V1 every evidence/provenance URL returns the claimed data by plain GET
+      not runnable until V0 passes (the platform contract is not live)
+[FAIL] V2 L differs from A only in recorded_fingerprint, and the record contradicts it
+      not runnable until V0 passes (the platform contract is not live)
+[FAIL] V3 F's provenance demonstrably mismatches on the explorer
+      not runnable until V0 passes (the platform contract is not live)
+[PASS] V4 W and W2 are plain claims with no independent record
+      W = E + "verified": true; W2 = the fixed seller page
+[PASS] V5 stimuli hashed, reproducible, and served as a trial serves them
+      H: 1 stored file(s) served with their hashes
+      L: stimulus L-passport not built (the platform contract is not live: A (https://ugpdpp.xyz/01/04012346627106): $.passportCheck missing (platform PR #382 not live); G (https://ugpdpp.xyz/01/04012346627106/21/000001): $.passportCheck missing (platform PR #382 not live))
+      W: 3 stored file(s) served with their hashes
+      G: 0 stored file(s) served with their hashes
+      F: stimulus F-passport not built (the platform contract is not live: A (https://ugpdpp.xyz/01/04012346627106): $.passportCheck missing (platform PR #382 not live); G (https://ugpdpp.xyz/01/04012346627106/21/000001): $.passportCheck missing (platform PR #382 not live))
+      W2: 1 stored file(s) served with their hashes
+[PASS] V6 the live passports answer 200 JSON through fetch_url
+      G kind item, A kind variant (application/json)
+[PASS] V7 no stimulus names a condition; prompts never name a checking method; tool description generic
+      L: not built; F: not built
+
+STUDY 5 PREFLIGHT: FAIL (platform contract not live)
+
+STUDY 5 COMBINED (gates 0-4 + V0-V7): FAIL
+exit=1

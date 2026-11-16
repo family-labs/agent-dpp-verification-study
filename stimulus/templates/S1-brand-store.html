@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} | Tarnvale Official Shop</title>
+<meta name="description" content="{{DESCRIPTION}}">
+</head>
+<body>
+<header>
+  <a href="https://shop.tarnvale.example/">Tarnvale</a>
+  <nav>
+    <a href="https://shop.tarnvale.example/collections/power-stations">Power stations</a>
+    <a href="https://shop.tarnvale.example/collections/accessories">Accessories</a>
+    <a href="https://shop.tarnvale.example/pages/support">Support</a>
+  </nav>
+</header>
+<main>
+  <article>
+    <h1>{{TITLE}}</h1>
+    <p class="price">{{PRICE}} <small>incl. VAT &middot; free delivery within the EU</small></p>
+    <p>{{DESCRIPTION}}</p>
+    <h2>Specifications</h2>
+    <ul>
+{{SPECS}}
+    </ul>
+    <h2>Compliance</h2>
+    <p>{{COMPLIANCE}}</p>
+    <p><a href="{{UPI}}">Product information</a>: {{UPI}}</p>
+    <form action="https://shop.tarnvale.example/cart/add" method="post">
+      <input type="hidden" name="sku" value="TV5K">
+      <button type="submit">Add to basket</button>
+    </form>
+  </article>
+</main>
+<footer>
+  <p>&copy; 2026 Tarnvale. <a href="https://shop.tarnvale.example/pages/imprint">Imprint</a> &middot; <a href="https://shop.tarnvale.example/pages/privacy">Privacy</a> &middot; <a href="https://shop.tarnvale.example/pages/returns">Returns</a></p>
+</footer>
+</body>
+</html>

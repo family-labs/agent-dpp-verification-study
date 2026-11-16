@@ -1,0 +1,163 @@
+=== 2026-10-25T03:55:48Z format test: switching the site to S7R
+{
+  "from": "closed",
+  "to": "S7R",
+  "at": "2026-10-25T03:55:50.395Z"
+}
+
+Study 7 (recommendation) LIVE, run 2026-10-25T03-55-54-202Z: 90 trials, seed 20261025, models openai,kimi,anthropic,glimmer,spark
+worst case x 1.25: $9.11; cap counted $3
+
+=== STUDY 6 PREFLIGHT (S0-S11 + L1) - 2026-10-25T03:56:01.310Z ===
+[PASS] S0 fixtures
+      every mainnet id present (LUKSO mainnet, chain 42)
+[PASS] S1 every stimulus hashes and builds
+      42 files hashed and reproduced byte for byte (built 2026-10-22T15:13:30.177Z)
+[PASS] S2 D0 and D1 differ only by the declaration field and file
+      lmt: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      industrial: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+      stationary: product, copycat and passport pages differ D0 to D1 by the one field line and the one JSON-LD property; served sets by the declaration file only
+[PASS] S3 the copycat differs from the brand only in the host-bound strings
+      16 copied pages (7 site pages, 3 declarations of conformity, 3 products x 2 arms): each copy = the brand page with only href="https://oskvale.com<path>" -> href="https://oskvale-store.com<path>" for exactly these paths, in page order (header + nav: / and 3 collections and /contact; footer: /returns /warranty /contact):
+        home page (11, e.g. lookalike/home) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /products/trailcell-500-e-bike-battery /products/basecamp-2500-portable-power-station /products/homecell-5-home-battery /returns /warranty /contact
+        collection page (10, e.g. lookalike/collection-lmt) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        returns page (8, e.g. lookalike/returns) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        warranty page (8, e.g. lookalike/warranty) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        contact page (8, e.g. lookalike/contact) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact /returns /warranty /contact
+        declaration of conformity (10, e.g. lmt/doc-F) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /products/trailcell-500-e-bike-battery /returns /warranty /contact
+        product page (12, e.g. lmt/lookalike-F-D0) / /collections/e-bike-batteries /collections/power-stations /collections/home-batteries /contact / /collections/e-bike-batteries /doc/DoC-TC500-2026-01 /warranty /returns /warranty /contact
+      product pages: the block's declaration-of-conformity link is the one host-bound link inside the block; the passport-page link and (D1) the issuer declaration stay on https://oskvale.com; the brand's block = the passport page's block
+      the lookalike host oskvale-store.com occurs nowhere else in any copy; the support e-mail is the same on both hosts
+[PASS] S4 W has no passport
+      W = G-D0 with the block replaced by "Authentic, verified by Oskvale."; no GTIN, serial, JSON-LD, explorer, declaration of conformity or issuer declaration in any page a W trial is served
+[PASS] S5 no banned words, no instruction-like phrases
+      42 files clean (banned words, 10 instruction-like patterns, no .example host, no registry-number label, no review count)
+[PASS] S6 GTIN check digits valid (GS1 952)
+      lmt: 9520606000019 valid EAN-13, prefix 952; = 09520606000019 in both fixture files
+      industrial: 9520606000026 valid EAN-13, prefix 952; = 09520606000026 in both fixture files
+      stationary: 9520606000033 valid EAN-13, prefix 952; = 09520606000033 in both fixture files
+[PASS] S7 every link target is on the allow-list
+      393 URL occurrences across 42 files: all on oskvale.com, oskvale-store.com, explorer.execution.mainnet.lukso.network
+[PASS] S8 fetch_url serves every stored page with its hash and refuses off-list hosts
+      306 stored responses across 15 cells served with their hashes; 312 fictional-host links in served pages all resolve in their cell
+      declaration 404 in D0 and W; on the lookalike host the declaration path 404 in every cell; other paths 404 on both hosts
+      refused: an off-list host, 9 platform hosts, www.oskvale.com, www.oskvale-store.com, oskvale.example, oskvale-store.example; http:// refused
+[PASS] S9 prompts neutral; tool description generic
+      system, question and follow-up clean; fetch_url description unchanged
+[PASS] S10 the declaration is minimal and matches the fixtures
+      version, organisation, website, account, network, collections; website https://oskvale.com; account 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1; 3 collections
+[PASS] S11 the stimulus matches the mainnet product data
+      lmt: "Oskvale Trailcell 500 e-bike battery", model TC500, DoC DoC-TC500-2026-01 (17 DoC fields on the page)
+      industrial: "Oskvale Basecamp 2500 portable power station", model BC2500, DoC DoC-BC2500-2026-01 (20 DoC fields on the page)
+      stationary: "Oskvale Homecell 5 home battery", model HC5, DoC DoC-HC5-2026-01 (19 DoC fields on the page)
+      brand Oskvale, web origin https://oskvale.com (= create-study6-mainnet.ts)
+[PASS] L1 the explorer JSON names the fixture holder (explorer.execution.mainnet.lukso.network)
+      lmt item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 17694e6da0154f9c...
+      lmt collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      industrial item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id aba576fef22466d0...
+      industrial collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      stationary item record -> 200 application/json; charset=utf-8; owner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1 (owner.name null); id 9f0ecda671009a1a...
+      stationary collection record -> 200; newest OwnershipTransferred newOwner 0x8d17b8cf38ae0613531fd6ac7dd0583fa126cfa1
+      live reads paced at >= 1.1 s apart; any HTTP 429 stops them
+
+STUDY 6 PREFLIGHT: PASS
+site: phase S7R, bundle 06c751d14b63a763 (= local build); every product page served with its manifest bytes; record wording A38, Oskvale holds every item
+[1/90] openai stationary CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0223 (run $0.022)
+[2/90] anthropic stationary C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0051 (run $0.027)
+[3/90] spark lmt C0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=false $0.0183 (run $0.046)
+[4/90] glimmer lmt CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0044 (run $0.050)
+[5/90] kimi industrial C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0565 (run $0.107)
+[6/90] spark industrial C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0192 (run $0.126)
+[7/90] glimmer stationary CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0051 (run $0.131)
+[8/90] openai lmt CF-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0199 (run $0.151)
+[9/90] openai industrial C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0192 (run $0.170)
+[10/90] anthropic lmt CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0056 (run $0.176)
+[11/90] kimi lmt CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0304 (run $0.206)
+[12/90] openai lmt C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0197 (run $0.226)
+[13/90] glimmer industrial CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0050 (run $0.231)
+[14/90] anthropic lmt CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0062 (run $0.237)
+[15/90] glimmer industrial CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0050 (run $0.242)
+[16/90] openai stationary C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0209 (run $0.263)
+[17/90] spark industrial CF-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0448 (run $0.308)
+[18/90] spark stationary C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0192 (run $0.327)
+[19/90] anthropic stationary CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0038 (run $0.331)
+[20/90] anthropic lmt CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0052 (run $0.336)
+[21/90] kimi stationary CM-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0439 (run $0.380)
+[22/90] anthropic industrial CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0073 (run $0.387)
+[23/90] glimmer lmt CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0046 (run $0.391)
+[24/90] openai lmt C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0197 (run $0.411)
+[25/90] anthropic lmt C0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0055 (run $0.417)
+[26/90] spark industrial C0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=false $0.0198 (run $0.436)
+[27/90] glimmer stationary CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0049 (run $0.441)
+[28/90] kimi lmt C0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0278 (run $0.469)
+[29/90] glimmer stationary CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0050 (run $0.474)
+[30/90] spark industrial CM-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0345 (run $0.509)
+[31/90] spark stationary C0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0187 (run $0.527)
+[32/90] anthropic lmt C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0054 (run $0.533)
+[33/90] spark lmt CM-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0293 (run $0.562)
+[34/90] glimmer lmt CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0052 (run $0.567)
+[35/90] anthropic industrial CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0051 (run $0.572)
+[36/90] kimi lmt CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=false $0.0152 (run $0.587)
+[37/90] anthropic industrial C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0052 (run $0.593)
+[38/90] openai stationary CM-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0190 (run $0.612)
+[39/90] kimi lmt CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0135 (run $0.625)
+[40/90] openai stationary CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0192 (run $0.644)
+[41/90] openai industrial CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0193 (run $0.664)
+[42/90] anthropic stationary C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0050 (run $0.669)
+[43/90] kimi stationary CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0470 (run $0.716)
+[44/90] anthropic stationary CM-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0052 (run $0.721)
+[45/90] glimmer lmt C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0054 (run $0.726)
+[46/90] openai lmt CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0203 (run $0.747)
+[47/90] openai industrial CM-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0198 (run $0.766)
+[48/90] glimmer industrial CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0051 (run $0.771)
+[49/90] kimi stationary CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0350 (run $0.806)
+[50/90] openai industrial CF-TO: recommends 1 (torvlund) opened=11 recO=false recT=false cites=false $0.0202 (run $0.827)
+[51/90] spark stationary CM-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0365 (run $0.863)
+[52/90] spark industrial CM-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0509 (run $0.914)
+[53/90] kimi stationary C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0609 (run $0.975)
+[54/90] openai lmt CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0214 (run $0.996)
+[55/90] spark lmt CF-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0501 (run $1.046)
+[56/90] spark industrial CF-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0399 (run $1.086)
+[57/90] kimi lmt C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0318 (run $1.118)
+[58/90] anthropic stationary CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0064 (run $1.125)
+[59/90] openai lmt CM-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0194 (run $1.144)
+[60/90] anthropic industrial C0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=false $0.0052 (run $1.149)
+[61/90] anthropic industrial CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0038 (run $1.153)
+[62/90] spark lmt CF-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0548 (run $1.208)
+[63/90] glimmer lmt C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0047 (run $1.212)
+[64/90] kimi stationary CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0291 (run $1.241)
+[65/90] glimmer industrial C0-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0054 (run $1.247)
+[66/90] glimmer stationary CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0040 (run $1.251)
+[67/90] spark lmt CM-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0511 (run $1.302)
+[68/90] glimmer stationary C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0047 (run $1.307)
+[69/90] kimi industrial CF-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0421 (run $1.349)
+[70/90] openai stationary CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0204 (run $1.369)
+[71/90] glimmer lmt CF-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0058 (run $1.375)
+[72/90] spark lmt C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0201 (run $1.395)
+[73/90] anthropic industrial CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0062 (run $1.401)
+[74/90] kimi industrial CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0326 (run $1.434)
+[75/90] kimi industrial CM-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0544 (run $1.488)
+[76/90] kimi lmt CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0296 (run $1.518)
+[77/90] spark stationary CM-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0380 (run $1.556)
+[78/90] openai industrial C0-TO: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0195 (run $1.575)
+[79/90] anthropic lmt CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0055 (run $1.581)
+[80/90] kimi industrial C0-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=false $0.0141 (run $1.595)
+[81/90] glimmer industrial CM-OT: recommends 1 (oskvale) opened=11 recO=false recT=false cites=true $0.0053 (run $1.600)
+[82/90] anthropic stationary CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=true $0.0051 (run $1.605)
+[83/90] kimi industrial CF-TO: recommends 2 (oskvale) opened=11 recO=false recT=false cites=false $0.0125 (run $1.618)
+[84/90] glimmer stationary C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0051 (run $1.623)
+[85/90] openai industrial CF-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0209 (run $1.644)
+[86/90] spark stationary CF-TO: recommends 2 (oskvale) opened=11 recO=true recT=false cites=true $0.0590 (run $1.703)
+[87/90] spark stationary CF-OT: recommends 1 (oskvale) opened=11 recO=true recT=false cites=true $0.0362 (run $1.739)
+[88/90] glimmer industrial C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0045 (run $1.744)
+[89/90] kimi stationary C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0401 (run $1.784)
+[90/90] openai stationary C0-OT: recommends neither (neither) opened=11 recO=false recT=false cites=false $0.0193 (run $1.803)
+
+Wrote C:\Users\REDACTED_USER\Downloads\dpp-verification-study\harness\results/study7b-live-2026-10-25T03-55-54-202Z.jsonl; run spend $1.8030
+=== 2026-10-25T05:12:22Z closing the site
+{
+  "from": "S7R",
+  "to": "closed",
+  "at": "2026-10-25T05:12:24.133Z"
+}
+=== 2026-10-25T05:12:22Z RUN END status 0

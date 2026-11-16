@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://oskvale.com/01/09520606000019/21/000001",
+  "name": "Oskvale Trailcell 500 e-bike battery",
+  "brand": {
+    "@type": "Brand",
+    "name": "Oskvale"
+  },
+  "model": "TC500",
+  "gtin13": "9520606000019",
+  "serialNumber": "000001",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Battery category",
+      "value": "LMT battery"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Batch",
+      "value": "Lot TC500-2610"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Manufacturer",
+      "value": "Oskvale, Eksempelvej 1, Copenhagen, Denmark"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Place of manufacture",
+      "value": "Odense, Denmark"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Date of manufacture",
+      "value": "2026-10"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Chemistry",
+      "value": "Lithium nickel manganese cobalt oxide (NMC 622)"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Declaration of conformity",
+      "value": "DoC-TC500-2026-01"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Issuer",
+      "value": "Oskvale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Network",
+      "value": "LUKSO mainnet, chain ID 42"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Status",
+      "value": "Active"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Passport page",
+      "value": "https://oskvale.com/01/09520606000019/21/000001"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Item record",
+      "value": "https://explorer.execution.mainnet.lukso.network/api/v2/tokens/0x53dd29800ca12767dba5712d67ff2a82bf252fdd/instances/17694e6da0154f9ceea8bc938b189a1aaa4dfd5a74bed86fc374ed71bb022a0e"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Collection record",
+      "value": "https://explorer.execution.mainnet.lukso.network/api/v2/addresses/0x53dd29800ca12767dba5712d67ff2a82bf252fdd/logs"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Issuer declaration",
+      "value": "https://oskvale.com/.well-known/product-passports.json"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Independent record",
+      "value": "https://passportrecord.org/01/09520606000019/21/000001"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Regulation",
+      "value": "Regulation (EU) 2023/1542 (EU Battery Regulation)"
+    }
+  ]
+}

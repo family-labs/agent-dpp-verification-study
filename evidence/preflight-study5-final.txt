@@ -1,0 +1,163 @@
+
+=== STUDY 2 NATIVE PREFLIGHT (A28 §5 gates 1-4) — 2026-10-15T23:53:50.002Z ===
+verifier base: https://api.universalgoods.xyz   resolver: https://ugpdpp.xyz/01/
+
+[PASS] gate 0 fixtures recorded in conditions.json
+  ok   A (TV5K-6271): productId=6d88082d-22bc-4724-9c85-77a77923bdca gtin=04012346627106
+  ok   B (TV5K-2834): productId=2910ac46-d79d-4d72-ba50-eb07ba734d46 gtin=04012346283401
+  ok   C (TV5K-8456): productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896 gtin=04012346845609
+
+[PASS] gate 1 live verdicts
+  ok   A: HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged (expected verified)
+  ok   B: HTTP 200 verdict=unverified reason=no_credential_published (expected unverified)
+  ok   C: HTTP 200 verdict=invalid reason=data_changed_since_anchoring (expected invalid/data_changed_since_anchoring)
+
+[FAIL] gate 2 resolver advertises the verification link identically
+       A: resolved -> kind=variant id=8ed4bcee-c922-45d4-aeea-94c70e806dc7; 2 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify
+         candidate $.passportCheck.evidence.recheck_url = https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (non-link field mentioning verif) $.passportCheck.status = "verified"
+         (non-link field mentioning verif) $.passportCheck.evidence.record_key_preimage = "UG_VerifiableData_product_6d88082d-22bc-4724-9c85-77a77923bdca"
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7?kind=variant&format=jsonld"
+  FAIL A: 2 URL fields mention "verif"; expected only $.links.verificationUrl
+       B: resolved -> kind=variant id=be54f83c-5057-443c-97bc-ac58fb3121d5; 2 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify
+         candidate $.passportCheck.evidence.recheck_url = https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5?kind=variant&format=jsonld"
+  FAIL B: 2 URL fields mention "verif"; expected only $.links.verificationUrl
+       C: resolved -> kind=variant id=e1402ddf-f5a8-454c-b375-e6e330691c84; 2 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify
+         candidate $.passportCheck.evidence.recheck_url = https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (non-link field mentioning verif) $.passportCheck.evidence.record_key_preimage = "UG_VerifiableData_product_ec1946b0-f69b-47a0-b6f1-c5c884b07896"
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84?kind=variant&format=jsonld"
+  FAIL C: 2 URL fields mention "verif"; expected only $.links.verificationUrl
+  FAIL link shape not identical across A/B/C: {}
+
+[FAIL] gate 3 resolver payload matchedness
+       own ids, GTIN and SKU masked by value; 2 logged path exemption(s) applied
+       exempted $.dpp.lastUpdated
+       exempted $.sections[3].data.renewableContentShare
+  DIFF $.passportCheck.checked_at
+       A="2026-10-15T23:52:54.876Z"
+       B="2026-10-15T23:53:52.128Z"
+       C="2026-10-15T23:53:12.955Z"
+  DIFF $.passportCheck.evidence.independent_record.anchor_tx
+       A="0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e"
+       B=null
+       C="0x380b8e97bd22dee2a823d4fa88f1b9c6ebcc91f43ada2c897b2a1b539a7509e3"
+  DIFF $.passportCheck.evidence.independent_record.profile_data_url
+       A="https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04B816Af69b6497829938e3204e85046F85f5589"
+       B=null
+       C="https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04B816Af69b6497829938e3204e85046F85f5589"
+  DIFF $.passportCheck.evidence.independent_record.record_data_url
+       A="https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e/logs"
+       B=null
+       C="https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x380b8e97bd22dee2a823d4fa88f1b9c6ebcc91f43ada2c897b2a1b539a7509e3/logs"
+  DIFF $.passportCheck.evidence.independent_record.record_page_url
+       A="https://explorer.execution.testnet.lukso.network/tx/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e?tab=logs"
+       B=null
+       C="https://explorer.execution.testnet.lukso.network/tx/0x380b8e97bd22dee2a823d4fa88f1b9c6ebcc91f43ada2c897b2a1b539a7509e3?tab=logs"
+  DIFF $.passportCheck.evidence.profile
+       A="0x04B816Af69b6497829938e3204e85046F85f5589"
+       B=null
+       C="0x04B816Af69b6497829938e3204e85046F85f5589"
+  DIFF $.passportCheck.evidence.provenance.collection
+       A="0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae"
+       B="0x1f881A95c77aa5d88B70C727D9b7aAf419eD88f3"
+       C="0x0C4e5516378511Df038c2fE069c75DA12123BCe8"
+  DIFF $.passportCheck.evidence.provenance.collection_data_url
+       A="https://explorer.execution.testnet.lukso.network/api/v2/tokens/0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae"
+       B="https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x1f881A95c77aa5d88B70C727D9b7aAf419eD88f3"
+       C="https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x0C4e5516378511Df038c2fE069c75DA12123BCe8"
+  DIFF $.passportCheck.evidence.provenance.deployment_record_url
+       A="https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x47237bf24779091f422a61c2a5d0fdab4f2df815ee6a1ac5ad3c8115f0c54340/logs"
+       B="https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x50b77e5fec2f17df452b9b6cf4d525fdfdfe36d3bb009703a5e40e8e5eb9460a/logs"
+       C="https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x19843d969b07e53ff6d101f0edd1a80d9fef068bc31bea042462975de84d09a4/logs"
+  DIFF $.passportCheck.evidence.provenance.deployment_tx
+       A="0x47237bf24779091f422a61c2a5d0fdab4f2df815ee6a1ac5ad3c8115f0c54340"
+       B="0x50b77e5fec2f17df452b9b6cf4d525fdfdfe36d3bb009703a5e40e8e5eb9460a"
+       C="0x19843d969b07e53ff6d101f0edd1a80d9fef068bc31bea042462975de84d09a4"
+  DIFF $.passportCheck.evidence.record_key
+       A="0x18a54e261b6f85494eb24f4068fb74b573a6303e71c4ef294fdaaf4136cb4106"
+       B=null
+       C="0x13c8d054a17be0133151f17af0b2c622e8446175fd6042ba6a3b576874f6fb4f"
+  DIFF $.passportCheck.evidence.record_key_preimage
+       A="UG_VerifiableData_product_<productId>"
+       B=null
+       C="UG_VerifiableData_product_<productId>"
+  DIFF $.passportCheck.evidence.recorded_fingerprint
+       A="0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"
+       B=null
+       C="0xd914fd7d344657d564f0bd281d9feecea4aa0bbc28e806fd6c5ec8ccab5fbd27"
+  DIFF $.passportCheck.issuer.name
+       A="Family Labs Energy Systems"
+       B=null
+       C="Family Labs Energy Systems"
+  DIFF $.passportCheck.issuer.profile
+       A="0x04B816Af69b6497829938e3204e85046F85f5589"
+       B=null
+       C="0x04B816Af69b6497829938e3204e85046F85f5589"
+  DIFF $.passportCheck.meaning
+       A="The passport data is unchanged since the brand recorded it on the public ledger. This is not a compliance certificate."
+       B="The brand has not recorded this passport data on the public ledger, so there is nothing to check it against. This is not a finding that anything is wrong."
+       C="The passport data no longer matches what the brand recorded on the public ledger: it has changed since it was signed."
+  DIFF $.passportCheck.status
+       A="verified"
+       B="not_signed"
+       C="changed_after_signing"
+  FAIL 17 differing path(s). Review each; exempt one ONLY by adding it to harness/native-exemptions.json with the measured reason AND logging it in an amendment.
+
+[PASS] gate 4 no served field names the condition
+  ok   no label found in 6 served bodies
+
+OVERALL: FAIL
+
+=== STUDY 5 PREFLIGHT (V0-V8) — 2026-10-15T23:53:58.194Z ===
+[PASS] V0 platform contract live (PR #382)
+      A and G carry passportCheck + evidence.independent_record (+ provenance on G at $.passportCheck.evidence.provenance); status verified
+[PASS] V1 every evidence/provenance URL returns the claimed data by plain GET
+      A record_data_url https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e/logs -> 200; DataChanged values ["0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"]
+      A profile_data_url https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04B816Af69b6497829938e3204e85046F85f5589 -> 200; hash 0x04b816af69b6497829938e3204e85046f85f5589
+      A record_page_url -> 200 text/html; charset=utf-8; holds the fingerprint in plain HTML: false
+      G record_data_url https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e/logs -> 200; DataChanged values ["0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"]
+      G profile_data_url https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04B816Af69b6497829938e3204e85046F85f5589 -> 200; hash 0x04b816af69b6497829938e3204e85046f85f5589
+      G record_page_url -> 200 text/html; charset=utf-8; holds the fingerprint in plain HTML: false
+      G collection_data_url -> 200; address 0xcec4247d4e7de11023c8c55e2a773876de0c80ae; name "Tarnvale 5000 Portable Power Station (TV5K-6271)"
+      G deployment_record_url -> 200; names the collection: true; names deployment_tx: true
+      G token_data_url -> 200; id 6b89c485dbc2d0780e76c0e7147059eaec663cf87bc3ddd07ffa944be26a8c0b; owner 0x04b816af69b6497829938e3204e85046f85f5589
+      G collection 0xcec4247d4e7de11023c8c55e2a773876de0c80ae ownership on the explorer: 0x0000000000000000000000000000000000000000->0x11d51e1253f3962eddf09a3d3dc6c29e533e0fde, 0x11d51e1253f3962eddf09a3d3dc6c29e533e0fde->0x04b816af69b6497829938e3204e85046f85f5589
+[PASS] V2 L differs from H only in recorded_fingerprint, and the public record contradicts it
+      H vs L differing leaves: ["$.passportCheck.evidence.recorded_fingerprint"]
+      H 0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44, L 0x8b18f528f7b4ada54acd558148d404852093b52679f3f5044998a27fbec1f25b, record ["0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"]
+[PASS] V3 F's provenance demonstrably mismatches on the explorer
+      G vs F differing leaves: ["$.passportCheck.evidence.provenance.collection","$.passportCheck.evidence.provenance.deployment_tx","$.passportCheck.evidence.provenance.deployment_record_url","$.passportCheck.evidence.provenance.collection_data_url","$.passportCheck.evidence.provenance.token_data_url"]
+      F collection ownership on the explorer: 0x0000000000000000000000000000000000000000->0x23f2ec2e80f08417e27f4dfc3184eaf09f9d37e2, 0x23f2ec2e80f08417e27f4dfc3184eaf09f9d37e2->0xb92fa7bbda0f316606bf5ca68db4589209f4796f
+      F collection_data_url -> 404 {"message":"Not found"}
+      F token_data_url -> 404 {"message":"Not found"}
+      F collection made by the claimed factory 0x11d51E1253f3962eDDf09A3D3dc6c29E533E0FDE: false
+      F deployment_record_url -> 200; created_contract -; to null
+[PASS] V8 no host cue (one mirror URL per test) and no checker shortcut (no /verify, recheck_url null, our hosts off the list)
+      H-passport and L-passport both at https://passport-viewer.example/01/04012346627106
+      G-passport and F-passport both at https://passport-viewer.example/01/04012346627106/21/000001
+      H and L product pages byte-identical (link to the mirror)
+      our resolver is not reachable through the trial's fetch_url
+[PASS] V4 W and W2 are plain claims with no independent record
+      W = E + "verified": true; W2 = the fixed seller page
+[PASS] V5 stimuli hashed, reproducible, and served as a trial serves them
+      H: 2 stored file(s) served with their hashes
+      L: 2 stored file(s) served with their hashes
+      W: 3 stored file(s) served with their hashes
+      G: 1 stored file(s) served with their hashes
+      F: 1 stored file(s) served with their hashes
+      W2: 1 stored file(s) served with their hashes
+[PASS] V6 the live passports answer 200 JSON (direct GET; the trial tool does not reach our hosts)
+      G kind item, A kind variant (application/json)
+[PASS] V7 no stimulus names a condition; prompts never name a checking method; tool description generic
+      clean
+
+STUDY 5 PREFLIGHT: PASS
+
+STUDY 5 COMBINED (gates 0-4 + V0-V8): FAIL

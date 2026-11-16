@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://oskvale.com/01/09520606000026/21/000001",
+  "name": "Oskvale Basecamp 2500 portable power station",
+  "brand": {
+    "@type": "Brand",
+    "name": "Oskvale"
+  },
+  "model": "BC2500",
+  "gtin13": "9520606000026",
+  "serialNumber": "000001",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Battery category",
+      "value": "Industrial battery"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Batch",
+      "value": "Lot BC2500-2610"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Manufacturer",
+      "value": "Oskvale, Eksempelvej 1, Copenhagen, Denmark"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Place of manufacture",
+      "value": "Odense, Denmark"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Date of manufacture",
+      "value": "2026-10"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Chemistry",
+      "value": "Lithium iron phosphate (LiFePO4)"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Declaration of conformity",
+      "value": "DoC-BC2500-2026-01"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Issuer",
+      "value": "Oskvale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Network",
+      "value": "LUKSO mainnet, chain ID 42"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Status",
+      "value": "Active"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Passport page",
+      "value": "https://oskvale.com/01/09520606000026/21/000001"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Item record",
+      "value": "https://explorer.execution.mainnet.lukso.network/api/v2/tokens/0xdc0d33a6f479cbfbfa9b7c39148d3162f655f4de/instances/aba576fef22466d0b8f60784327316a72fc2c22e5f6ac6b8d219d679b0dfd8ff"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Collection record",
+      "value": "https://explorer.execution.mainnet.lukso.network/api/v2/addresses/0xdc0d33a6f479cbfbfa9b7c39148d3162f655f4de/logs"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Issuer declaration",
+      "value": "https://oskvale.com/.well-known/product-passports.json"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Independent record",
+      "value": "https://passportrecord.org/01/09520606000026/21/000001"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Regulation",
+      "value": "Regulation (EU) 2023/1542 (EU Battery Regulation)"
+    }
+  ]
+}

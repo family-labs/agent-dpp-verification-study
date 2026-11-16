@@ -1,0 +1,152 @@
+{
+  "product": {
+    "title": "Tarnvale 5000 Portable Power Station",
+    "description": "Portable 5.12 kWh LiFePO4 power station for home backup and off-grid use. 5000W continuous output, 10-year design life, EU Battery Regulation compliant."
+  },
+  "sections": {
+    "identification": {
+      "title": "Identification",
+      "data": {
+        "modelNumber": "PC5K-2026"
+      },
+      "perUnit": [
+        "uniqueProductIdentifier",
+        "globalTradeItemNumber"
+      ]
+    },
+    "physicalAttributes": {
+      "title": "Physical Attributes",
+      "data": {
+        "weight": {
+          "value": 48.2,
+          "unit": "kg"
+        },
+        "dimensions": {
+          "length": {
+            "value": 28,
+            "unit": "cm"
+          },
+          "width": {
+            "value": 19,
+            "unit": "cm"
+          },
+          "height": {
+            "value": 19.5,
+            "unit": "cm"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "title": "Provenance",
+      "data": {
+        "manufacturer": "Family Labs Energy Systems GmbH (DE-FLE-2211), Turmstrasse 30, 10551 Berlin, Germany",
+        "dateOfManufacture": "2026-03-12T00:00:00.000Z",
+        "placeOfManufacture": {
+          "facilityName": "FLE Werk 2, Brandenburg an der Havel",
+          "uniqueFacilityIdentifier": "DE-FLE-W2"
+        }
+      }
+    },
+    "composition": {
+      "title": "Composition",
+      "data": {
+        "materials": [
+          {
+            "name": "Lithium iron phosphate (LiFePO4) cells",
+            "percentage": 62,
+            "weight": {
+              "value": 29.88,
+              "unit": "kg"
+            }
+          },
+          {
+            "name": "Aluminum housing",
+            "percentage": 18,
+            "weight": {
+              "value": 8.68,
+              "unit": "kg"
+            }
+          },
+          {
+            "name": "Copper wiring and busbars",
+            "percentage": 9,
+            "weight": {
+              "value": 4.34,
+              "unit": "kg"
+            }
+          },
+          {
+            "name": "Electronics (BMS, inverter)",
+            "percentage": 8,
+            "weight": {
+              "value": 3.86,
+              "unit": "kg"
+            }
+          },
+          {
+            "name": "Other (seals, fasteners, labels)",
+            "percentage": 3,
+            "weight": {
+              "value": 1.44,
+              "unit": "kg"
+            }
+          }
+        ],
+        "recycledContent": {
+          "preConsumerPercentage": 12,
+          "postConsumerPercentage": 21
+        },
+        "substancesOfConcern": [],
+        "renewableContentPercentage": 4,
+        "sourcingInfo": [
+          {
+            "material": "LiFePO4 cells",
+            "origin": "DE",
+            "supplier": "Hollen Batteriezellen GmbH"
+          },
+          {
+            "material": "Aluminum housing",
+            "origin": "NO",
+            "supplier": "Vestvik Aluminium AS"
+          }
+        ]
+      }
+    },
+    "circularity": {
+      "title": "Circularity",
+      "data": {
+        "durability": {
+          "expectedLifetime": 10
+        },
+        "repairability": "Repairability score 8.1/10. Spare parts guaranteed 10 years from date of manufacture. Repair instructions: https://support.familylabs.xyz/pc5k/repair",
+        "recyclability": "73% recyclable by mass; designed for recycling. Battery module and housing separate without special tooling; cells recycled under EU Battery Regulation collection schemes.",
+        "upgradability": true,
+        "reusabilityPotential": true,
+        "endOfLifeInstructions": "Return to any FLE collection point or registered battery recycler. Do not dispose of in household waste."
+      }
+    },
+    "documentation": {
+      "title": "Documentation",
+      "data": {
+        "certifications": [
+          {
+            "name": "EU Battery Regulation 2023/1542 — Conformity Assessment",
+            "issuer": "Kestrel Conformity Services GmbH (notified body)"
+          },
+          {
+            "name": "CE Marking",
+            "issuer": "Family Labs Energy Systems GmbH"
+          },
+          {
+            "name": "UN 38.3 Transport Certification",
+            "issuer": "Kestrel Conformity Services GmbH"
+          }
+        ],
+        "euDeclarationOfConformityUrl": "https://compliance.familylabs.xyz/doc/PC5K-2026.pdf",
+        "safetyInstructions": "Operate between -10C and 40C. Charge only with the supplied charger. Keep ventilation openings clear.",
+        "warrantyDetails": "5-year full warranty; 10-year capacity warranty (70% retention)."
+      }
+    }
+  }
+}

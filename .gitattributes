@@ -1,0 +1,13 @@
+# Stimulus pages and templates are hashed byte-for-byte (stimulus/manifest.json).
+# Never let git rewrite their line endings on checkout.
+stimulus/pages/** -text
+stimulus/templates/** -text
+results-archive/** -text
+evidence/A-credential.json -text
+stimulus/passports/** -text
+stimulus/ucp/** -text
+stimulus/study4/** -text
+stimulus/study6/** -text
+analysis/study6-selftest-rows.jsonl -text
+evidence/study6-*.json -text
+stimulus/study7/** -text

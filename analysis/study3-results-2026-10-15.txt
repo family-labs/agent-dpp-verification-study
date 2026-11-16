@@ -1,0 +1,274 @@
+
+==============================================================================
+DATA AND EXCLUSIONS (Study 3)
+==============================================================================
+rows read: 440   malformed: 0   other study / pilot / smoke (ignored): 0
+arm U: rows 200; instrument_invalid EXCLUDED 0; errored 0; no/unparseable report 0; USABLE 200
+    prompt versions / task sha256: [('U-ucp-open-ended', '12e921bc9b340fd068377d68ad25998f19a0f9e80cde331c90427e43ad3579bd')]
+arm H: rows 200; instrument_invalid EXCLUDED 0; errored 0; no/unparseable report 0; USABLE 200
+    prompt versions / task sha256: [('O-open-ended', 'd40b16499afd294b5cae242bd06150b49bedb8b76a4649fa5b836a3ba3d33ec5')]
+arm R: rows 40; instrument_invalid EXCLUDED 0; errored 0; no/unparseable report 0; USABLE 40
+    prompt versions / task sha256: [('A28-evidence', '2d1feb6b4a5d002d2dccca47c1d719125421555d3c8e2bd74e24c262c79ff600')]
+seeds [20261016]; runIds ['2026-10-14T23-38-42-887Z']
+models returned: ['claude-haiku-5-5', 'gemini-3.8-flash', 'gpt-5.4-mini-2026-03-17', 'kimi-k2.6']
+listing sha256 (arm U): [('A', 'f76752598587374e0898bb6260e3ba9fd6dd3538c72d8325d369661fbad28bf2'), ('B', 'a786bdcfbb7b701244915cad842909af10ea35c4b08ad281c1a0ced75e44968c'), ('C', 'f29dd7a32247b7e743306724cdcb33057d260c86845032760371e8815a13237f'), ('D', 'e291ecf242aaafa9f803e79b1d862c3e301e6905d8e7eec7726bb718ab30c344'), ('E', '889b680b66f9d40851e8953bc3a7de273e0eb4eadfe0f868d17f7cebb0dea11f')]
+computed API cost by vendor: anthropic $0.3795, gemini $4.4392, kimi $2.0795, openai $0.3896
+rule C: the response says the passport data changed / was altered after it was recorded, or that it failed a verification or integrity check
+rule D: the response names both the page's 6000 cycles and the passport's 4000 cycles within one paragraph (any order; 6000, 6,000, 6 000, 6.000 and likewise 4000)
+
+==============================================================================
+ARM U (UCP listing), open-ended: fetch path and decisions per model x condition
+==============================================================================
+claude-haiku-5-5
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 0, passport_url 10, both 0)
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=0  do_not_stock=10
+      (U path detail: upi 4, passport_url 10, both 4)
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=0  do_not_stock=10
+      (U path detail: upi 7, passport_url 10, both 7)
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+      (U path detail: upi 4, passport_url 10, both 4)
+  E: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+gemini-3.8-flash
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 10, passport_url 10, both 10)
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=7  do_not_stock=3
+      (U path detail: upi 10, passport_url 10, both 10)
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=0  do_not_stock=10
+      (U path detail: upi 10, passport_url 10, both 10)
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 10, passport_url 10, both 10)
+  E: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=6  do_not_stock=4
+gpt-5.4-mini
+  A: followedLink   8/10   80.0%  [ 49.0,  94.3]   reachedChecker   8/10   80.0%  [ 49.0,  94.3]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+      (U path detail: upi 8, passport_url 8, both 8)
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 10, passport_url 10, both 10)
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   9/10   90.0%  [ 59.6,  98.2]
+      decisions: stock=0  stock_with_caveats=7  do_not_stock=3
+      (U path detail: upi 10, passport_url 10, both 10)
+  D: followedLink   8/10   80.0%  [ 49.0,  94.3]   reachedChecker   6/10   60.0%  [ 31.3,  83.2]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 6, passport_url 8, both 6)
+  E: followedLink   1/10   10.0%  [  1.8,  40.4]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+kimi-k2.6
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 9, passport_url 10, both 9)
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 9, passport_url 10, both 9)
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=8  do_not_stock=2
+      (U path detail: upi 7, passport_url 10, both 7)
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+      (U path detail: upi 8, passport_url 10, both 8)
+  E: followedLink   9/10   90.0%  [ 59.6,  98.2]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+
+==============================================================================
+ARM U: flaggedProblem (pre-specified rules, analysis/followup_rules.py)
+==============================================================================
+claude-haiku-5-5
+  C flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  C flagged AND reachedChecker:  10/10  100.0%  [ 72.2, 100.0]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+gemini-3.8-flash
+  C flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  C flagged AND reachedChecker:  10/10  100.0%  [ 72.2, 100.0]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+gpt-5.4-mini
+  C flaggedProblem:                  9/10   90.0%  [ 59.6,  98.2]
+  C flagged AND reachedChecker:   9/10   90.0%  [ 59.6,  98.2]
+  D flaggedProblem:                  0/10    0.0%  [  0.0,  27.8]
+  D flagged AND followedLink  :   0/10    0.0%  [  0.0,  27.8]
+kimi-k2.6
+  C flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  C flagged AND reachedChecker:  10/10  100.0%  [ 72.2, 100.0]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+
+false-positive check (each rule on the conditions WITHOUT that problem):
+  claude-haiku-5-5       rule C: A 0/10  B 5/10  E 0/10
+  claude-haiku-5-5       rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  gemini-3.8-flash       rule C: A 0/10  B 3/10  E 0/10
+  gemini-3.8-flash       rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  gpt-5.4-mini           rule C: A 0/10  B 0/10  E 0/10
+  gpt-5.4-mini           rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  kimi-k2.6              rule C: A 0/10  B 0/10  E 0/10
+  kimi-k2.6              rule D: A 0/10  B 0/10  C 0/10  E 0/10
+
+==============================================================================
+ARM H (S1 page), open-ended: fetch path and decisions per model x condition
+==============================================================================
+claude-haiku-5-5
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=5  do_not_stock=5
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=2  do_not_stock=8
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   2/10   20.0%  [  5.7,  51.0]
+      decisions: stock=0  stock_with_caveats=3  do_not_stock=7
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=1  do_not_stock=9
+  E: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=7  do_not_stock=3
+gemini-3.8-flash
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=4  do_not_stock=6
+  C: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=0  do_not_stock=10
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker  10/10  100.0%  [ 72.2, 100.0]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+  E: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=8  do_not_stock=2
+gpt-5.4-mini
+  A: followedLink   0/10    0.0%  [  0.0,  27.8]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+  B: followedLink   0/10    0.0%  [  0.0,  27.8]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+  C: followedLink   1/10   10.0%  [  1.8,  40.4]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+  D: followedLink   4/10   40.0%  [ 16.8,  68.7]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+  E: followedLink   0/10    0.0%  [  0.0,  27.8]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+kimi-k2.6
+  A: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+  B: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=8  do_not_stock=2
+  C: followedLink   9/10   90.0%  [ 59.6,  98.2]   reachedChecker   0/10    0.0%  [  0.0,  27.8]
+      decisions: stock=0  stock_with_caveats=9  do_not_stock=1
+  D: followedLink  10/10  100.0%  [ 72.2, 100.0]   reachedChecker   1/10   10.0%  [  1.8,  40.4]
+      decisions: stock=0  stock_with_caveats=8  do_not_stock=2
+  E: followedLink   5/10   50.0%  [ 23.7,  76.3]   reachedChecker n/a (no checker)
+      decisions: stock=0  stock_with_caveats=10  do_not_stock=0
+
+==============================================================================
+ARM H: flaggedProblem (pre-specified rules, analysis/followup_rules.py)
+==============================================================================
+claude-haiku-5-5
+  C flaggedProblem:                  2/10   20.0%  [  5.7,  51.0]
+  C flagged AND reachedChecker:   2/10   20.0%  [  5.7,  51.0]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+gemini-3.8-flash
+  C flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  C flagged AND reachedChecker:  10/10  100.0%  [ 72.2, 100.0]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+gpt-5.4-mini
+  C flaggedProblem:                  0/10    0.0%  [  0.0,  27.8]
+  C flagged AND reachedChecker:   0/10    0.0%  [  0.0,  27.8]
+  D flaggedProblem:                  0/10    0.0%  [  0.0,  27.8]
+  D flagged AND followedLink  :   0/10    0.0%  [  0.0,  27.8]
+kimi-k2.6
+  C flaggedProblem:                  0/10    0.0%  [  0.0,  27.8]
+  C flagged AND reachedChecker:   0/10    0.0%  [  0.0,  27.8]
+  D flaggedProblem:                 10/10  100.0%  [ 72.2, 100.0]
+  D flagged AND followedLink  :  10/10  100.0%  [ 72.2, 100.0]
+
+false-positive check (each rule on the conditions WITHOUT that problem):
+  claude-haiku-5-5       rule C: A 0/10  B 0/10  E 0/10
+  claude-haiku-5-5       rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  gemini-3.8-flash       rule C: A 0/10  B 1/10  E 0/10
+  gemini-3.8-flash       rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  gpt-5.4-mini           rule C: A 0/10  B 0/10  E 0/10
+  gpt-5.4-mini           rule D: A 0/10  B 0/10  C 0/10  E 0/10
+  kimi-k2.6              rule C: A 0/10  B 0/10  E 0/10
+  kimi-k2.6              rule D: A 0/10  B 0/10  C 0/10  E 0/10
+
+==============================================================================
+PRIMARY: reachedChecker over A-D, arm U (UCP) minus arm H (page), Newcombe 95%
+==============================================================================
+claude-haiku-5-5
+  U  40/40  100.0%  [ 91.2, 100.0]
+  H   2/40    5.0%  [  1.4,  16.5]
+  U - H  +95.0 points [ +80.5,  +98.6]
+gemini-3.8-flash
+  U  40/40  100.0%  [ 91.2, 100.0]
+  H  40/40  100.0%  [ 91.2, 100.0]
+  U - H   +0.0 points [  -8.8,   +8.8]
+gpt-5.4-mini
+  U  33/40   82.5%  [ 68.0,  91.3]
+  H   0/40    0.0%  [  0.0,   8.8]
+  U - H  +82.5 points [ +65.6,  +91.3]
+kimi-k2.6
+  U  40/40  100.0%  [ 91.2, 100.0]
+  H   1/40    2.5%  [  0.4,  12.9]
+  U - H  +97.5 points [ +83.9,  +99.6]
+
+per condition (U vs H):
+  claude-haiku-5-5: A U 10/10 H 0/10   B U 10/10 H 0/10   C U 10/10 H 2/10   D U 10/10 H 0/10
+  gemini-3.8-flash: A U 10/10 H 10/10   B U 10/10 H 10/10   C U 10/10 H 10/10   D U 10/10 H 10/10
+  gpt-5.4-mini: A U 8/10 H 0/10   B U 10/10 H 0/10   C U 9/10 H 0/10   D U 6/10 H 0/10
+  kimi-k2.6: A U 10/10 H 0/10   B U 10/10 H 0/10   C U 10/10 H 0/10   D U 10/10 H 1/10
+
+==============================================================================
+SECONDARY: followedLink (A-D), flaggedProblem C and D, U minus H (Newcombe 95%)
+==============================================================================
+claude-haiku-5-5
+  followedLink A-D   U 40/40  H 40/40   U - H   +0.0 points [  -8.8,   +8.8]
+  C flaggedProblem   U 10/10  H 2/10   U - H  +80.0 points [ +38.4,  +94.3]
+  D flaggedProblem   U 10/10  H 10/10   U - H   +0.0 points [ -27.8,  +27.8]
+gemini-3.8-flash
+  followedLink A-D   U 40/40  H 40/40   U - H   +0.0 points [  -8.8,   +8.8]
+  C flaggedProblem   U 10/10  H 10/10   U - H   +0.0 points [ -27.8,  +27.8]
+  D flaggedProblem   U 10/10  H 10/10   U - H   +0.0 points [ -27.8,  +27.8]
+gpt-5.4-mini
+  followedLink A-D   U 36/40  H 5/40   U - H  +77.5 points [ +58.6,  +86.8]
+  C flaggedProblem   U 9/10  H 0/10   U - H  +90.0 points [ +48.8,  +98.2]
+  D flaggedProblem   U 0/10  H 0/10   U - H   +0.0 points [ -27.8,  +27.8]
+kimi-k2.6
+  followedLink A-D   U 40/40  H 39/40   U - H   +2.5 points [  -6.5,  +12.9]
+  C flaggedProblem   U 10/10  H 0/10   U - H +100.0 points [ +60.7, +100.0]
+  D flaggedProblem   U 10/10  H 10/10   U - H   +0.0 points [ -27.8,  +27.8]
+
+==============================================================================
+SECONDARY: condition E (no checker). Over-trust is NOT measurable open-ended (no claims_status); decision distribution, U vs H
+==============================================================================
+  claude-haiku-5-5       U: n=10  stock=0  stock_with_caveats=9  do_not_stock=1   followed E's link 10/10
+  claude-haiku-5-5       H: n=10  stock=0  stock_with_caveats=7  do_not_stock=3   followed E's link 10/10
+  gemini-3.8-flash       U: n=10  stock=0  stock_with_caveats=6  do_not_stock=4   followed E's link 10/10
+  gemini-3.8-flash       H: n=10  stock=0  stock_with_caveats=8  do_not_stock=2   followed E's link 10/10
+  gpt-5.4-mini           U: n=10  stock=0  stock_with_caveats=10  do_not_stock=0   followed E's link 1/10
+  gpt-5.4-mini           H: n=10  stock=0  stock_with_caveats=10  do_not_stock=0   followed E's link 0/10
+  kimi-k2.6              U: n=10  stock=0  stock_with_caveats=10  do_not_stock=0   followed E's link 9/10
+  kimi-k2.6              H: n=10  stock=0  stock_with_caveats=10  do_not_stock=0   followed E's link 5/10
+
+==============================================================================
+ARM R-claude (A28 evidence prompt, S1 pages): claims_status ACCURACY per condition
+==============================================================================
+claude-haiku-5-5
+  A (verified):   0/8     0.0%  [  0.0,  32.4]   distribution {'unverified': 8}
+  B (unverified):   8/8   100.0%  [ 67.6, 100.0]   distribution {'unverified': 8}
+  C (invalid):   8/8   100.0%  [ 67.6, 100.0]   distribution {'invalid': 8}
+  D (mismatch):   8/8   100.0%  [ 67.6, 100.0]   distribution {'mismatch': 8}
+  E (unverified):   8/8   100.0%  [ 67.6, 100.0]   distribution {'unverified': 8}
+  native check rate (correct AND product link AND checker):
+    A:   0/8     0.0%  [  0.0,  32.4]
+    B:   7/8    87.5%  [ 52.9,  97.8]
+    C:   8/8   100.0%  [ 67.6, 100.0]
+    D:   4/8    50.0%  [ 21.5,  78.5]
+    A+C+D pooled:  12/24   50.0%  [ 31.4,  68.6]
+  over-trust (B called verified):   0/8     0.0%  [  0.0,  32.4]
+  over-trust (E called verified):   0/8     0.0%  [  0.0,  32.4]
+  chain-following A-D:  27/32   84.4%  [ 68.2,  93.1]

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f7f7"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+<linearGradient id="alu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset=".45" stop-color="#1c1c1c"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
+<linearGradient id="grey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9fa3"/><stop offset="1" stop-color="#6e7377"/></linearGradient>
+<linearGradient id="white" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3e3e3"/></linearGradient>
+<radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="1200" fill="url(#bg)"/>
+<ellipse cx="600" cy="960" rx="440" ry="46" fill="url(#shadow)"/>
+<rect x="270" y="250" width="70" height="200" rx="30" fill="none" stroke="#2c2c2c" stroke-width="26"/>
+<rect x="860" y="250" width="70" height="200" rx="30" fill="none" stroke="#2c2c2c" stroke-width="26"/>
+<rect x="180" y="360" width="840" height="580" rx="64" fill="url(#grey)"/>
+<rect x="220" y="400" width="760" height="500" rx="44" fill="#4a4e52"/>
+<rect x="300" y="460" width="340" height="190" rx="22" fill="#0f1a14"/>
+<text x="470" y="580" font-family="Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#7bd389" text-anchor="middle">86%</text>
+<g fill="#1e1e1e"><circle cx="760" cy="510" r="44"/><circle cx="880" cy="510" r="44"/><circle cx="760" cy="640" r="44"/><circle cx="880" cy="640" r="44"/></g>
+<g fill="#5e6266"><rect x="300" y="720" width="80" height="44" rx="12"/><rect x="400" y="720" width="80" height="44" rx="12"/><rect x="500" y="720" width="120" height="44" rx="12"/></g>
+<text x="600" y="860" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="8.8" fill="#c7c9cb" text-anchor="middle">TORVLUND</text>
+</svg>

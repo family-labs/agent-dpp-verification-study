@@ -1,0 +1,119 @@
+
+======== Study 6 LIVE data quality ========
+rows read 390, usable 374 (+ 15 drift-check rows)
+  excluded: errored (missing data)                   glimmer    F-D1  1
+usable trials of the three vendors per product x condition: industrial/F-D0=15, industrial/F-D1=15, industrial/G-D0=15, industrial/G-D1=15, industrial/W=15, lmt/F-D0=15, lmt/F-D1=15, lmt/G-D0=15, lmt/G-D1=15, lmt/W=15, stationary/F-D0=15, stationary/F-D1=15, stationary/G-D0=15, stationary/G-D1=15, stationary/W=15
+
+======== PRIMARY (POOLED over the three vendors' own tools): seller_has_item = yes, G minus F, per arm; gain = D1 - D0 ========
+model      arm  G yes                      F yes                      discrimination [Newcombe 95%]   
+POOLED-3   D0     5/45    11% [0.05,0.23]    1/45     2% [0.00,0.12]  +0.089 [-0.024,+0.214]
+POOLED-3   D1     6/45    13% [0.06,0.26]    0/45     0% [0.00,0.08]  +0.133 [+0.028,+0.262]
+POOLED-3   gain                                                       +0.044 [-0.119,+0.215]   (MOVER 95%)
+success rule (pooled gain >= 0.2 and its 95% lower bound > 0): NOT MET
+sensitivity: without trials with a vendor-only fetch of our domains or a tagged row outside the window (28 removed): gain +0.070 [-0.119,+0.266]
+
+======== SEPARATE: Meta's models with OpenRouter's fetch tool; Gemini's own tool if its postponed block ran (never pooled) ========
+model      arm  G yes                      F yes                      discrimination [Newcombe 95%]   
+META-2     D0     0/30     0% [0.00,0.11]    0/30     0% [0.00,0.11]  +0.000 [-0.114,+0.114]
+META-2     D1     2/30     7% [0.02,0.21]    0/29     0% [0.00,0.12]  +0.067 [-0.060,+0.213]
+META-2     gain                                                       +0.067 [-0.103,+0.252]   (MOVER 95%)
+glimmer    D0     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+glimmer    D1     0/15     0% [0.00,0.20]    0/14     0% [0.00,0.22]  +0.000 [-0.215,+0.204]
+glimmer    gain                                                       +0.000 [-0.297,+0.288]   (MOVER 95%)
+spark      D0     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+spark      D1     2/15    13% [0.04,0.38]    0/15     0% [0.00,0.20]  +0.133 [-0.092,+0.379]
+spark      gain                                                       +0.133 [-0.171,+0.452]   (MOVER 95%)
+
+======== SECONDARY (descriptive): each of the three pooled vendors ========
+model      arm  G yes                      F yes                      discrimination [Newcombe 95%]   
+anthropic  D0     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+anthropic  D1     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+anthropic  gain                                                       +0.000 [-0.288,+0.288]   (MOVER 95%)
+kimi       D0     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+kimi       D1     0/15     0% [0.00,0.20]    0/15     0% [0.00,0.20]  +0.000 [-0.204,+0.204]
+kimi       gain                                                       +0.000 [-0.288,+0.288]   (MOVER 95%)
+openai     D0     5/15    33% [0.15,0.58]    1/15     7% [0.01,0.30]  +0.267 [-0.028,+0.522]
+openai     D1     6/15    40% [0.20,0.64]    0/15     0% [0.00,0.20]  +0.400 [+0.113,+0.643]
+openai     gain                                                       +0.133 [-0.251,+0.515]   (MOVER 95%)
+
+worst of the three: anthropic  gain +0.000 [-0.288,+0.288]
+
+======== by product (descriptive, the three vendors) ========
+lmt          D0 +0.133 [-0.132,+0.391]       D1 +0.200 [-0.042,+0.452]       gain +0.067 [-0.287,+0.432]
+industrial   D0 +0.067 [-0.144,+0.298]       D1 +0.133 [-0.092,+0.379]       gain +0.067 [-0.256,+0.390]
+stationary   D0 +0.067 [-0.144,+0.298]       D1 +0.067 [-0.144,+0.298]       gain +0.000 [-0.313,+0.313]
+
+======== SECONDARY: what each tool actually opened (access log + the vendor's own record) ========
+model      page fetched live        decl. fetched (D1)       decl. tried (D0+W)       explorer JSON            item record              invented                
+anthropic   72/75    96% [0.89,0.99]  15/30    50% [0.33,0.67]   0/45     0% [0.00,0.08]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]
+glimmer     74/74   100% [0.95,1.00]  10/29    34% [0.20,0.53]   0/45     0% [0.00,0.08]   0/74     0% [0.00,0.05]   0/74     0% [0.00,0.05]   0/74     0% [0.00,0.05]
+kimi        75/75   100% [0.95,1.00]   1/30     3% [0.01,0.17]   0/45     0% [0.00,0.08]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]
+openai      71/75    95% [0.87,0.98]   3/30    10% [0.03,0.26]   0/45     0% [0.00,0.08]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]   1/75     1% [0.00,0.07]
+spark       75/75   100% [0.95,1.00]  30/30   100% [0.89,1.00]   0/45     0% [0.00,0.08]   0/75     0% [0.00,0.05]   0/75     0% [0.00,0.05]  15/75    20% [0.13,0.30]
+POOLED-3   218/225   97% [0.94,0.98]  19/90    21% [0.14,0.31]   0/135    0% [0.00,0.03]   0/225    0% [0.00,0.02]   0/225    0% [0.00,0.02]   1/225    0% [0.00,0.02]
+
+user agents seen on our hosts, per model:
+  anthropic  {'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claude-user@anthropic.com)': 72}
+  glimmer    {'OpenRouter-WebFetch/1.0': 74}
+  kimi       {'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36': 75, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36': 22, 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.1 Safari/537.36 Edg/130.0.1': 13, 'Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0 Safari/537.36 Edg/129.0.0': 13}
+  openai     {'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot': 71}
+  spark      {'OpenRouter-WebFetch/1.0': 75}
+
+vendor-only fetches of our hosts (no access-log row: vendor cache or out-of-window), and searches, per model:
+  anthropic  trials with vendor-only fetches 1/75; searches 145
+  glimmer    trials with vendor-only fetches 0/74; searches 0
+  kimi       trials with vendor-only fetches 26/75; searches 401
+  openai     trials with vendor-only fetches 1/75; searches 148
+  spark      trials with vendor-only fetches 0/75; searches 0
+
+======== SECONDARY: trust in W against G-D0 (genuine = yes) ========
+anthropic  W   0/15     0% [0.00,0.20]  G-D0   0/15     0% [0.00,0.20]  W - G +0.000 [-0.204,+0.204]
+glimmer    W   0/15     0% [0.00,0.20]  G-D0   0/15     0% [0.00,0.20]  W - G +0.000 [-0.204,+0.204]
+kimi       W   0/15     0% [0.00,0.20]  G-D0   0/15     0% [0.00,0.20]  W - G +0.000 [-0.204,+0.204]
+openai     W   0/15     0% [0.00,0.20]  G-D0   0/15     0% [0.00,0.20]  W - G +0.000 [-0.204,+0.204]
+spark      W   0/15     0% [0.00,0.20]  G-D0   1/15     7% [0.01,0.30]  W - G -0.067 [-0.298,+0.144]
+POOLED-3   W   0/45     0% [0.00,0.08]  G-D0   0/45     0% [0.00,0.08]  W - G +0.000 [-0.079,+0.079]
+
+======== DRIFT CHECK: the first W block against W repeated after D1 (the three vendors) ========
+  genuine         first W   0/45     0% [0.00,0.08]  drift W   0/9      0% [0.00,0.30]  drift - first +0.000 [-0.079,+0.299]
+  sellerHasItem   first W   3/45     7% [0.02,0.18]  drift W   2/9     22% [0.06,0.55]  drift - first +0.156 [-0.039,+0.484]
+
+======== answer distributions per model x condition ========
+  anthropic  G-D0  genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  anthropic  F-D0  genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  anthropic  G-D1  genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  anthropic  F-D1  genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  anthropic  W     genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  glimmer    G-D0  genuine {'no': 2, 'unsure': 13}  seller_has_item {'no': 2, 'unsure': 13}
+  glimmer    F-D0  genuine {'no': 2, 'unsure': 13}  seller_has_item {'no': 1, 'unsure': 14}
+  glimmer    G-D1  genuine {'unsure': 14, 'yes': 1}  seller_has_item {'unsure': 15}
+  glimmer    F-D1  genuine {'no': 3, 'unsure': 11}  seller_has_item {'no': 2, 'unsure': 12}
+  glimmer    W     genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  kimi       G-D0  genuine {'no': 14, 'unsure': 1}  seller_has_item {'no': 11, 'unsure': 4}
+  kimi       F-D0  genuine {'no': 13, 'unsure': 2}  seller_has_item {'no': 13, 'unsure': 2}
+  kimi       G-D1  genuine {'no': 15}  seller_has_item {'no': 9, 'unsure': 6}
+  kimi       F-D1  genuine {'no': 14, 'unsure': 1}  seller_has_item {'no': 14, 'unsure': 1}
+  kimi       W     genuine {'no': 14, 'unsure': 1}  seller_has_item {'no': 11, 'unsure': 4}
+  openai     G-D0  genuine {'unsure': 15}  seller_has_item {'unsure': 10, 'yes': 5}
+  openai     F-D0  genuine {'unsure': 15}  seller_has_item {'unsure': 14, 'yes': 1}
+  openai     G-D1  genuine {'unsure': 15}  seller_has_item {'unsure': 9, 'yes': 6}
+  openai     F-D1  genuine {'unsure': 15}  seller_has_item {'unsure': 15}
+  openai     W     genuine {'unsure': 15}  seller_has_item {'unsure': 12, 'yes': 3}
+  spark      G-D0  genuine {'no': 4, 'unsure': 10, 'yes': 1}  seller_has_item {'no': 3, 'unsure': 12}
+  spark      F-D0  genuine {'no': 3, 'unsure': 11, 'yes': 1}  seller_has_item {'no': 3, 'unsure': 12}
+  spark      G-D1  genuine {'no': 2, 'unsure': 9, 'yes': 4}  seller_has_item {'no': 1, 'unsure': 12, 'yes': 2}
+  spark      F-D1  genuine {'no': 2, 'unsure': 7, 'yes': 6}  seller_has_item {'no': 7, 'unsure': 8}
+  spark      W     genuine {'no': 1, 'unsure': 14}  seller_has_item {'no': 1, 'unsure': 14}
+
+======== predictions (A36) ========
+  P37  supported      pooled D0 discrimination <= 0.2 (+0.089 [-0.024,+0.214])
+  P38  not supported  declaration fetched in <= 20% of pooled D1 trials (19/90)
+  P39  supported      pooled gain <= 0.1 (+0.044 [-0.119,+0.215])
+  P40  not supported  pooled gain's 95% lower bound > 0 (+0.044 [-0.119,+0.215])
+  P41  supported      the worst of the three vendors' gain <= 0.0 (anthropic +0.000)
+  P42  not supported  >= 1 of the three with a gain >= 0.25 (0)
+  P43  not supported  invented verification in >= 10% of trials for >= 1 of the three (0)
+  P44  supported      pooled |genuine=yes on W - on G-D0| <= 0.2 (+0.000 [-0.079,+0.079])
+  P45  not run        if the postponed Gemini own-tool block runs, Gemini opens the declaration in <= 20% of its D1 trials (0/0)
+  P46  supported      every model's tool fetched the given page live in >= 90% of its trials (below: none)
+  P47  supported      drift: |genuine=yes on drift W - on first W| <= 0.15 (+0.000 [-0.079,+0.299])

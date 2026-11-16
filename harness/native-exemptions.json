@@ -1,0 +1,15 @@
+{
+  "_comment": "Study 2 matchedness exemptions (A28 §5 gate 3). EMPTY by design: each entry must come from a MEASURED preflight-native diff on the real fixtures, carry the measured reason, and be logged in a PREREGISTRATION amendment before the first counted trial. Never add a predicted path. `path` uses the preflight's JSONPath-like notation; `[*]` matches any array index; an entry also exempts everything beneath it.",
+  "exemptions": [
+    {
+      "path": "$.dpp.lastUpdated",
+      "reason": "Measured 2026-10-14: per-product edit timestamps (Sync on A/C rewrites it; B equalised by an unchanged re-save at 00:37:30Z). Values within 2 minutes, order A<C<B, not aligned with condition.",
+      "amendment": "A31"
+    },
+    {
+      "path": "$.sections[3].data.renewableContentShare",
+      "reason": "Measured 2026-10-14: the designed condition-C manipulation (A30: Circularity > Share of renewable content 4 -> 9 after anchoring). A=4, B=4, C=9. Not shown on any stimulus page.",
+      "amendment": "A31"
+    }
+  ]
+}

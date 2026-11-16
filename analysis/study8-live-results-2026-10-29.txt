@@ -1,0 +1,79 @@
+======== Study 8 data quality ========
+usable 119; excluded {'errored spark V1': 1}
+  missing recommendation (missing data): glimmer V2 1
+
+======== PRIMARY: pooled three vendors ========
+POOLED-3   V0  Oskvale   6/18    33% [0.16,0.56] fake   4/18    22% [0.09,0.45] neither 8/18                                   record opened   0/18     0% [0.00,0.18] lookalike opened   0/18     0% [0.00,0.18] reasons cite a check   3/18    17% [0.06,0.39]
+POOLED-3   V1  Oskvale  16/18    89% [0.67,0.97] fake   0/18     0% [0.00,0.18] neither 2/18  tool used  12/18    67% [0.44,0.84] record opened   0/18     0% [0.00,0.18] lookalike opened   0/18     0% [0.00,0.18] reasons cite a check  13/18    72% [0.49,0.88]
+POOLED-3   V2  Oskvale  10/18    56% [0.34,0.75] fake   3/18    17% [0.06,0.39] neither 5/18                                   record opened   0/18     0% [0.00,0.18] lookalike opened   0/18     0% [0.00,0.18] reasons cite a check   7/18    39% [0.20,0.61]
+POOLED-3   V3  Oskvale  17/18    94% [0.74,0.99] fake   0/18     0% [0.00,0.18] neither 1/18  tool used  12/18    67% [0.44,0.84] record opened   0/18     0% [0.00,0.18] lookalike opened   0/18     0% [0.00,0.18] reasons cite a check  14/18    78% [0.55,0.91]
+POOLED-3   effect V1 - V0: +0.556 [+0.240,+0.744]
+POOLED-3   effect V2 - V0: +0.222 [-0.094,+0.484]
+POOLED-3   effect V3 - V2: +0.389 [+0.105,+0.612]
+POOLED-3   effect V3 - V0: +0.611 [+0.306,+0.788]
+POOLED-3   tool call statuses: {'verified': 24, 'invalid-identifier': 10, 'no-record': 27}
+success rule (tool effect V1 - V0 >= 0.20, lower bound > 0): MET
+
+======== order: share recommending the FIRST link, pooled three ========
+  V0: first link   5/10    50% [0.24,0.76] of answers naming a product
+  V1: first link   7/16    44% [0.23,0.67] of answers naming a product
+  V2: first link   7/13    54% [0.29,0.77] of answers naming a product
+  V3: first link   8/17    47% [0.26,0.69] of answers naming a product
+
+======== SEPARATE: Meta (OpenRouter fetch) ========
+META-2     V0  Oskvale  10/12    83% [0.55,0.95] fake   0/12     0% [0.00,0.24] neither 2/12                                   record opened   6/12    50% [0.25,0.75] lookalike opened   0/12     0% [0.00,0.24] reasons cite a check   6/12    50% [0.25,0.75]
+META-2     V1  Oskvale  11/11   100% [0.74,1.00] fake   0/11     0% [0.00,0.26] neither 0/11  tool used  11/11   100% [0.74,1.00] record opened   0/11     0% [0.00,0.26] lookalike opened   0/11     0% [0.00,0.26] reasons cite a check  11/11   100% [0.74,1.00]
+META-2     V2  Oskvale   9/11    82% [0.52,0.95] fake   0/11     0% [0.00,0.26] neither 2/12                                   record opened   6/12    50% [0.25,0.75] lookalike opened   6/12    50% [0.25,0.75] reasons cite a check   9/12    75% [0.47,0.91]
+META-2     V3  Oskvale  12/12   100% [0.76,1.00] fake   0/12     0% [0.00,0.24] neither 0/12  tool used  12/12   100% [0.76,1.00] record opened   0/12     0% [0.00,0.24] lookalike opened   0/12     0% [0.00,0.24] reasons cite a check  12/12   100% [0.76,1.00]
+META-2     effect V1 - V0: +0.167 [-0.119,+0.448]
+META-2     effect V2 - V0: -0.015 [-0.334,+0.295]
+META-2     effect V3 - V2: +0.182 [-0.094,+0.477]
+META-2     effect V3 - V0: +0.167 [-0.104,+0.448]
+META-2     tool call statuses: {'verified': 26, 'no-record': 23, 'invalid-identifier': 13}
+
+======== per model ========
+anthropic  V0  Oskvale   2/6     33% [0.10,0.70] fake   2/6     33% [0.10,0.70] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   2/6     33% [0.10,0.70]
+anthropic  V1  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+anthropic  V2  Oskvale   2/6     33% [0.10,0.70] fake   2/6     33% [0.10,0.70] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   4/6     67% [0.30,0.90]
+anthropic  V3  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+anthropic  effect V1 - V0: +0.667 [+0.131,+0.903]
+anthropic  effect V2 - V0: +0.000 [-0.436,+0.436]
+anthropic  effect V3 - V2: +0.667 [+0.131,+0.903]
+anthropic  effect V3 - V0: +0.667 [+0.131,+0.903]
+anthropic  tool call statuses: {'verified': 12, 'invalid-identifier': 3, 'no-record': 16}
+glimmer    V0  Oskvale   4/6     67% [0.30,0.90] fake   0/6      0% [0.00,0.39] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   0/6      0% [0.00,0.39]
+glimmer    V1  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+glimmer    V2  Oskvale   3/5     60% [0.23,0.88] fake   0/5      0% [0.00,0.43] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   3/6     50% [0.19,0.81]
+glimmer    V3  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+glimmer    effect V1 - V0: +0.333 [-0.123,+0.700]
+glimmer    effect V2 - V0: -0.067 [-0.505,+0.396]
+glimmer    effect V3 - V2: +0.400 [-0.082,+0.769]
+glimmer    effect V3 - V0: +0.333 [-0.123,+0.700]
+glimmer    tool call statuses: {'verified': 12, 'no-record': 12, 'invalid-identifier': 7}
+kimi       V0  Oskvale   2/6     33% [0.10,0.70] fake   0/6      0% [0.00,0.39] neither 4/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   1/6     17% [0.03,0.56]
+kimi       V1  Oskvale   5/6     83% [0.44,0.97] fake   0/6      0% [0.00,0.39] neither 1/6   tool used   5/6     83% [0.44,0.97] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   5/6     83% [0.44,0.97]
+kimi       V2  Oskvale   5/6     83% [0.44,0.97] fake   0/6      0% [0.00,0.39] neither 1/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   1/6     17% [0.03,0.56]
+kimi       V3  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+kimi       effect V1 - V0: +0.500 [-0.040,+0.773]
+kimi       effect V2 - V0: +0.500 [-0.040,+0.773]
+kimi       effect V3 - V2: +0.167 [-0.247,+0.564]
+kimi       effect V3 - V0: +0.667 [+0.131,+0.903]
+kimi       tool call statuses: {'verified': 11, 'no-record': 10, 'invalid-identifier': 7}
+openai     V0  Oskvale   2/6     33% [0.10,0.70] fake   2/6     33% [0.10,0.70] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   0/6      0% [0.00,0.39]
+openai     V1  Oskvale   5/6     83% [0.44,0.97] fake   0/6      0% [0.00,0.39] neither 1/6   tool used   1/6     17% [0.03,0.56] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   2/6     33% [0.10,0.70]
+openai     V2  Oskvale   3/6     50% [0.19,0.81] fake   1/6     17% [0.03,0.56] neither 2/6                                    record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   2/6     33% [0.10,0.70]
+openai     V3  Oskvale   5/6     83% [0.44,0.97] fake   0/6      0% [0.00,0.39] neither 1/6   tool used   0/6      0% [0.00,0.39] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   2/6     33% [0.10,0.70]
+openai     effect V1 - V0: +0.500 [-0.040,+0.773]
+openai     effect V2 - V0: +0.167 [-0.315,+0.559]
+openai     effect V3 - V2: +0.333 [-0.172,+0.674]
+openai     effect V3 - V0: +0.500 [-0.040,+0.773]
+openai     tool call statuses: {'no-record': 1, 'verified': 1}
+spark      V0  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6                                    record opened   6/6    100% [0.61,1.00] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+spark      V1  Oskvale   5/5    100% [0.57,1.00] fake   0/5      0% [0.00,0.43] neither 0/5   tool used   5/5    100% [0.57,1.00] record opened   0/5      0% [0.00,0.43] lookalike opened   0/5      0% [0.00,0.43] reasons cite a check   5/5    100% [0.57,1.00]
+spark      V2  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6                                    record opened   6/6    100% [0.61,1.00] lookalike opened   6/6    100% [0.61,1.00] reasons cite a check   6/6    100% [0.61,1.00]
+spark      V3  Oskvale   6/6    100% [0.61,1.00] fake   0/6      0% [0.00,0.39] neither 0/6   tool used   6/6    100% [0.61,1.00] record opened   0/6      0% [0.00,0.39] lookalike opened   0/6      0% [0.00,0.39] reasons cite a check   6/6    100% [0.61,1.00]
+spark      effect V1 - V0: +0.000 [-0.434,+0.390]
+spark      effect V2 - V0: +0.000 [-0.390,+0.390]
+spark      effect V3 - V2: +0.000 [-0.390,+0.390]
+spark      effect V3 - V0: +0.000 [-0.390,+0.390]
+spark      tool call statuses: {'verified': 14, 'invalid-identifier': 6, 'no-record': 11}

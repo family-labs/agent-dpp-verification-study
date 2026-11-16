@@ -1,0 +1,132 @@
+5fee11b 2026-11-16T06:24:27Z Merge study6-instrument: Study 8N (A43) registration, runner mode and launcher
+0640f46 2026-11-16T06:24:00Z PREREGISTRATION A43 (Study 8N): genuine passport against a rival with no passport, without and with the verify tool; logged before any Study 8N trial
+9f5fe53 2026-11-16T06:23:35Z Study 8N (A43): OpenRouter vendor cap 11.50 -> 12.50 (binding limit only); detached launcher run-study8n.sh
+463cf8f 2026-11-16T05:50:12Z Study 8N (A43 draft): genuine passport against a rival with NO passport, without and with the verify tool (dc97cc6); --study8n runner mode, --no-passport analysis; dry and mock runs pass
+fe86770 2026-10-28T23:48:39Z Study 8 results: correct the tool-offered trial count (59)
+40d3f1a 2026-10-28T23:48:27Z Study 8 results (A41, all models): verify tool effect +0.556 (MET); no model chose the fake after the tool said no-record (0/46); OpenAI rarely called the tool; data archived with SHA256
+eb33dcb 2026-10-27T04:52:59Z Study 9 design: Part 2, organisation questions (catalogue completeness, impostor issuer), with the brand-declaration symmetry rule (James, 27 Oct 2026)
+844baef 2026-10-27T00:25:45Z Study 9 design draft (for James's review): ledger vs EN 18222 standard API vs proprietary provider APIs, reading passports across brands; neutrality rules, phases, measures, predictions, steps
+e8552a4 2026-10-26T11:44:12Z Merge study6-instrument: multi-file resume and the Study 8 resume launcher
+49a68eb 2026-10-26T11:44:11Z Study 8: --resume takes several files; launcher for the remaining OpenAI, Kimi and Meta A41 trials (after the OpenRouter top-up)
+774bcae 2026-10-26T11:43:24Z Study 8 Claude results: correct two denominators (9 no-tool ladder trials, 5 V2 trials)
+d1b80c3 2026-10-26T11:43:14Z Study 8 Claude results (A41 Claude part + A42 ladder): with the verify tool every Claude model chose the genuine passport every time (Haiku 12/12); without it Haiku was fooled, larger models were not; data archived with SHA256
+adbd1c3 2026-10-26T11:19:15Z PREREGISTRATION: A42 - Study 8 Claude only: A41's remaining Claude Haiku trials now, and the Claude ladder (Sonnet 5.5, Opus 5.5, Fable 5.1) on Study 8's conditions (James, 26 Oct 2026); tool check archived
+a7dd285 2026-10-26T11:19:14Z Merge study6-instrument: Claude ladder caps and launcher
+892c4bc 2026-10-26T11:18:46Z Study 8 Claude only: ladder caps sonnet 2.5 / opus 3.8 / fable 2.8 (counted 9.1) after the tool check's costs; launcher (A41 Haiku resume, then the A42 ladder)
+c2ab80d 2026-10-26T11:17:33Z Merge study6-instrument: Study 8 Claude ladder instrument (A42 draft)
+67ebc31 2026-10-26T11:17:27Z Study 8 Claude ladder (A42 draft): sonnet/opus/fable labels and prices (pricing page read 26 Oct), per-model caps, --claude-ladder mode, schedule over the full label set so a one-model resume keeps scheduleIndex, ladder analysis; tool check takes --cap
+f80f928 2026-10-25T23:53:26Z PREREGISTRATION: A41 - Study 8: does the open verify tool make AI models pick a genuine passport over a convincing fake, and does a seller-hosted lookalike verifier fool them? (James: yes to all four; tool check passed for all five models)
+59e3364 2026-10-25T23:52:43Z Study 8: OpenRouter follow-up drops the extra tool's turns (a pinned provider refuses tool_choice none); without the tool nothing changes
+052a465 2026-10-25T23:52:43Z Merge study6-instrument: OpenRouter follow-up fix for the Study 8 tool check
+1583d01 2026-10-25T23:50:42Z Merge study6-instrument: Study 8 instrument (A41 draft) - open verify tool over MCP, seller-hosted lookalike verifier
+1ef1e14 2026-10-25T23:39:51Z Study 8: pin the verify tool to protocol commit dc97cc6 (brand-domain links fixed); mock run of 120 passes the tool gate; analysis reads it
+0231507 2026-10-25T23:36:49Z Study 8 (A41 draft): open verify tool offered over MCP beside each vendor's web tool, seller-hosted lookalike verifier
+7e0d822 2026-10-25T05:13:08Z Study 7 format test results: one plain passport line wins as well as the full block (CM - C0 +0.556, success rule MET; CM - CF +0.000); data archived with SHA256
+f2cae45 2026-10-25T03:55:18Z PREREGISTRATION: A40 - Study 7 format test: does a minimal passport line still win the recommendation? (James: yes; QR-only version dropped before registration)
+98715ff 2026-10-25T03:55:08Z Merge study6-instrument: Study 7 format test (A40) - minimal passport line, --format-test runner mode, analysis, launcher
+48af72e 2026-10-24T12:03:25Z Study 7 format test: QR-only version dropped (James: "the minimal line is good for now"); 90 trials, cap USD 3; bundle 06c751d1
+162793f 2026-10-24T11:57:09Z A40 draft (Study 7 format test) and its detached launcher
+e3cea41 2026-10-24T11:56:40Z Study 7 format test (A40 draft): minimal passport line and QR-only pages, --format-test runner mode, analysis
+729180c 2026-10-24T11:17:55Z results-archive: Study 7 counted-run console log (listed in SHA256SUMS; *.log is ignored by default)
+eebb359 2026-10-24T11:17:43Z Study 7 results: genuine passport wins against none (+0.417, success rule MET), no edge against a fake for the pooled models (+0.000); data archived with SHA256
+f1c1e9a 2026-10-24T10:29:19Z PREREGISTRATION: A39 - Study 7 Kimi spending limit 5.00 -> 6.50 (shared with Study 6), counted run resumes; resume launcher
+ea97163 2026-10-24T09:35:46Z Study 7 counted-run launcher (A37 + A38; detached)
+8afa38b 2026-10-24T09:34:45Z PREREGISTRATION: A38 - Study 7 record page drops the Study 6 'not the holder' sentence (James, 24 Oct 2026; after the pilot, before any counted Study 7 trial)
+d8142db 2026-10-24T09:34:32Z Merge study6-instrument: A38 record wording (drop the Study 6 'not the holder' sentence) and the runner's A38 gates
+5231efc 2026-10-24T09:30:17Z A38 draft: Study 7 record page drops the Study 6 'not the holder' sentence (James: drop the sentence)
+41f7b31 2026-10-24T09:29:53Z Study 7 (A38 draft): the record page drops "A seller on any other website is not the holder of this item"
+7da2b4e 2026-10-24T08:15:19Z Study 7 pilot script (detached launch)
+5f6a5ca 2026-10-24T08:15:04Z PREREGISTRATION: A37 - Study 7, does a genuine Digital Product Passport win the recommendation? (registered 2026-10-24, before any Study 7 trial)
+f281534 2026-10-24T08:15:03Z evidence: preflight --live before registering A37 (PASS)
+e34ba2d 2026-10-24T08:14:29Z Merge study6-instrument: Study 7 (recommendation) instrument, record service, tool checks (conflict in run-study6-live.ts resolved to the branch, which carries the same --resume change plus Study 7 mode)
+ef8df76 2026-10-24T08:03:52Z Study 7: deployed (bundle 673cb70c, record service live on passportrecord.org); tool check passed for all five models; A37 draft section 2f filled
+9b8c28d 2026-10-24T07:41:31Z A37 draft: addresses on oskvale-store.com
+57f6b22 2026-10-24T07:41:23Z Study 7 recommendation version built (not deployed): multi-brand shop on oskvale-store.com (phase S7R) with Oskvale (genuine passport) and matched rival Torvlund (none / non-genuine passport), neutral numbered product addresses, record service answers 'no record' for unknown identifiers, two-link recommendation runner (C0-C2, both orders, 180 trials), analysis; A37 draft updated (C3 dropped, USD 11 cap); all checks pass
+36a6a47 2026-10-24T07:16:36Z A37 draft redefined (James, 24 Oct): Study 7 measures which product the model RECOMMENDS: genuine passport vs none vs non-genuine, matched rival brand on one neutral retailer, C0-C3, 240 trials; not registered
+a07ec51 2026-10-24T07:00:43Z Study 7: F3 gains a real QR code of the passport address with a DPP alt text (knowledge-probe cue); A37 draft updated; all checks pass
+e51fb51 2026-10-24T06:24:30Z Knowledge probe (exploratory, not registered): 5 models, 3 DPP questions, no tools, USD 0.10
+68b77ce 2026-10-24T06:16:31Z Study 6 live results (A36): pooled gain +0.044 (-0.119, +0.215), success rule not met; no model opened the ledger record; raw data, site log, pilot and tool-check archived with SHA256; deviations stated (D0 interrupted and resumed; one 429)
+2095c72 2026-10-24T06:04:33Z Study 7 (draft, not registered): page formats F0 (Study 6 D1), F1 (one Independent record link), F3 (+ EU DPP vocabulary, JSON-LD alternate, llms.txt); independent record service in the Worker (holder read live from the explorer); S7 site phases; runner --study 7; analysis; A37 draft. Study 6 pages and phases byte-identical; site selftest T1-T9 PASS; nothing deployed
+96f1c5a 2026-10-24T02:04:04Z study6 live: --resume for an interrupted block (finished trials skipped, registered order kept); resume script launched detached; counted and pilot scripts
+9bda9c0 2026-10-24T02:04:04Z run-study6-live: --resume (same change as the main checkout)
+8dffb50 2026-10-23T07:29:00Z PREREGISTRATION: A36 - Study 6, live sites read with each vendor's own web tool (registered 2026-10-23, before any Study 6 trial)
+0b4cee7 2026-10-23T07:28:47Z A36: placeholders filled for registration (instrument 3efb475, bundle 79f0064a, preflight 2026-10-23T07:28:27Z, Gemini deadline 2026-12-22, no pilot before)
+3efb475 2026-10-23T07:28:33Z evidence: Study 6 preflight --live before registering A36 (S0-S11 + L1 PASS)
+13802ad 2026-10-23T07:24:52Z study6 live: no Gemini trials until its own URL tool reads the new domains (James, 23 Oct); counted schedule = five labels, 375 trials; Gemini only in the postponed probe-gated block; A36 draft, tests and analysis updated
+e02a3ec 2026-10-23T06:59:05Z A36 draft: tool-check findings, pooled three vendors, Gemini fetch arm + postponed own-tool block, attribution by fetcher identity with background rows, predictions P41/P45/P46 revised; decisions recorded (not registered)
+25adcad 2026-10-23T06:57:39Z study6 live: Gemini with the harness's generic live fetch tool as a separate arm (geminifetch); Gemini own-tool block postponed behind a domain probe (gemini-domain-probe.ts, seed +2); pooled primary = OpenAI, Kimi, Anthropic; OpenAI fetcher signature ChatGPT-User; analysis groups updated
+4e97f85 2026-10-23T06:20:43Z study6 live: tool check findings (Gemini refuses the new domains, Kimi proxy-pool fetcher, scanner background on new domains, OpenAI key expired); attribution by vendor fetcher signature with background rows, vendor-reported failures not counted as received; robots header configurable; phase logged on redirects; extra neutral check pages
+7a559d2 2026-10-23T06:02:42Z site: pin wrangler 4.149.0 for the deploy (wrangler.toml stays git-ignored)
+eeb1cad 2026-10-22T15:28:44Z gitignore: live runner raw response folders
+e629515 2026-10-22T15:28:39Z design draft: pointer to the live-site version (23 Oct)
+67c14ab 2026-10-22T15:28:31Z study6 live: A36 rewritten for live sites + vendor tools (not registered; tool-check placeholders), site runbook, analysis phase-fault exclusion and sensitivity
+c137255 2026-10-22T15:25:42Z study6 live analysis: pooled primary over the four vendors' own tools, Meta separate, evidence measures from access log + vendor record, drift check, P37-P47; runs on mock rows
+d55653f 2026-10-22T15:24:37Z study6 live harness: each vendor's own web tool (OpenAI web_search, Gemini url_context+search, Anthropic web_fetch+web_search, Kimi official fetch/web-search, OpenRouter web_fetch for Meta), time blocks W/D0/D1/drift, access-log attribution by window and share tag, evidence log for unchanged scoring, live ledger (counted 25 / pilot 2 / check 0.5), tool check, site admin; selftests pass, mock runs of every block pass; no API call made
+e2cf536 2026-10-22T15:15:35Z study6 live: Cloudflare Worker sites for oskvale.com and oskvale-store.com (phases closed/check/W/D0/D1, access log in D1, noindex, robots allow, inert basket), restyled shop pages and drawn product images; site selftest T1-T8 PASS, preflight S0-S11 PASS; nothing deployed
+9e78c2e 2026-10-22T15:07:21Z study6 live: plan for James (live Cloudflare sites, vendor web tools priced, 450 trials within USD 30, A36 changes); nothing deployed or run
+32ed9ec 2026-10-22T07:58:19Z design draft: five vendors
+7ef1e0b 2026-10-22T07:58:15Z A36 draft: six models from five vendors (two from Meta), not six vendors
+3036c82 2026-10-22T07:57:29Z study6: battery products, realistic Oskvale shop on oskvale.com, mainnet ids recorded (James, 22 Oct)
+1196098 2026-10-22T07:31:29Z study6 fixtures: three Oskvale battery products created on mainnet (ids recorded; not yet tokenised)
+0e07e47 2026-10-22T07:21:43Z study6 fixtures: mainnet battery creator, dry run only (no writes made)
+65ee8dd 2026-10-21T07:46:58Z study6 instrument: lookalike shop F, pooled primary analysis, LUKSO mainnet (James, 21 Oct)
+83bc05e 2026-10-20T07:31:09Z study6 instrument (build only, no trials): brand-domain declaration study
+e218486 2026-10-20T07:07:38Z design draft: Study 6 refocused on the brand-domain declaration (James, 20 Oct): G/F/W conditions, D0/D1 arms, worst-model discrimination, 360 trials within USD 10, GS1 952 demo GTINs; not registered
+005e6b2 2026-10-20T06:48:21Z design draft: USD 20 total budget for the mainnet studies (James, 20 Oct), split by phase, with what it gives up
+505e0d2 2026-10-20T04:47:39Z paper: apply the 20 Oct fact-check (70 findings): BR 78(g)/(h) cited, domain dependency and guessable identifiers stated, AI studies scoped to the recorded fingerprint, requirement table re-labelled so it cannot read as compliance, repo stated as private until publication; study report says five vendors
+0aa036a 2026-10-20T04:27:19Z paper: restructure around the EU passport framework: law and standards section (ESPR verified on EUR-Lex 20 Oct), requirement-by-requirement table, measurements section from recorded runs, AI evidence condensed as preliminary, implementation status corrected (deploy block, event count, mainnet)
+a7724ea 2026-10-20T03:45:30Z paper: introduction gains the barcode's origin (Woodland and Silver patent, UPC, EAN, GS1) and Sunrise 2027 as GS1 describes it
+7303618 2026-10-20T02:10:56Z design draft: Study 6 products are clothing, consumer electronics and furniture (James, 20 Oct); no mandate implied; electronics kept out of battery passport categories
+3fd01cc 2026-10-20T01:46:41Z design draft: Study 6 (mainnet baseline, page-format loop scored on the worst model, frozen confirmation); not registered, no trial
+3440e40 2026-10-20T01:42:29Z paper: introduction retold as the story of reading products (barcode, smartphone, AI model) and why an open public ledger; mainnet study placeholder; abstract unchanged
+a4c4e82 2026-10-16T01:59:47Z paper: add Study 5 (browsing only, 6 vendors): no use of the public record; web2 claims trusted more; test-setup red flags as a cross-study limit
+54edd84 2026-10-16T01:59:15Z results: Study 5 (independent record + provenance, browsing only, 6 vendors) 288 trials: registered analysis, P32-P36 scored, exploratory red-flag analysis, data archived
+fb712cc 2026-10-15T23:55:35Z prereg: A35, Study 5 (independent record + provenance, browsing only, 6 vendors incl. Meta Muse) registered before any counted trial; P32-P36
+b662c1a 2026-10-15T23:54:58Z study5: stimuli built from the live #382 contract; preflight V1 checks the record URLs' host (explorer is a label); final preflight V0-V8 PASS
+1fd64a0 2026-10-15T23:49:02Z study5: OpenRouter (Meta models) cap USD 8 per James, leaving credit for a later study
+0723ddd 2026-10-15T13:13:59Z Study 5 design fixes before A35: one neutral mirror host for every passport copy, and no route to our checker
+0c9917c 2026-10-15T13:06:07Z Study 5 instrument (interoperability unique to smart contracts): lying passport vs the public record, counterfeit vs on-chain provenance; plain GET browsing only; no counted trial run
+8c3bac4 2026-10-15T11:10:05Z paper: the independent re-check needs the full credential (incl. restricted sections); the public cannot repeat it today
+a765de4 2026-10-15T06:36:42Z readme: update the short version for Studies 3 and 4
+992eb87 2026-10-15T06:36:27Z paper: report and whitepaper section 8 add Study 4 (plain shopping question): no checking, passport read as a guarantee, design rule
+17fb4eb 2026-10-15T06:35:48Z results: Study 4 (plain shopping question) 160 trials: registered analysis, P29-P31 scored, exploratory E1-E2, data archived
+0186ebd 2026-10-15T05:39:34Z prereg: A34, Study 4 (plain shopping question, platform-run search, 4 comparable products) registered before any counted trial; P29-P31
+5c1eb93 2026-10-15T05:38:30Z Study 4: platform-run search (as AI Mode) and locale en-IE, after the smoke trials
+2db73c8 2026-10-15T05:33:29Z Study 4 instrument (a plain shopping question): four-product search, P/T/U/N on our listing, follow-up pick; preflight --study4 passes; no counted trial run
+b9ee8ad 2026-10-15T05:14:36Z correction: the open-ended prompt framed a business buyer and (Study 3 arm U) named UCP; 'unprompted' means 'not asked to check', not a natural shopping request
+1364948 2026-10-15T04:23:56Z whitepaper: section 8 adds Study 3 (UCP delivery) results, predictions and limits
+595ae29 2026-10-15T04:23:30Z paper: study report adds Study 3 (UCP delivery): summary, 3.4, P25-P28, 5.4, limits, reproduce
+8183b25 2026-10-15T04:22:21Z results: Study 3 (UCP) 440 trials: registered analysis, P25-P28 scored, data archived with sha256
+788c566 2026-10-14T23:38:34Z prereg: A33, Study 3 (UCP delivery vs web page, 4 models incl. claude-haiku-5-5) registered before any counted trial; P25-P28
+8aee0ae 2026-10-14T23:37:20Z Study 3 instrument (UCP): arm U listings captured from the live endpoint, arm H control, arm R-claude, Claude adapter, per-vendor ledger; preflight --study3 passes; no counted trial run
+9c8deb1 2026-10-14T11:53:40Z paper: state precisely who holds which key (credential key held encrypted by the platform; ledger record written by the brand's own key)
+fd110ed 2026-10-14T11:53:00Z paper: Universal Goods Protocol V3 whitepaper (October 2026), from Draft 0.1
+40f9f09 2026-10-14T11:49:28Z readme: public-facing entry point (findings, conflict of interest, how to check it yourself)
+239966e 2026-10-14T11:48:27Z paper: fix the prediction tally (5 supported, 1 partly, 7 not)
+c22e498 2026-10-14T11:48:18Z paper: study report (plain, short), every number from the two registered results files
+f6d1bba 2026-10-14T11:47:04Z paper: import whitepaper Draft 0.1 (4 Sep 2026) unchanged, recovered from the testnet repo's stash, as the base for V3
+6188334 2026-10-14T09:52:39Z whitepaper: section 8 draft updated with the follow-up (unprompted checking, conventional passport E, reworded notice)
+28e20a1 2026-10-14T09:52:08Z results: follow-up (A32) 210 trials: registered analysis output, P18-P24 scored, data archived with sha256
+2854754 2026-10-14T06:00:41Z prereg: A32, follow-up registered before any trial: reworded notice (arm R), plain hosted passport (E), open-ended prompt (arm O), predictions P18-P24
+584b16b 2026-10-14T05:59:15Z follow-up instrument: arm O (open-ended prompt), condition E (plain hosted passport, no checker), arm R re-run; no trial run
+7aeb3b0 2026-10-14T04:04:11Z whitepaper: draft section 8 (Evidence) from the Study 2 results, within the A28 §7 claim limits
+eadabe7 2026-10-14T04:03:38Z archive: store raw results and the archived credential byte-for-byte (no line-ending conversion), so their sha256 stays reproducible
+ecc8512 2026-10-14T04:03:28Z results: Study 2 main run (240 trials), registered analysis output, exploratory notes E1-E3, raw data archived with sha256
+5c83c0c 2026-10-14T00:40:22Z evidence: archive A's signed credential and an independent, standard-library check of its on-chain anchor (A31 §5); MATCH via rpc.testnet.lukso.network
+73ec73d 2026-10-14T00:38:56Z prereg: A31, fixtures signed and set; gate-3 exemptions from the measured diff; preflight passes; main run parameters
+a037137 2026-10-12T06:11:27Z fixtures: rebuild A/B/C on the EU Industrial battery passport; D claims 6000 vs 4000 cycles; A30
+ae041a3 2026-10-12T04:21:51Z fixtures: A/B/C created on alpha in the study-only organisation (2026-10-12); ids recorded
+d7d1034 2026-10-12T00:54:36Z fixtures: send the API key in x-api-key, not as a Bearer token (the Bearer path is OAuth and 401s an API key)
+8808db6 2026-10-11T05:44:00Z prereg: A29, models fixed from the pilot; open instrument choices fixed; fictional brand renamed (Tarnvale / Quillbury)
+2129db1 2026-10-11T05:37:24Z Study 2 instrument (A28): stimulus pages, fetch_url tool, native runner, preflight gates 1-4, analysis
+303a8e1 2026-10-11T05:20:23Z prereg: A28, Study 1 retired before any trial; Study 2 "native interoperability" registered
+b95cc62 2026-09-22T05:31:26Z fixtures: the rewritten create-fixtures.ts that d93f379 described but did not contain; preflight-only entry
+2dc6031 2026-09-22T05:29:30Z fixtures: recreate on the rebuilt alpha as V3, up to the first human signature; A27
+40aef41 2026-09-22T05:23:45Z prereg: A26 — fixtures destroyed by the alpha rebuild; verifier, publish gate and payload re-measured before recreation
+cc416fd 2026-09-04T08:32:42Z preflight: read the verifier's `verdict` field, not a `status` field that has never existed
+8734279 2026-08-07T09:12:53Z harness+analysis: repair the instrument, gate the fixtures, log amendments A18-A24
+a48bc7f 2026-08-07T03:23:34Z prereg: log amendments A1-A17, all before the first trial
+9982b4c 2026-09-29T04:52:13Z docs: add AI agent DPP research handoff
+e1a5c08 2026-07-23T01:52:08Z fixtures: sync section shapes to live testnet schema registry; testnet ids + API base
+fc7090d 2026-07-23T00:54:49Z fixtures: local end-to-end seed script (isolated PGlite, A/B/C + forged C)
+bc55078 2026-07-23T00:21:46Z Agent DPP Verification Study: design, pre-registration, fixtures, harness, analysis

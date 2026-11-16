@@ -1,0 +1,42 @@
+{
+  "_comment": "Study 5 SMOKE stimuli (pilot=true): the live A / unit resolver JSON of the build time plus a SYNTHETIC passportCheck in the PR #382 contract shape (stimulus/study5-pilot.ts). Excluded from every analysis.",
+  "builtAt": "2026-10-15T12:55:28.705Z",
+  "sources": {
+    "A": {
+      "url": "https://ugpdpp.xyz/01/04012346627106",
+      "fetchedAt": "2026-10-15T12:55:28.203Z",
+      "sha256": "dfa8d23620c6ecda43c535c947c09d1408cdb4e865dcc0b1bf0d2fb104d46f8c"
+    },
+    "unit": {
+      "url": "https://ugpdpp.xyz/01/04012346627106/21/000001",
+      "fetchedAt": "2026-10-15T12:55:28.691Z",
+      "sha256": "c113e7192672397ec13678e16ee67865c3f65fd6da7f67adefae68ca752f89ef"
+    }
+  },
+  "stimuli": {
+    "T1": {
+      "page": {
+        "file": "study5/pilot/T1-page.html",
+        "sha256": "452d3605ea5595d155a9352d26776f37237ffa6b66838cd36b820518f22ee4f8",
+        "bytes": 2107,
+        "url": "https://shop.tarnvale.example/products/tarnvale-5000"
+      },
+      "passport": {
+        "file": "study5/pilot/T1-passport.json",
+        "sha256": "a4118d0bd7cd29cb9f933e6d2b6339a5de16032a269f47efa698d8c6486b17a1",
+        "bytes": 10723,
+        "url": "https://dpp.tarnvale.example/01/04012346627106",
+        "contentType": "application/json; charset=utf-8"
+      }
+    },
+    "T2": {
+      "passport": {
+        "file": "study5/pilot/T2-passport.json",
+        "sha256": "a808ff9a0b1b1101d7cc170303e242121e685d250b234ca1a690be03467fa9b0",
+        "bytes": 11627,
+        "url": "https://dpp.tarnvale.example/01/04012346627106/21/000001",
+        "contentType": "application/json; charset=utf-8"
+      }
+    }
+  }
+}

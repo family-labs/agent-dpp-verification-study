@@ -1,0 +1,213 @@
+{
+  "_comment": "Study 2 (A28 §4) per-token prices, USD per 1,000,000 tokens, standard (non-batch, non-priority) tier, as PUBLISHED by each vendor on the retrieval date. Looked up 2026-10-11 by fetching the vendor's own pricing page. A model missing from this table cannot be run by run-native.ts: its cost could not be computed, and a price is never guessed. inputPerMTok applies to UNCACHED input; cachedInputPerMTok to cache-hit input; outputPerMTok to output INCLUDING reasoning/thinking tokens (all three vendors bill reasoning as output). Where a vendor has a long-context tier, `longContext` gives the threshold (input tokens of ONE call) above which the long rates apply to that call.",
+  "retrieved": "2026-10-11",
+  "models": {
+    "gpt-5.4-mini": {
+      "vendor": "openai",
+      "inputPerMTok": 0.75,
+      "cachedInputPerMTok": 0.075,
+      "outputPerMTok": 4.5,
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5.4-nano": {
+      "vendor": "openai",
+      "inputPerMTok": 0.2,
+      "cachedInputPerMTok": 0.02,
+      "outputPerMTok": 1.25,
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5.6-luna": {
+      "vendor": "openai",
+      "inputPerMTok": 0.2,
+      "cachedInputPerMTok": 0.02,
+      "outputPerMTok": 1.2,
+      "longContext": {
+        "aboveInputTokens": 272000,
+        "inputPerMTok": 0.4,
+        "cachedInputPerMTok": 0.04,
+        "outputPerMTok": 1.8
+      },
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5.6-terra": {
+      "vendor": "openai",
+      "inputPerMTok": 2.0,
+      "cachedInputPerMTok": 0.2,
+      "outputPerMTok": 12.0,
+      "longContext": {
+        "aboveInputTokens": 272000,
+        "inputPerMTok": 4.0,
+        "cachedInputPerMTok": 0.4,
+        "outputPerMTok": 18.0
+      },
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5.5": {
+      "vendor": "openai",
+      "inputPerMTok": 5.0,
+      "cachedInputPerMTok": 0.5,
+      "outputPerMTok": 30.0,
+      "longContext": {
+        "aboveInputTokens": 272000,
+        "inputPerMTok": 10.0,
+        "cachedInputPerMTok": 1.0,
+        "outputPerMTok": 45.0
+      },
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5-mini": {
+      "vendor": "openai",
+      "inputPerMTok": 0.25,
+      "cachedInputPerMTok": 0.025,
+      "outputPerMTok": 2.0,
+      "source": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gemini-3.8-flash": {
+      "vendor": "gemini",
+      "inputPerMTok": 0.75,
+      "cachedInputPerMTok": 0.075,
+      "outputPerMTok": 3.75,
+      "note": "Published as '$0.75 through December 31, 2026. $1.50 starting January 1, 2027' (output $3.75 -> $7.50). The study runs before 2027, so the 2026 price applies.",
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "gemini-3.6-flash": {
+      "vendor": "gemini",
+      "inputPerMTok": 0.75,
+      "cachedInputPerMTok": 0.075,
+      "outputPerMTok": 3.75,
+      "note": "Same 2026 promotional price as gemini-3.8-flash; doubles on 2027-01-01.",
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "gemini-3.5-flash-lite": {
+      "vendor": "gemini",
+      "inputPerMTok": 0.3,
+      "cachedInputPerMTok": 0.03,
+      "outputPerMTok": 2.5,
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "gemini-3-flash-preview": {
+      "vendor": "gemini",
+      "inputPerMTok": 0.5,
+      "cachedInputPerMTok": 0.05,
+      "outputPerMTok": 3.0,
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "gemini-3.1-pro-preview": {
+      "vendor": "gemini",
+      "inputPerMTok": 2.0,
+      "cachedInputPerMTok": 0.2,
+      "outputPerMTok": 12.0,
+      "longContext": {
+        "aboveInputTokens": 200000,
+        "inputPerMTok": 4.0,
+        "cachedInputPerMTok": 0.4,
+        "outputPerMTok": 18.0
+      },
+      "source": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "kimi-k2.6": {
+      "vendor": "kimi",
+      "inputPerMTok": 0.95,
+      "cachedInputPerMTok": 0.16,
+      "outputPerMTok": 4.0,
+      "source": "https://platform.kimi.ai/docs/pricing/chat"
+    },
+    "claude-haiku-5-5": {
+      "vendor": "anthropic",
+      "inputPerMTok": 0.1,
+      "cachedInputPerMTok": 0.01,
+      "cacheWritePerMTok": 0.125,
+      "outputPerMTok": 0.5,
+      "longContext": {
+        "aboveInputTokens": 100000,
+        "inputPerMTok": 0.5,
+        "cachedInputPerMTok": 0.05,
+        "cacheWritePerMTok": 0.625,
+        "outputPerMTok": 2.5
+      },
+      "retrieved": "2026-10-15",
+      "note": "Study 3 (added 2026-10-15; Study 2 rows keep the top-level 2026-10-11 retrieval date). Published rows, verbatim: 'Claude Haiku 5.5 (for prompts up to 100,000 tokens) | $0.10 / MTok | $0.125 / MTok [5m cache writes] | $0.20 / MTok [1h cache writes] | $0.01 / MTok [cache hits] | $0.50 / MTok' and '(for prompts over 100,000 tokens) | $0.50 | $0.625 | $1 | $0.05 | $2.50'. 'A request's prompt length counts all of its input tokens, including cache reads and cache writes. Each request is priced on its own.' Global routing (no inference_geo), standard tier. Thinking tokens are output tokens. cacheWritePerMTok is the 5-minute rate; the harness requests no caching.",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "kimi-k3": {
+      "vendor": "kimi",
+      "inputPerMTok": 3.0,
+      "cachedInputPerMTok": 0.3,
+      "outputPerMTok": 15.0,
+      "source": "https://platform.kimi.ai/docs/pricing/chat"
+    },
+    "meta/muse-glimmer-30b": {
+      "vendor": "openrouter",
+      "inputPerMTok": 0.3,
+      "cachedInputPerMTok": 0.04,
+      "outputPerMTok": 1.2,
+      "retrieved": "2026-10-15",
+      "pinnedEndpoint": {
+        "provider": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16"
+      },
+      "listPricePerToken": {
+        "prompt": "0.0000003",
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000004"
+      },
+      "note": "Study 5 (added 2026-10-15): the pinned endpoint's price from OpenRouter's live /api/v1/models/{id}/endpoints, USD per token x 1e6. OpenRouter also returns usage.cost per call; the harness logs it and budgets on the larger of it and this computed cost.",
+      "source": "https://openrouter.ai/api/v1/models/meta/muse-glimmer-30b/endpoints"
+    },
+    "meta/muse-spark-1.3": {
+      "vendor": "openrouter",
+      "inputPerMTok": 1.25,
+      "cachedInputPerMTok": 0.15,
+      "outputPerMTok": 4.25,
+      "retrieved": "2026-10-15",
+      "pinnedEndpoint": {
+        "provider": "Meta",
+        "tag": "meta",
+        "quantization": "unknown"
+      },
+      "listPricePerToken": {
+        "prompt": "0.00000125",
+        "completion": "0.00000425",
+        "web_search": "0.0025",
+        "input_cache_read": "0.00000015"
+      },
+      "note": "Study 5 (added 2026-10-15): the pinned endpoint's price from OpenRouter's live /api/v1/models/{id}/endpoints, USD per token x 1e6. OpenRouter also returns usage.cost per call; the harness logs it and budgets on the larger of it and this computed cost.",
+      "source": "https://openrouter.ai/api/v1/models/meta/muse-spark-1.3/endpoints"
+    },
+    "claude-sonnet-5-5": {
+      "vendor": "anthropic",
+      "inputPerMTok": 2.0,
+      "cachedInputPerMTok": 0.1,
+      "cacheWritePerMTok": 2.5,
+      "outputPerMTok": 10.0,
+      "retrieved": "2026-10-26",
+      "note": "Study 8 Claude ladder (A42). Published row, verbatim: 'Claude Sonnet 5.5 | $2 / MTok | $2.50 / MTok | $4 / MTok | $0.10 / MTok | $10 / MTok' (base input, 5m cache writes, 1h cache writes, cache hits, output). No prompt-length tier (only Haiku 5.5 has one). Global routing, standard tier; thinking tokens are output tokens; the harness requests no caching.",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude-opus-5-5": {
+      "vendor": "anthropic",
+      "inputPerMTok": 4.0,
+      "cachedInputPerMTok": 0.2,
+      "cacheWritePerMTok": 5.0,
+      "outputPerMTok": 20.0,
+      "retrieved": "2026-10-26",
+      "note": "Study 8 Claude ladder (A42). Published row, verbatim: 'Claude Opus 5.5 | $4 / MTok | $5 / MTok | $8 / MTok | $0.20 / MTok | $20 / MTok' (base input, 5m cache writes, 1h cache writes, cache hits, output). No prompt-length tier (only Haiku 5.5 has one). Global routing, standard tier; thinking tokens are output tokens; the harness requests no caching.",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "claude-fable-5-1": {
+      "vendor": "anthropic",
+      "inputPerMTok": 10.0,
+      "cachedInputPerMTok": 0.25,
+      "cacheWritePerMTok": 12.5,
+      "outputPerMTok": 50.0,
+      "retrieved": "2026-10-26",
+      "note": "Study 8 Claude ladder (A42). Published row, verbatim: 'Claude Fable 5.1 | $10 / MTok | $12.50 / MTok | $20 / MTok | $0.25 / MTok | $50 / MTok' (base input, 5m cache writes, 1h cache writes, cache hits, output). No prompt-length tier (only Haiku 5.5 has one). Global routing, standard tier; thinking tokens are output tokens; the harness requests no caching.",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    }
+  },
+  "notFound": {
+    "gemini-3.5-flash": "Listed by the key's /v1beta/models but NOT on the published pricing page on 2026-10-11. Not runnable: no published price.",
+    "gemini-3.7-flash": "Listed by the key's /v1beta/models but NOT on the published pricing page on 2026-10-11. Not runnable: no published price."
+  }
+}

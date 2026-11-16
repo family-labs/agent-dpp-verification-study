@@ -1,0 +1,624 @@
+{
+  "_comment": "Study 7 stimuli (DRAFT study): stimulus/build-study7.ts from the Study 6 fixtures; Study 6 files are reused unchanged for site pages, DoC pages and the declaration.",
+  "builtAt": "2026-10-25T23:31:36.478Z",
+  "study6ManifestBuiltAt": "2026-10-22T15:13:30.177Z",
+  "checkerHost": "passportrecord.org",
+  "stimuli": {
+    "F0/lmt/store-G": {
+      "file": "study7/F0/lmt/store-G.html",
+      "sha256": "4569369af0e99d0b4458088a14f128bbe654e25d0aef8a8705dc0098dbbd066e",
+      "bytes": 9663,
+      "url": "https://oskvale.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/lmt/lookalike-F": {
+      "file": "study7/F0/lmt/lookalike-F.html",
+      "sha256": "29691f791f74e17b4aa7d14760fa4dd9858b77368eb0aaf0a3a1a631a028a9d3",
+      "bytes": 9735,
+      "url": "https://oskvale-store.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/lmt/passport": {
+      "file": "study7/F0/lmt/passport.html",
+      "sha256": "667ef56be1db3f9bbd1495162b940a5b2f6e8e2ed2a97e3990393ce33139e40b",
+      "bytes": 6292,
+      "url": "https://oskvale.com/01/09520606000019/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/industrial/store-G": {
+      "file": "study7/F0/industrial/store-G.html",
+      "sha256": "693d152c20395af494fc19213f0f9de7af4bec12e11bb96e0c1d2775ad9dbedd",
+      "bytes": 9950,
+      "url": "https://oskvale.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/industrial/lookalike-F": {
+      "file": "study7/F0/industrial/lookalike-F.html",
+      "sha256": "1e3ea5b0dc478fd3e40ef6ae2512d264f3aa12afb999e5b2f40ba62054932048",
+      "bytes": 10022,
+      "url": "https://oskvale-store.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/industrial/passport": {
+      "file": "study7/F0/industrial/passport.html",
+      "sha256": "43fb689b849b4a8df4ed9c1ddd51c03972cc1e609e0940a331f85487eb7da34e",
+      "bytes": 6323,
+      "url": "https://oskvale.com/01/09520606000026/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/stationary/store-G": {
+      "file": "study7/F0/stationary/store-G.html",
+      "sha256": "3c11316c4ee9206b5d834f53eaaba2465f76f0d37824d06e489a94f2a6e2e716",
+      "bytes": 9687,
+      "url": "https://oskvale.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/stationary/lookalike-F": {
+      "file": "study7/F0/stationary/lookalike-F.html",
+      "sha256": "3223f6113526e35568f28d3ba317a6f2da57ca4de658b6360e5ee82462207557",
+      "bytes": 9759,
+      "url": "https://oskvale-store.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F0/stationary/passport": {
+      "file": "study7/F0/stationary/passport.html",
+      "sha256": "d8820b629f98615f654b71055b27a0768281113f80fb33b8f1a956b045e5f272",
+      "bytes": 6278,
+      "url": "https://oskvale.com/01/09520606000033/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/lmt/store-G": {
+      "file": "study7/F1/lmt/store-G.html",
+      "sha256": "f029555b241c69d45510fe4d685d4f839759e5cf79071d7b1a860b1099696b50",
+      "bytes": 9980,
+      "url": "https://oskvale.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/lmt/lookalike-F": {
+      "file": "study7/F1/lmt/lookalike-F.html",
+      "sha256": "acc4c66a3702152c8b7f1e97b1c372165a864f9bdec02505fc075cf982de101d",
+      "bytes": 10052,
+      "url": "https://oskvale-store.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/lmt/passport": {
+      "file": "study7/F1/lmt/passport.html",
+      "sha256": "2fa931b8030ec911bcd49e53c8fd235f025dd17069207db2d4326c256ea5aadc",
+      "bytes": 6609,
+      "url": "https://oskvale.com/01/09520606000019/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/industrial/store-G": {
+      "file": "study7/F1/industrial/store-G.html",
+      "sha256": "f166cce12f773d8ddf526c8ebb0ed2a6ba8981994bc9db023fb39e0f76f506ea",
+      "bytes": 10267,
+      "url": "https://oskvale.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/industrial/lookalike-F": {
+      "file": "study7/F1/industrial/lookalike-F.html",
+      "sha256": "7db39763e8aad3a68c28a7e423018aa55cd9f092fd06b10570d06d90cc1e5ed2",
+      "bytes": 10339,
+      "url": "https://oskvale-store.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/industrial/passport": {
+      "file": "study7/F1/industrial/passport.html",
+      "sha256": "7da1ca09f8d53dfbecfdb56ec4476888603b715145378ef5130d84789d2ea44b",
+      "bytes": 6640,
+      "url": "https://oskvale.com/01/09520606000026/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/stationary/store-G": {
+      "file": "study7/F1/stationary/store-G.html",
+      "sha256": "64ca43d43eece73137f365c17153767cbe57a713f36dab55ba665ffa58132b77",
+      "bytes": 10004,
+      "url": "https://oskvale.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/stationary/lookalike-F": {
+      "file": "study7/F1/stationary/lookalike-F.html",
+      "sha256": "8cb1fc5b2f389369631159709372466b5bf9e2af667364de4e31b34d1c7b207c",
+      "bytes": 10076,
+      "url": "https://oskvale-store.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F1/stationary/passport": {
+      "file": "study7/F1/stationary/passport.html",
+      "sha256": "84b92a1c3337560b4d43c7a08601cdb272327c3d326232a0972ad1d85ea7354b",
+      "bytes": 6595,
+      "url": "https://oskvale.com/01/09520606000033/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/lmt/store-G": {
+      "file": "study7/F3/lmt/store-G.html",
+      "sha256": "48624d7a9147d04332c1467b1a31570473195c9473115d4feff27ea705ebe53e",
+      "bytes": 10728,
+      "url": "https://oskvale.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/lmt/lookalike-F": {
+      "file": "study7/F3/lmt/lookalike-F.html",
+      "sha256": "508f10bc8d59e4456b51db9c502f5443b70d682bd70d97216cf9f8b9a252555c",
+      "bytes": 10800,
+      "url": "https://oskvale-store.com/products/trailcell-500-e-bike-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/lmt/passport": {
+      "file": "study7/F3/lmt/passport.html",
+      "sha256": "79016dfd22871cc8b3b67c7e65ab60257c55c8fa5c4f353c6641c28c883e6f75",
+      "bytes": 7191,
+      "url": "https://oskvale.com/01/09520606000019/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/lmt/qr": {
+      "file": "study7/F3/lmt/qr.svg",
+      "sha256": "cba9752fc47dd8745c0f4a6e851995808409d6ac8ff1612689708debddaa9928",
+      "bytes": 5729,
+      "url": "https://oskvale.com/images/passport-qr-trailcell-500-e-bike-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/lmt/qr-copy": {
+      "file": "study7/F3/lmt/qr-copy.svg",
+      "sha256": "cba9752fc47dd8745c0f4a6e851995808409d6ac8ff1612689708debddaa9928",
+      "bytes": 5729,
+      "url": "https://oskvale-store.com/images/passport-qr-trailcell-500-e-bike-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/lmt/passport-jsonld": {
+      "file": "study7/F3/lmt/passport-jsonld.jsonld",
+      "sha256": "e6d7eec90c082519a2f91bcafa51dde4a1b0782e3c6d47e2185922f9f8d92092",
+      "bytes": 2538,
+      "url": "https://oskvale.com/01/09520606000019/21/000001.jsonld",
+      "contentType": "application/ld+json; charset=utf-8"
+    },
+    "F3/industrial/store-G": {
+      "file": "study7/F3/industrial/store-G.html",
+      "sha256": "29265c8837ea7c98bf7a5d459c40122d1d9366d0bd8ff3f1e0116d5cef5eb391",
+      "bytes": 11031,
+      "url": "https://oskvale.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/industrial/lookalike-F": {
+      "file": "study7/F3/industrial/lookalike-F.html",
+      "sha256": "e7a6b855cb6eb93ae8a58cec56e26b909a7c0f1d6927b77012ef61fcedcd2b05",
+      "bytes": 11103,
+      "url": "https://oskvale-store.com/products/basecamp-2500-portable-power-station",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/industrial/passport": {
+      "file": "study7/F3/industrial/passport.html",
+      "sha256": "a270c3d4a1684506e4be057e8c6304ce015643ed405ac73614a93967cb09c325",
+      "bytes": 7238,
+      "url": "https://oskvale.com/01/09520606000026/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/industrial/qr": {
+      "file": "study7/F3/industrial/qr.svg",
+      "sha256": "bacc225cd170284bcd44df8b079746967d0ac118d9f9890b7aac4440a5bcc900",
+      "bytes": 5976,
+      "url": "https://oskvale.com/images/passport-qr-basecamp-2500-portable-power-station.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/industrial/qr-copy": {
+      "file": "study7/F3/industrial/qr-copy.svg",
+      "sha256": "bacc225cd170284bcd44df8b079746967d0ac118d9f9890b7aac4440a5bcc900",
+      "bytes": 5976,
+      "url": "https://oskvale-store.com/images/passport-qr-basecamp-2500-portable-power-station.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/industrial/passport-jsonld": {
+      "file": "study7/F3/industrial/passport-jsonld.jsonld",
+      "sha256": "0b93f3c37fd847b18fae8a592286a68ad22b409514f70254b39a064f66d88a3f",
+      "bytes": 2541,
+      "url": "https://oskvale.com/01/09520606000026/21/000001.jsonld",
+      "contentType": "application/ld+json; charset=utf-8"
+    },
+    "F3/stationary/store-G": {
+      "file": "study7/F3/stationary/store-G.html",
+      "sha256": "1c0c8fa47d57871c5076ea3c6e78b8b9bbfde9f8e13e59bdd4f6fb3296bcb75a",
+      "bytes": 10742,
+      "url": "https://oskvale.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/stationary/lookalike-F": {
+      "file": "study7/F3/stationary/lookalike-F.html",
+      "sha256": "86ffe674a98f5eb15c8da6517b38bc4fe78c4c3bfd1c6a7f35e9dc0e8e3381b7",
+      "bytes": 10814,
+      "url": "https://oskvale-store.com/products/homecell-5-home-battery",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/stationary/passport": {
+      "file": "study7/F3/stationary/passport.html",
+      "sha256": "72d670da4e4d8a7e27ba9ee641ac4e085757cc8beaac9fe08b659e5c0a720974",
+      "bytes": 7167,
+      "url": "https://oskvale.com/01/09520606000033/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "F3/stationary/qr": {
+      "file": "study7/F3/stationary/qr.svg",
+      "sha256": "f964bd5ffa1ab0ea65d297e928fce6ecbe9551d9a34b64cbce5b973be17b4455",
+      "bytes": 5802,
+      "url": "https://oskvale.com/images/passport-qr-homecell-5-home-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/stationary/qr-copy": {
+      "file": "study7/F3/stationary/qr-copy.svg",
+      "sha256": "f964bd5ffa1ab0ea65d297e928fce6ecbe9551d9a34b64cbce5b973be17b4455",
+      "bytes": 5802,
+      "url": "https://oskvale-store.com/images/passport-qr-homecell-5-home-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "F3/stationary/passport-jsonld": {
+      "file": "study7/F3/stationary/passport-jsonld.jsonld",
+      "sha256": "639eeae9e3191255308a243a24a26710c6028205c9389f110bde2427cd162f21",
+      "bytes": 2541,
+      "url": "https://oskvale.com/01/09520606000033/21/000001.jsonld",
+      "contentType": "application/ld+json; charset=utf-8"
+    },
+    "F3/llms": {
+      "file": "study7/F3/llms.txt",
+      "sha256": "5d093904f124b601b190357eaebf6b0d93fd869aeabc157a554105bd32cab705",
+      "bytes": 1302,
+      "url": "https://oskvale.com/llms.txt",
+      "contentType": "text/plain; charset=utf-8"
+    },
+    "R/oskvale-none/lmt": {
+      "file": "study7/R/oskvale-none/lmt.html",
+      "sha256": "daf55bbef87f288b82fc3ce257abcf260310143fa3bcd6647dd006b454224ca5",
+      "bytes": 5023,
+      "url": "https://oskvale-store.com/products/88902",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-genuine/lmt": {
+      "file": "study7/R/oskvale-genuine/lmt.html",
+      "sha256": "30f58be2582967ba0139916e1ccc48fca41bf14d88a49058a5c69b3fadd21527",
+      "bytes": 10245,
+      "url": "https://oskvale-store.com/products/32109",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-none/lmt": {
+      "file": "study7/R/torvlund-none/lmt.html",
+      "sha256": "45f306c8921c006e171eee2c87b0c70bb48a4424cfaa0995b977626df24966ae",
+      "bytes": 5001,
+      "url": "https://oskvale-store.com/products/31532",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-fake/lmt": {
+      "file": "study7/R/torvlund-fake/lmt.html",
+      "sha256": "cde5493f31cf259888728d2c96fa9c81f3f41c58468943d63fe0388e99463727",
+      "bytes": 9743,
+      "url": "https://oskvale-store.com/products/88816",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-minimal/lmt": {
+      "file": "study7/R/oskvale-minimal/lmt.html",
+      "sha256": "41219970e4463b69370935f2a99f6be8581078cfedcd70d0a4acef185c45151d",
+      "bytes": 7916,
+      "url": "https://oskvale-store.com/products/32063",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-doc/lmt": {
+      "file": "study7/R/torvlund-doc/lmt.html",
+      "sha256": "6ef97cee2ced13a400251912fc1e5f71f0b775b8daf5fdd892437f5c43423e80",
+      "bytes": 2442,
+      "url": "https://oskvale-store.com/doc/DoC-RP500-2026-01",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport/lmt": {
+      "file": "study7/R/torvlund-passport/lmt.html",
+      "sha256": "94f2fd888cfad63057ae16fef5049847994e6256b5633935e95880db114202b6",
+      "bytes": 6445,
+      "url": "https://oskvale-store.com/01/09520606000040/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund/lmt": {
+      "file": "study7/R/qr-torvlund/lmt.svg",
+      "sha256": "ac36cc44e3a3a14e776f1a3f482acb9239368885f53018dfb767f04eeaa4298b",
+      "bytes": 7358,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-lmt.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/torvlund-fakeL/lmt": {
+      "file": "study7/R/torvlund-fakeL/lmt.html",
+      "sha256": "8c780532410a7091465e93ab7a20eda792ce6e61f104f83cd3d39c9e964db2ab",
+      "bytes": 9808,
+      "url": "https://oskvale-store.com/products/34931",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport-l/lmt": {
+      "file": "study7/R/torvlund-passport-l/lmt.html",
+      "sha256": "ea2fb62dc219a08f71916d80846a54c70ee708cd83f579d5ac7dcc6c218ef82a",
+      "bytes": 6510,
+      "url": "https://oskvale-store.com/passport/01/09520606000040/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-verify-l/lmt": {
+      "file": "study7/R/torvlund-verify-l/lmt.html",
+      "sha256": "6808a25604d98208de2899f46b6011227792e30d085c21aae5bdf9b85c51bd43",
+      "bytes": 2230,
+      "url": "https://oskvale-store.com/verify/01/09520606000040/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund-l/lmt": {
+      "file": "study7/R/qr-torvlund-l/lmt.svg",
+      "sha256": "13d348984e79f790f9e23b7f691d31317355aa244b4970f723d24fa3dd17305e",
+      "bytes": 7701,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-lmt-v.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/qr-oskvale/lmt": {
+      "file": "study7/R/qr-oskvale/lmt.svg",
+      "sha256": "cba9752fc47dd8745c0f4a6e851995808409d6ac8ff1612689708debddaa9928",
+      "bytes": 5729,
+      "url": "https://oskvale-store.com/images/passport-qr-trailcell-500-e-bike-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/lmt-1": {
+      "file": "study7/R/img-torvlund/lmt-1.svg",
+      "sha256": "f95e0317f86b5874ec72ffdb1922c8716e6bb75e2ac4686273916a0c686c9f42",
+      "bytes": 1710,
+      "url": "https://oskvale-store.com/images/torvlund-lmt-1.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/lmt-2": {
+      "file": "study7/R/img-torvlund/lmt-2.svg",
+      "sha256": "71f0e599c4ac9126ca3f1408e5bb68672d08e11c4e0d7b8bd479c4bfc8a6fddc",
+      "bytes": 1612,
+      "url": "https://oskvale-store.com/images/torvlund-lmt-2.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/lmt-3": {
+      "file": "study7/R/img-torvlund/lmt-3.svg",
+      "sha256": "69389051ba25d6dcee20e87af1a9af639c55c3981fd4bcc4b2bbd3f90fbbd88b",
+      "bytes": 1808,
+      "url": "https://oskvale-store.com/images/torvlund-lmt-3.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/oskvale-none/industrial": {
+      "file": "study7/R/oskvale-none/industrial.html",
+      "sha256": "6f932e36cc3e231f5e1eab392d1e54650f384df9de7ecbcf36c40e9e15919b65",
+      "bytes": 5295,
+      "url": "https://oskvale-store.com/products/95256",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-genuine/industrial": {
+      "file": "study7/R/oskvale-genuine/industrial.html",
+      "sha256": "b7d739d51ff3ac920294d9b5b462c7dda3ce459808ab42ead0aac03196e5e5da",
+      "bytes": 10540,
+      "url": "https://oskvale-store.com/products/17910",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-none/industrial": {
+      "file": "study7/R/torvlund-none/industrial.html",
+      "sha256": "6940d2f9f8edaf47b74c62f20bf163524c8f0fe63e3a855e0e1452b39b83c352",
+      "bytes": 5225,
+      "url": "https://oskvale-store.com/products/74945",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-fake/industrial": {
+      "file": "study7/R/torvlund-fake/industrial.html",
+      "sha256": "7b081a728221a5eb3ea340f4c9afd32c6602085e44e71ea8b162a5e51562e1e0",
+      "bytes": 10001,
+      "url": "https://oskvale-store.com/products/67284",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-minimal/industrial": {
+      "file": "study7/R/oskvale-minimal/industrial.html",
+      "sha256": "2d935adea4e2bac15c142ffa29665d46c50abae77badb81af3f74f4bae8e2f82",
+      "bytes": 8191,
+      "url": "https://oskvale-store.com/products/22069",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-doc/industrial": {
+      "file": "study7/R/torvlund-doc/industrial.html",
+      "sha256": "79ed5fe32964acab178a06634d01d14afd785c69f46edafccc3f67a26cb43869",
+      "bytes": 2490,
+      "url": "https://oskvale-store.com/doc/DoC-FS2500-2026-01",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport/industrial": {
+      "file": "study7/R/torvlund-passport/industrial.html",
+      "sha256": "62624bfe3335539f5f470579c8c8ce44beadcda9d1fb2691edc38cdd02f50865",
+      "bytes": 6503,
+      "url": "https://oskvale-store.com/01/09520606000057/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund/industrial": {
+      "file": "study7/R/qr-torvlund/industrial.svg",
+      "sha256": "fe725cb8f337b63ba41af69cc06354e168f54cedf4c527f9c6238ca82aa4c4d5",
+      "bytes": 7413,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-industrial.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/torvlund-fakeL/industrial": {
+      "file": "study7/R/torvlund-fakeL/industrial.html",
+      "sha256": "a34f20e2cdb2648873020fcdc63c2b48834afbecda80002d21a06a13920af0e6",
+      "bytes": 10066,
+      "url": "https://oskvale-store.com/products/79653",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport-l/industrial": {
+      "file": "study7/R/torvlund-passport-l/industrial.html",
+      "sha256": "b97bbaddba2f8f60334b55b898b9b4b8137900d74f00474a6e5c698c4b4acb99",
+      "bytes": 6568,
+      "url": "https://oskvale-store.com/passport/01/09520606000057/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-verify-l/industrial": {
+      "file": "study7/R/torvlund-verify-l/industrial.html",
+      "sha256": "b871b1b0425af8e82fb8dd46b8484ebe9cce80e98e5df8f1f713e7ff38703298",
+      "bytes": 2266,
+      "url": "https://oskvale-store.com/verify/01/09520606000057/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund-l/industrial": {
+      "file": "study7/R/qr-torvlund-l/industrial.svg",
+      "sha256": "e36d73e2c3a472155809b16e2075e41e159bb959cce17c83fd30852ce5e2f540",
+      "bytes": 7845,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-industrial-v.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/qr-oskvale/industrial": {
+      "file": "study7/R/qr-oskvale/industrial.svg",
+      "sha256": "bacc225cd170284bcd44df8b079746967d0ac118d9f9890b7aac4440a5bcc900",
+      "bytes": 5976,
+      "url": "https://oskvale-store.com/images/passport-qr-basecamp-2500-portable-power-station.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/industrial-1": {
+      "file": "study7/R/img-torvlund/industrial-1.svg",
+      "sha256": "2c9a734504fdf17580083a81adce5259d82f717c9426d1dfecbce02b70bf759f",
+      "bytes": 2133,
+      "url": "https://oskvale-store.com/images/torvlund-industrial-1.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/industrial-2": {
+      "file": "study7/R/img-torvlund/industrial-2.svg",
+      "sha256": "0485cdb1b9551a1274581510ddbcf856ac3c6dbf4992cb0c7019660233ea2769",
+      "bytes": 2144,
+      "url": "https://oskvale-store.com/images/torvlund-industrial-2.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/industrial-3": {
+      "file": "study7/R/img-torvlund/industrial-3.svg",
+      "sha256": "3ec01c314d34003fd1884d08c348a7a3863d80c9725d591c79a52616f3154002",
+      "bytes": 1897,
+      "url": "https://oskvale-store.com/images/torvlund-industrial-3.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/oskvale-none/stationary": {
+      "file": "study7/R/oskvale-none/stationary.html",
+      "sha256": "e6d58f48e64ec996df1665d5f1f390a3c146f9dcdb0511942e277b741bd50c02",
+      "bytes": 5047,
+      "url": "https://oskvale-store.com/products/32656",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-genuine/stationary": {
+      "file": "study7/R/oskvale-genuine/stationary.html",
+      "sha256": "42ebb4d8a28af49f1f0bcef370132ce1ce667c8ccbac8e5c6518c890308e9b7c",
+      "bytes": 10263,
+      "url": "https://oskvale-store.com/products/90681",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-none/stationary": {
+      "file": "study7/R/torvlund-none/stationary.html",
+      "sha256": "9078a311ede945bef1a83dfc966dccfa81056aae4041fd09b6402b6f914b8f5a",
+      "bytes": 5034,
+      "url": "https://oskvale-store.com/products/20221",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-fake/stationary": {
+      "file": "study7/R/torvlund-fake/stationary.html",
+      "sha256": "cc5d9c4a30492347e868cf7c920da7d24a91964c82739184113e1a1a5f42eae2",
+      "bytes": 9785,
+      "url": "https://oskvale-store.com/products/78979",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/oskvale-minimal/stationary": {
+      "file": "study7/R/oskvale-minimal/stationary.html",
+      "sha256": "dd3eefdd1395f4cc1d163e96f123ba94d895ad42857cfa37e62a36665dbd34ed",
+      "bytes": 7943,
+      "url": "https://oskvale-store.com/products/75809",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-doc/stationary": {
+      "file": "study7/R/torvlund-doc/stationary.html",
+      "sha256": "c40d14e466e4cc66f7b012940d4653cf416ed9e09fe662c0ffd88b9239843935",
+      "bytes": 2449,
+      "url": "https://oskvale-store.com/doc/DoC-WS5-2026-01",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport/stationary": {
+      "file": "study7/R/torvlund-passport/stationary.html",
+      "sha256": "e609c727f8a2fd67b291c060ff5d3adf94c6a0b0b72e1d2b9c8e73de9ab1a951",
+      "bytes": 6446,
+      "url": "https://oskvale-store.com/01/09520606000064/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund/stationary": {
+      "file": "study7/R/qr-torvlund/stationary.svg",
+      "sha256": "f0e8445e8780c335c3e011e0ee30c33128dee4cd9c3100234350173f0db37314",
+      "bytes": 7861,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-stationary.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/torvlund-fakeL/stationary": {
+      "file": "study7/R/torvlund-fakeL/stationary.html",
+      "sha256": "69ea232adf0374c27e8339dc1c58a2923bcd57fff563c675cb721b62722db30c",
+      "bytes": 9850,
+      "url": "https://oskvale-store.com/products/74981",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-passport-l/stationary": {
+      "file": "study7/R/torvlund-passport-l/stationary.html",
+      "sha256": "130946afc9e405a4e261401d3fcacae7134d3457836d5fca0b04d5f006e04d8f",
+      "bytes": 6511,
+      "url": "https://oskvale-store.com/passport/01/09520606000064/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/torvlund-verify-l/stationary": {
+      "file": "study7/R/torvlund-verify-l/stationary.html",
+      "sha256": "f49a8f670a3a63a78f68239e4924072ca8d2fb093e2efbdbd4d44f2daa2fb0ab",
+      "bytes": 2218,
+      "url": "https://oskvale-store.com/verify/01/09520606000064/21/000001",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/qr-torvlund-l/stationary": {
+      "file": "study7/R/qr-torvlund-l/stationary.svg",
+      "sha256": "18959414da570eeecc7f7d85516cef9b646bd8cd5882a0d66f525c22fbfbcf2b",
+      "bytes": 7477,
+      "url": "https://oskvale-store.com/images/passport-qr-torvlund-stationary-v.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/qr-oskvale/stationary": {
+      "file": "study7/R/qr-oskvale/stationary.svg",
+      "sha256": "f964bd5ffa1ab0ea65d297e928fce6ecbe9551d9a34b64cbce5b973be17b4455",
+      "bytes": 5802,
+      "url": "https://oskvale-store.com/images/passport-qr-homecell-5-home-battery.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/stationary-1": {
+      "file": "study7/R/img-torvlund/stationary-1.svg",
+      "sha256": "a78584e9604bf2c4c9f57a6a035974924b2691c8a78689c1e14e5602037e6299",
+      "bytes": 1618,
+      "url": "https://oskvale-store.com/images/torvlund-stationary-1.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/stationary-2": {
+      "file": "study7/R/img-torvlund/stationary-2.svg",
+      "sha256": "50b72c3745a9327f56c2d7b6444db2aa0e597001921472b06a86b70edd89ef43",
+      "bytes": 1645,
+      "url": "https://oskvale-store.com/images/torvlund-stationary-2.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/img-torvlund/stationary-3": {
+      "file": "study7/R/img-torvlund/stationary-3.svg",
+      "sha256": "90667547d4d18c882d47a34cc179e98a312ae225d0b10b2fed606304af20bc7b",
+      "bytes": 2045,
+      "url": "https://oskvale-store.com/images/torvlund-stationary-3.svg",
+      "contentType": "image/svg+xml"
+    },
+    "R/site/home": {
+      "file": "study7/R/site/home.html",
+      "sha256": "a0f094c22ff4128b57f5fead929a20cf05dcb160857335bf48b466887c36cf3b",
+      "bytes": 2080,
+      "url": "https://oskvale-store.com/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/site/returns": {
+      "file": "study7/R/site/returns.html",
+      "sha256": "8004af5d6db8e7b5c69005e76b8e402f06942bce18a64889cca3ce3613f6828d",
+      "bytes": 1983,
+      "url": "https://oskvale-store.com/returns",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "R/site/contact": {
+      "file": "study7/R/site/contact.html",
+      "sha256": "7bdcc9980e310f63dcc5e76f1d41807de37e4ed26e7924a6146b4ddbe77e9773",
+      "bytes": 1785,
+      "url": "https://oskvale-store.com/contact",
+      "contentType": "text/html; charset=utf-8"
+    }
+  }
+}

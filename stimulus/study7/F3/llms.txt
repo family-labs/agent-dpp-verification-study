@@ -1,0 +1,19 @@
+# Oskvale
+
+> Oskvale designs lithium batteries in Copenhagen and assembles them in Odense, Denmark: e-bike packs, portable power stations and home storage. The shop is https://oskvale.com.
+
+## Battery passports
+
+Every Oskvale battery carries an EU battery passport under Regulation (EU) 2023/1542 (EU Battery Regulation).
+
+- Issuer declaration (website, ledger account and product collections): https://oskvale.com/.well-known/product-passports.json
+- Oskvale Trailcell 500 e-bike battery: passport https://oskvale.com/01/09520606000019/21/000001, independent record https://passportrecord.org/01/09520606000019/21/000001
+- Oskvale Basecamp 2500 portable power station: passport https://oskvale.com/01/09520606000026/21/000001, independent record https://passportrecord.org/01/09520606000026/21/000001
+- Oskvale Homecell 5 home battery: passport https://oskvale.com/01/09520606000033/21/000001, independent record https://passportrecord.org/01/09520606000033/21/000001
+
+## Shop
+
+- https://oskvale.com/
+- Oskvale Trailcell 500 e-bike battery: https://oskvale.com/products/trailcell-500-e-bike-battery
+- Oskvale Basecamp 2500 portable power station: https://oskvale.com/products/basecamp-2500-portable-power-station
+- Oskvale Homecell 5 home battery: https://oskvale.com/products/homecell-5-home-battery

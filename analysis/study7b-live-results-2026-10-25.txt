@@ -1,0 +1,56 @@
+======== Study 7 format test data quality ========
+usable 90; excluded {}
+
+======== PRIMARY: pooled three vendors ========
+POOLED-3   C0  Oskvale recommended   4/18    22% [0.09,0.45]  neither 14/18   record opened   0/18     0% [0.00,0.18] passport page opened   0/18     0% [0.00,0.18] reasons cite passport   0/18     0% [0.00,0.18]
+POOLED-3   CF  Oskvale recommended  14/18    78% [0.55,0.91]  neither 3/18   record opened   0/18     0% [0.00,0.18] passport page opened   0/18     0% [0.00,0.18] reasons cite passport  13/18    72% [0.49,0.88]
+POOLED-3   CM  Oskvale recommended  14/18    78% [0.55,0.91]  neither 4/18   record opened   1/18     6% [0.01,0.26] passport page opened   1/18     6% [0.01,0.26] reasons cite passport  12/18    67% [0.44,0.84]
+POOLED-3   effect CF - C0: +0.556 [+0.230,+0.743]
+POOLED-3   effect CM - C0: +0.556 [+0.230,+0.743]
+POOLED-3   effect CM - CF: +0.000 [-0.265,+0.265]
+success rule (CM effect >= 0.20, lower bound > 0): MET
+
+======== order: share recommending the FIRST link, pooled three ========
+  C0: first link   2/4     50% [0.15,0.85] of answers naming a product
+  CF: first link   7/15    47% [0.25,0.70] of answers naming a product
+  CM: first link   5/14    36% [0.16,0.61] of answers naming a product
+
+======== SEPARATE: Meta (OpenRouter fetch) ========
+META-2     C0  Oskvale recommended   4/12    33% [0.14,0.61]  neither 8/12   record opened   0/12     0% [0.00,0.24] passport page opened   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+META-2     CF  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened   6/12    50% [0.25,0.75] passport page opened   6/12    50% [0.25,0.75] reasons cite passport  12/12   100% [0.76,1.00]
+META-2     CM  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened   6/12    50% [0.25,0.75] passport page opened   6/12    50% [0.25,0.75] reasons cite passport  12/12   100% [0.76,1.00]
+META-2     effect CF - C0: +0.667 [+0.299,+0.862]
+META-2     effect CM - C0: +0.667 [+0.299,+0.862]
+META-2     effect CM - CF: +0.000 [-0.242,+0.242]
+
+======== per model ========
+anthropic  C0  Oskvale recommended   2/6     33% [0.10,0.70]  neither 4/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   0/6      0% [0.00,0.39]
+anthropic  CF  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   6/6    100% [0.61,1.00]
+anthropic  CM  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   1/6     17% [0.03,0.56] passport page opened   1/6     17% [0.03,0.56] reasons cite passport   6/6    100% [0.61,1.00]
+anthropic  effect CF - C0: +0.667 [+0.131,+0.903]
+anthropic  effect CM - C0: +0.667 [+0.131,+0.903]
+anthropic  effect CM - CF: +0.000 [-0.390,+0.390]
+glimmer    C0  Oskvale recommended   1/6     17% [0.03,0.56]  neither 5/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   0/6      0% [0.00,0.39]
+glimmer    CF  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   6/6    100% [0.61,1.00]
+glimmer    CM  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   6/6    100% [0.61,1.00]
+glimmer    effect CF - C0: +0.833 [+0.277,+0.970]
+glimmer    effect CM - C0: +0.833 [+0.277,+0.970]
+glimmer    effect CM - CF: +0.000 [-0.390,+0.390]
+kimi       C0  Oskvale recommended   2/6     33% [0.10,0.70]  neither 4/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   0/6      0% [0.00,0.39]
+kimi       CF  Oskvale recommended   5/6     83% [0.44,0.97]  neither 1/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   4/6     67% [0.30,0.90]
+kimi       CM  Oskvale recommended   5/6     83% [0.44,0.97]  neither 1/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   3/6     50% [0.19,0.81]
+kimi       effect CF - C0: +0.500 [-0.040,+0.773]
+kimi       effect CM - C0: +0.500 [-0.040,+0.773]
+kimi       effect CM - CF: +0.000 [-0.420,+0.420]
+openai     C0  Oskvale recommended   0/6      0% [0.00,0.39]  neither 6/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   0/6      0% [0.00,0.39]
+openai     CF  Oskvale recommended   3/6     50% [0.19,0.81]  neither 2/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   3/6     50% [0.19,0.81]
+openai     CM  Oskvale recommended   3/6     50% [0.19,0.81]  neither 3/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   3/6     50% [0.19,0.81]
+openai     effect CF - C0: +0.500 [+0.000,+0.812]
+openai     effect CM - C0: +0.500 [+0.000,+0.812]
+openai     effect CM - CF: +0.000 [-0.442,+0.442]
+spark      C0  Oskvale recommended   3/6     50% [0.19,0.81]  neither 3/6   record opened   0/6      0% [0.00,0.39] passport page opened   0/6      0% [0.00,0.39] reasons cite passport   0/6      0% [0.00,0.39]
+spark      CF  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   6/6    100% [0.61,1.00] passport page opened   6/6    100% [0.61,1.00] reasons cite passport   6/6    100% [0.61,1.00]
+spark      CM  Oskvale recommended   6/6    100% [0.61,1.00]  neither 0/6   record opened   6/6    100% [0.61,1.00] passport page opened   6/6    100% [0.61,1.00] reasons cite passport   6/6    100% [0.61,1.00]
+spark      effect CF - C0: +0.500 [+0.000,+0.812]
+spark      effect CM - C0: +0.500 [+0.000,+0.812]
+spark      effect CM - CF: +0.000 [-0.390,+0.390]

@@ -1,0 +1,9 @@
+node_modules/
+harness/results/*.jsonl
+.env
+*.log
+__pycache__/
+.venv/
+harness/results/*.json
+harness/results/*.json.tmp
+harness/results/*.raw/

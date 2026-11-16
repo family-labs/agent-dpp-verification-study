@@ -1,0 +1,49 @@
+======== Study 7 (recommendation) data quality ========
+usable 180; excluded {}
+
+======== PRIMARY: pooled three vendors ========
+POOLED-3   C0  Oskvale recommended  14/36    39% [0.25,0.55]  neither 22/36   record opened: Oskvale   0/36     0% [0.00,0.10] Torvlund   0/36     0% [0.00,0.10] reasons cite passport   0/36     0% [0.00,0.10]
+POOLED-3   C1  Oskvale recommended  29/36    81% [0.65,0.90]  neither 7/36   record opened: Oskvale   0/36     0% [0.00,0.10] Torvlund   0/36     0% [0.00,0.10] reasons cite passport  29/36    81% [0.65,0.90]
+POOLED-3   C2  Oskvale recommended  14/36    39% [0.25,0.55]  neither 15/36   record opened: Oskvale   0/36     0% [0.00,0.10] Torvlund   0/36     0% [0.00,0.10] reasons cite passport  24/36    67% [0.50,0.80]
+POOLED-3   effect C1 - C0: +0.417 [+0.192,+0.588]
+POOLED-3   effect C2 - C0: +0.000 [-0.215,+0.215]
+success rule (H1 effect >= 0.20, lower bound > 0): MET
+
+======== order: share recommending the FIRST link, pooled three ========
+  C0: first link   6/36    17% [0.08,0.32]
+  C1: first link  12/36    33% [0.20,0.50]
+  C2: first link  12/36    33% [0.20,0.50]
+
+======== SEPARATE: Meta (OpenRouter fetch) ========
+META-2     C0  Oskvale recommended   7/24    29% [0.15,0.49]  neither 17/24   record opened: Oskvale   0/24     0% [0.00,0.14] Torvlund   0/24     0% [0.00,0.14] reasons cite passport   0/24     0% [0.00,0.14]
+META-2     C1  Oskvale recommended  24/24   100% [0.86,1.00]  neither 0/24   record opened: Oskvale  12/24    50% [0.31,0.69] Torvlund   0/24     0% [0.00,0.14] reasons cite passport  24/24   100% [0.86,1.00]
+META-2     C2  Oskvale recommended  18/24    75% [0.55,0.88]  neither 6/24   record opened: Oskvale  12/24    50% [0.31,0.69] Torvlund  12/24    50% [0.31,0.69] reasons cite passport  24/24   100% [0.86,1.00]
+META-2     effect C1 - C0: +0.708 [+0.465,+0.851]
+META-2     effect C2 - C0: +0.458 [+0.176,+0.651]
+
+======== per model ========
+anthropic  C0  Oskvale recommended   7/12    58% [0.32,0.81]  neither 5/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+anthropic  C1  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport  12/12   100% [0.76,1.00]
+anthropic  C2  Oskvale recommended   2/12    17% [0.05,0.45]  neither 4/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   8/12    67% [0.39,0.86]
+anthropic  effect C1 - C0: +0.417 [+0.087,+0.680]
+anthropic  effect C2 - C0: -0.417 [-0.670,-0.031]
+glimmer    C0  Oskvale recommended   2/12    17% [0.05,0.45]  neither 10/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+glimmer    C1  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport  12/12   100% [0.76,1.00]
+glimmer    C2  Oskvale recommended   6/12    50% [0.25,0.75]  neither 6/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport  12/12   100% [0.76,1.00]
+glimmer    effect C1 - C0: +0.833 [+0.462,+0.953]
+glimmer    effect C2 - C0: +0.333 [-0.041,+0.607]
+kimi       C0  Oskvale recommended   7/12    58% [0.32,0.81]  neither 5/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+kimi       C1  Oskvale recommended   9/12    75% [0.47,0.91]  neither 3/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   8/12    67% [0.39,0.86]
+kimi       C2  Oskvale recommended   7/12    58% [0.32,0.81]  neither 5/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   5/12    42% [0.19,0.68]
+kimi       effect C1 - C0: +0.167 [-0.193,+0.476]
+kimi       effect C2 - C0: +0.000 [-0.346,+0.346]
+openai     C0  Oskvale recommended   0/12     0% [0.00,0.24]  neither 12/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+openai     C1  Oskvale recommended   8/12    67% [0.39,0.86]  neither 4/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   9/12    75% [0.47,0.91]
+openai     C2  Oskvale recommended   5/12    42% [0.19,0.68]  neither 6/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport  11/12    92% [0.65,0.99]
+openai     effect C1 - C0: +0.667 [+0.299,+0.862]
+openai     effect C2 - C0: +0.417 [+0.087,+0.680]
+spark      C0  Oskvale recommended   5/12    42% [0.19,0.68]  neither 7/12   record opened: Oskvale   0/12     0% [0.00,0.24] Torvlund   0/12     0% [0.00,0.24] reasons cite passport   0/12     0% [0.00,0.24]
+spark      C1  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened: Oskvale  12/12   100% [0.76,1.00] Torvlund   0/12     0% [0.00,0.24] reasons cite passport  12/12   100% [0.76,1.00]
+spark      C2  Oskvale recommended  12/12   100% [0.76,1.00]  neither 0/12   record opened: Oskvale  12/12   100% [0.76,1.00] Torvlund  12/12   100% [0.76,1.00] reasons cite passport  12/12   100% [0.76,1.00]
+spark      effect C1 - C0: +0.583 [+0.225,+0.807]
+spark      effect C2 - C0: +0.583 [+0.225,+0.807]

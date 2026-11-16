@@ -1,0 +1,38 @@
+$ bun run src/preflight-study5-rehearsal.ts   (2026-10-15T13-13Z, after the design fixes)
+Neutralise (design fix 2): what each copy changes against its source
+  H: ["$.links.verificationUrl","$.passportCheck.evidence.recheck_url"]
+  G: ["$.links.verificationUrl","$.passportCheck.evidence.recheck_url"]
+  H: links to /verify []; recheck_url null  ok
+  L: links to /verify []; recheck_url null  ok
+  G: links to /verify []; recheck_url null  ok
+  F: links to /verify []; recheck_url null  ok
+
+V1 (genuine evidence + provenance, on the copies): PASS
+    H record_data_url https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e/logs -> 200; DataChanged values ["0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"]
+    H profile_data_url https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04b816af69b6497829938e3204e85046f85f5589 -> 200; hash 0x04b816af69b6497829938e3204e85046f85f5589
+    H record_page_url -> 200 text/html; charset=utf-8; holds the fingerprint in plain HTML: false
+    G record_data_url https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x0b0e4f49ed3b719ac255ccec099f2d3b5ebaf3275d6be46f2941dc07366eb30e/logs -> 200; DataChanged values ["0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44"]
+    G profile_data_url https://explorer.execution.testnet.lukso.network/api/v2/addresses/0x04b816af69b6497829938e3204e85046f85f5589 -> 200; hash 0x04b816af69b6497829938e3204e85046f85f5589
+    G record_page_url -> 200 text/html; charset=utf-8; holds the fingerprint in plain HTML: false
+    G collection_data_url -> 200; address 0xcec4247d4e7de11023c8c55e2a773876de0c80ae; name "Tarnvale 5000 Portable Power Station (TV5K-6271)"
+    G deployment_record_url -> 200; names the collection: true; names deployment_tx: true
+    G token_data_url -> 200; id 6b89c485dbc2d0780e76c0e7147059eaec663cf87bc3ddd07ffa944be26a8c0b; owner 0x04b816af69b6497829938e3204e85046f85f5589
+    G collection 0xcec4247d4e7de11023c8c55e2a773876de0c80ae ownership on the explorer: 0x0000000000000000000000000000000000000000->0x11d51e1253f3962eddf09a3d3dc6c29e533e0fde, 0x11d51e1253f3962eddf09a3d3dc6c29e533e0fde->0x04b816af69b6497829938e3204e85046f85f5589
+
+V2 (L): PASS
+    H vs L differing leaves: ["$.passportCheck.evidence.recorded_fingerprint"]
+    H 0xa7e824d12f0c6174d708daf9bd20eee5839d327b1bfbe4ba613bf5ba604d1a44  ->  L 0x8b18f528f7b4ada54acd558148d404852093b52679f3f5044998a27fbec1f25b; the public record holds L: false, holds H: true
+
+V3 (F): PASS
+    G vs F differing leaves: ["$.passportCheck.evidence.provenance.collection","$.passportCheck.evidence.provenance.deployment_tx","$.passportCheck.evidence.provenance.deployment_record_url","$.passportCheck.evidence.provenance.collection_data_url","$.passportCheck.evidence.provenance.token_data_url"]
+      collection: "0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae"  ->  "0x750DC5Ba0a639f5340Bf23Bb5Cd16119A8e50B79"
+      deployment_tx: "0x47237bf24779091f422a61c2a5d0fdab4f2df815ee6a1ac5ad3c8115f0c54340"  ->  "0xb2cd3ce511b80eb3ed0c5037ad8a8e2f0a135927f6f708bf6d5f4168bca5ef77"
+      deployment_record_url: "https://explorer.execution.testnet.lukso.network/api/v2/transactions/0x47237bf24779091f422a61c2a5d0fdab4f2df815ee6a1ac5ad3c8115f0c54340/logs"  ->  "https://explorer.execution.testnet.lukso.network/api/v2/transactions/0xb2cd3ce511b80eb3ed0c5037ad8a8e2f0a135927f6f708bf6d5f4168bca5ef77/logs"
+      collection_data_url: "https://explorer.execution.testnet.lukso.network/api/v2/tokens/0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae"  ->  "https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x750DC5Ba0a639f5340Bf23Bb5Cd16119A8e50B79"
+      token_data_url: "https://explorer.execution.testnet.lukso.network/api/v2/tokens/0xCEC4247d4e7dE11023c8c55e2A773876De0c80ae/instances/6b89c485dbc2d0780e76c0e7147059eaec663cf87bc3ddd07ffa944be26a8c0b"  ->  "https://explorer.execution.testnet.lukso.network/api/v2/tokens/0x750DC5Ba0a639f5340Bf23Bb5Cd16119A8e50B79/instances/6b89c485dbc2d0780e76c0e7147059eaec663cf87bc3ddd07ffa944be26a8c0b"
+    F collection ownership on the explorer: 0x0000000000000000000000000000000000000000->0x23f2ec2e80f08417e27f4dfc3184eaf09f9d37e2, 0x23f2ec2e80f08417e27f4dfc3184eaf09f9d37e2->0xb92fa7bbda0f316606bf5ca68db4589209f4796f
+    F collection_data_url -> 404 {"message":"Not found"}
+    F token_data_url -> 404 {"message":"Not found"}
+    F collection made by the claimed factory 0x11d51E1253f3962eDDf09A3D3dc6c29E533E0FDE: false
+    F deployment_record_url -> 200; created_contract -; to null
+exit=0

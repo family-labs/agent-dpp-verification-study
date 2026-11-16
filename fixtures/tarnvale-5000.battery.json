@@ -1,0 +1,316 @@
+{
+  "_comment": "Study 2 fixture data (A30). One synthetic LiFePO4 industrial battery, served identically by all three fixture products. Category: Industrial battery (c0000000-0000-4000-8000-000000000204, parent Battery). Every name here is fictional; no real organisation, notified body, test laboratory, recycler, supplier, mine or collection scheme is named. Real standards and EU acts are cited only as the documents applied. Sections, keys and shapes follow the live testnet registry (GET /api/passport/sections/resolve?entityType=product&categoryPath=battery/industrial and GET /api/schemas, read 2026-10-12). Per-unit values are written by create-fixtures.ts from perUnit; nothing in this file differs between products.",
+  "categoryId": "c0000000-0000-4000-8000-000000000204",
+  "product": {
+    "title": "Tarnvale 5000 Portable Power Station",
+    "description": "Portable 5.12 kWh LiFePO4 power station for home backup and off-grid use. 5000 W continuous output, 10-year warranty, EU Battery Regulation compliant."
+  },
+  "perUnit": {
+    "batteryIdentification.identifyingElement": "Lot <sku>-2603"
+  },
+  "sections": {
+    "batteryIdentification": {
+      "title": "Battery information",
+      "data": {
+        "manufacturer": {
+          "name": "Family Labs Energy Systems GmbH",
+          "postalAddress": {
+            "streetAddress": "Turmstrasse 30",
+            "postalCode": "10551",
+            "locality": "Berlin",
+            "country": "DE"
+          },
+          "singleContactPoint": "Product compliance desk, Family Labs Energy Systems GmbH, Turmstrasse 30, 10551 Berlin, Germany",
+          "webAddress": "https://support.familylabs.xyz/tv5k"
+        },
+        "batteryCategory": "industrial",
+        "modelIdentification": "TV5K-2026",
+        "manufacturingPlace": "Brandenburg an der Havel, Germany (FLE Werk 2)",
+        "manufacturingDate": "2026-03",
+        "weight": 48.2,
+        "capacity": 5.12
+      }
+    },
+    "materialComposition": {
+      "title": "Material composition",
+      "data": {
+        "chemistry": "Lithium iron phosphate (LiFePO4)",
+        "hazardousSubstances": [
+          "Lithium hexafluorophosphate (LiPF6)",
+          "Dimethyl carbonate",
+          "Ethyl methyl carbonate"
+        ],
+        "usableExtinguishingAgent": [
+          "Water in large quantities",
+          "Aqueous vermiculite dispersion"
+        ],
+        "criticalRawMaterialsAboveThreshold": [
+          "Lithium",
+          "Natural graphite",
+          "Phosphorus",
+          "Aluminium",
+          "Copper"
+        ]
+      }
+    },
+    "performanceAndDurability": {
+      "title": "Performance & Durability",
+      "data": {
+        "voltage": {
+          "minimal": 40,
+          "nominal": 51.2,
+          "maximum": 58.4,
+          "temperatureRange": { "minimum": -10, "maximum": 45, "unit": "°C" }
+        },
+        "power": {
+          "originalCapability": 5000,
+          "limits": {
+            "maximumContinuousDischargePower": { "value": 5000, "unit": "W" },
+            "maximumPeakDischargePower": { "value": 7500, "unit": "W", "duration": "10 s" },
+            "maximumChargePower": { "value": 2560, "unit": "W" }
+          },
+          "temperatureRange": { "minimum": -10, "maximum": 45, "unit": "°C" }
+        },
+        "expectedLifetime": {
+          "cycles": 4000,
+          "referenceTest": "EN IEC 62620 cycle endurance test, 0.5C charge and discharge at 25 °C, end of life at 70 % of rated capacity"
+        },
+        "cRateOfCycleLifeTest": 0.5,
+        "idleTemperature": {
+          "range": { "minimum": -20, "maximum": 45, "unit": "°C" },
+          "referenceTest": "Manufacturer storage test TS-TV5K-07: 30 days at each limit, 50 % state of charge"
+        },
+        "commercialWarrantyPeriod": "10 years",
+        "roundTripEfficiency": {
+          "initial": 95,
+          "atFiftyPercentCycleLife": 93
+        },
+        "internalResistance": {
+          "cell": 0.00025,
+          "pack": 0.008
+        }
+      }
+    },
+    "batteryCircularity": {
+      "title": "Circularity",
+      "data": {
+        "renewableContentShare": 4
+      }
+    },
+    "conformity": {
+      "title": "Conformity",
+      "data": {
+        "declarationOfConformity": {
+          "identificationNumber": "DoC-TV5K-2026-01",
+          "batteryModel": {
+            "product": "Tarnvale 5000 Portable Power Station, model TV5K-2026",
+            "category": "Industrial battery",
+            "batchOrSerialNumber": "All production lots from 2026-03"
+          },
+          "manufacturer": {
+            "name": "Family Labs Energy Systems GmbH",
+            "address": "Turmstrasse 30, 10551 Berlin, Germany"
+          },
+          "soleResponsibilityStatement": "This declaration of conformity is issued under the sole responsibility of the manufacturer.",
+          "objectOfDeclaration": [
+            {
+              "value": "Tarnvale 5000 Portable Power Station, model TV5K-2026: rechargeable lithium iron phosphate industrial battery, 5.12 kWh, 51.2 V nominal, with integrated inverter and charger.",
+              "language": "en"
+            }
+          ],
+          "unionHarmonisationLegislation": [
+            "Regulation (EU) 2023/1542 (OJ L 191, 28.7.2023, p. 1)",
+            "Directive 2014/35/EU (OJ L 96, 29.3.2014, p. 357)",
+            "Directive 2014/30/EU (OJ L 96, 29.3.2014, p. 79)",
+            "Directive 2011/65/EU (OJ L 174, 1.7.2011, p. 88)"
+          ],
+          "standardsAndSpecifications": [
+            "EN IEC 62619:2022",
+            "EN IEC 62620:2015+A1:2023",
+            "UN Manual of Tests and Criteria, Part III, sub-section 38.3",
+            "EN IEC 62368-1:2024"
+          ],
+          "notifiedBody": {
+            "name": "Kestrel Conformity Services GmbH",
+            "address": "Hafenweg 12, 20457 Hamburg, Germany",
+            "number": "KCS-7731"
+          },
+          "notifiedBodyIntervention": "Voluntary third-party review of the technical documentation and of the Article 12 safety test reports at the manufacturer's request. The conformity assessment itself followed Module A, internal production control.",
+          "certificates": [
+            "Kestrel Conformity Services GmbH, technical documentation review TDR-TV5K-2026-014, issued 2026-02-24, valid until 2029-02-23"
+          ],
+          "additionalInformation": [
+            {
+              "value": "The integrated inverter and charger are covered by this same declaration.",
+              "language": "en"
+            }
+          ],
+          "placeAndDateOfIssue": {
+            "place": "Berlin",
+            "date": "2026-03-02"
+          },
+          "signatory": {
+            "name": "A. Brenner",
+            "function": "Head of Product Compliance"
+          },
+          "signature": {
+            "url": "https://compliance.familylabs.xyz/doc/TV5K-2026.pdf",
+            "contentType": "application/pdf",
+            "resourceTitle": "EU declaration of conformity DoC-TV5K-2026-01 (signed)",
+            "language": "en"
+          }
+        }
+      }
+    },
+    "endOfLife": {
+      "title": "End of life",
+      "data": {
+        "separateCollectionSymbol": {
+          "applied": true,
+          "placement": "battery"
+        },
+        "endUserRoleInWastePrevention": [
+          {
+            "value": "Use and store the unit within the stated temperature range and keep it charged between uses to extend its life. Have faults repaired rather than replacing the unit.",
+            "language": "en"
+          }
+        ],
+        "endUserRoleInSeparateCollection": [
+          {
+            "value": "Do not dispose of this battery with household waste. Hand it in for separate collection free of charge.",
+            "language": "en"
+          }
+        ],
+        "collectionAndTreatmentAvailable": [
+          {
+            "value": "Free take-back at the point of sale and through the manufacturer's own take-back service (request at https://support.familylabs.xyz/tv5k/return). Returned units are checked for repair or repurposing first; units that cannot be reused are sent for recycling.",
+            "language": "en"
+          }
+        ],
+        "wasteBatteryHandlingSafetyInstructions": [
+          {
+            "value": "Switch the unit off and discharge it below 30 % before transport. Do not open, puncture or crush the battery module. Keep a damaged unit outdoors, away from combustible material, and contact the take-back service.",
+            "language": "en"
+          }
+        ],
+        "meaningOfLabelsAndSymbols": [
+          {
+            "value": "Crossed-out wheeled bin: collect separately, never in household waste. CE: the manufacturer declares conformity with applicable EU legislation. QR code: links to this product information.",
+            "language": "en"
+          }
+        ],
+        "substanceImpacts": [
+          {
+            "value": "The electrolyte contains a fluorinated lithium salt and flammable organic solvents. If released they can form toxic and corrosive gases and contaminate soil and water, which is why the battery must be collected separately and treated.",
+            "language": "en"
+          }
+        ]
+      }
+    },
+    "safetyAndDocumentation": {
+      "title": "Safety & documentation",
+      "data": {
+        "detailedComposition": {
+          "cells": "16 prismatic LiFePO4 cells, 3.2 V 100 Ah",
+          "cathode": "Lithium iron phosphate on aluminium foil, PVDF binder",
+          "anode": "Natural graphite on copper foil, CMC/SBR binder",
+          "electrolyte": "LiPF6 in ethylene carbonate, dimethyl carbonate and ethyl methyl carbonate",
+          "separator": "Ceramic-coated polyethylene",
+          "housing": "Aluminium enclosure",
+          "electronics": "Battery management system, inverter, charger"
+        },
+        "cathodeMaterials": ["Lithium iron phosphate (LiFePO4)", "Aluminium foil", "Polyvinylidene fluoride (PVDF)", "Carbon black"],
+        "anodeMaterials": ["Natural graphite", "Copper foil", "Carboxymethyl cellulose (CMC)", "Styrene-butadiene rubber (SBR)"],
+        "electrolyteMaterials": ["Lithium hexafluorophosphate (LiPF6)", "Ethylene carbonate", "Dimethyl carbonate", "Ethyl methyl carbonate"],
+        "componentPartNumbers": [
+          "TV5K-BM-16S: battery module, 16S1P",
+          "TV5K-BMS-02: battery management board",
+          "TV5K-INV-50: 5000 W inverter",
+          "TV5K-CHG-25: charger board",
+          "TV5K-FAN-01: cooling fan"
+        ],
+        "replacementSourceContacts": [
+          "Family Labs Energy Systems GmbH spare parts service, https://support.familylabs.xyz/tv5k/parts"
+        ],
+        "explodedDiagrams": {
+          "url": "https://support.familylabs.xyz/tv5k/service/exploded-view.pdf",
+          "contentType": "application/pdf",
+          "resourceTitle": "TV5K-2026 exploded view",
+          "language": "en"
+        },
+        "disassemblySequences": [
+          {
+            "value": "1. Disconnect all inputs and outputs and switch off. 2. Remove the eight side-panel screws and the side panels. 3. Disconnect the module harness from the BMS board. 4. Remove the four module bracket bolts and lift the battery module out.",
+            "language": "en"
+          }
+        ],
+        "fasteningTechniques": ["Screws (Torx T20)", "Bolts (M6 hex)", "Snap-fit connectors"],
+        "toolsRequired": ["Torx T20 screwdriver", "10 mm socket wrench", "Insulated gloves"],
+        "damageRiskWarnings": [
+          {
+            "value": "Do not pry the module out by its terminals. Short-circuiting the module terminals can cause fire.",
+            "language": "en"
+          }
+        ],
+        "cellCountAndLayout": {
+          "cellCount": 16,
+          "layout": "16S1P, two rows of eight prismatic cells"
+        },
+        "safetyMeasures": [
+          {
+            "value": "Battery management system with cell-level over-voltage, under-voltage, over-current, short-circuit and temperature protection. Fused module output. Operate between -10 °C and 45 °C; keep ventilation openings clear.",
+            "language": "en"
+          }
+        ]
+      }
+    },
+    "testReports": {
+      "title": "Test evidence",
+      "data": {
+        "results": [
+          "TR-TV5K-0326-01: cycle endurance, 4000 cycles to 70 % of rated capacity at 0.5C, 25 °C (pass)",
+          "TR-TV5K-0326-02: safety tests to EN IEC 62619:2022 (pass)",
+          "TR-TV5K-0326-03: UN 38.3 transport tests T1 to T8 (pass)"
+        ],
+        "requirementEvidenced": [
+          "Regulation (EU) 2023/1542, Article 10 and Annex IV",
+          "Regulation (EU) 2023/1542, Article 12 and Annex V",
+          "Transport of dangerous goods, UN 38.3"
+        ]
+      }
+    }
+  },
+  "skippedPending": {
+    "_comment": "Fields the live registry marks requiredness=pending_act for the industrial category on 2026-10-12. Not filled.",
+    "materialComposition": ["materialComposition", "criticalRawMaterialsPresent"],
+    "performanceAndDurability": ["ratedCapacity"],
+    "batteryCircularity": [
+      "manufacturerAdministrativeInformation",
+      "batteryModelInformation",
+      "manufacturingPlantLocation",
+      "carbonFootprintTotal",
+      "byLifeCycleStage",
+      "declarationOfConformityIdentificationNumber",
+      "supportingStudy",
+      "carbonFootprintPerformanceClass",
+      "dueDiligenceReport",
+      "dueDiligenceReportingPeriod",
+      "batteriesConcerned",
+      "stepsTaken",
+      "significantAdverseImpacts",
+      "thirdPartyVerificationSummary",
+      "notifiedBodyName",
+      "environmentalMattersInformation",
+      "recycledContent"
+    ]
+  },
+  "notFilled": {
+    "_comment": "Optional or conditional fields left empty because the condition does not apply to this product, or because the platform fills them.",
+    "batteryIdentification.manufacturer.emailAddress": "conditional (only where the manufacturer has one); left empty",
+    "batteryIdentification.gtin": "optional; the GTIN is carried on the variant's _identity row",
+    "endOfLife.heavyMetalSymbols": "conditional; LiFePO4 cells below the Cd 0.002 % and Pb 0.004 % thresholds, so no symbol",
+    "conformity.declarationOfConformity.authorisedRepresentative": "conditional; the manufacturer is established in the EU",
+    "conformity.declarationOfConformity.objectImage": "conditional; no image",
+    "identification, visuals": "generic sections offered to the category but not Annex XIII data; not filled"
+  }
+}

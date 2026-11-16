@@ -1,0 +1,62 @@
+# ⛔ RUN THIS ANALYSIS FROM THE STUDY'S OWN VIRTUALENV, NOT A GLOBAL PYTHON.
+#
+#   <repo>/.venv/Scripts/python.exe analysis/analyze.py <trials.jsonl>
+#
+# The venv exists because the Firth dependency below needs `scikit-learn<1.6`,
+# and installing that globally changes the machine for every other project on it.
+# That was briefly done on 2026-08-07 and has since been REVERTED: the global
+# interpreter is back to scikit-learn 1.9.0 with firthlogist removed, verified by
+# an actual fit and by `pip check` reporting no broken requirements.
+#
+# Recreate the venv from scratch with:
+#   python -m venv .venv
+#   .venv/Scripts/python -m pip install "pandas>=2.0" "statsmodels>=0.14" "scikit-learn<1.6" tabulate
+#   .venv/Scripts/python -m pip install --no-deps --ignore-requires-python firthlogist
+#
+# ⚠ VERIFY BY FITTING, NEVER BY IMPORTING. An import check passes while the fit
+# is broken — that is exactly how this bit us. Confirmed 2026-08-07 inside the
+# venv against genuinely separated data: maximum likelihood raised, Firth
+# returned finite coefficients, finite profile-likelihood CIs and finite
+# p-values. `--no-deps` also omits `tabulate`, which firthlogist imports at load.
+
+pandas>=2.0
+statsmodels>=0.14
+
+# A10 step 2: pre-committed Firth (Jeffreys-prior) penalized-likelihood refit,
+# fitted whenever the FITTED MODEL shows separation pathology. If this package
+# is absent, analyze.py reports the regression as NOT ESTIMABLE and falls back
+# to the descriptive Wilson-interval tables, per A10 step 3 — it never
+# interprets a separated fit.
+firthlogist>=0.5
+
+# firthlogist 0.5.0 is the newest release and CANNOT be installed with a plain
+# `pip install` on this machine. Two facts, both verified 2026-08-07 against the
+# interpreter that actually runs this script
+# (C:/Users/REDACTED_USER/AppData/Local/Programs/Python/Python312/python.exe):
+#
+#   1. Its metadata declares `Requires-Python >=3.8,<3.11`. On Python 3.12 pip
+#      refuses with "Could not find a version that satisfies the requirement".
+#      The package is pure Python and runs fine on 3.12; the pin is stale.
+#   2. It calls `BaseEstimator._validate_data`, which scikit-learn REMOVED in
+#      1.6. With scikit-learn >= 1.6 the import succeeds and the FIT raises
+#      `AttributeError: 'FirthLogisticRegression' object has no attribute
+#      '_validate_data'` — i.e. the failure appears only when separation is
+#      actually detected, which is the worst possible time to discover it.
+#
+# Its declared `numpy<2.0.0` pin is ALSO stale: it works against numpy 2.5.1
+# (verified: import, fit, profile-likelihood CIs and p-values under
+# quasi-complete separation). But pip BELIEVES the pin, so a plain install
+# silently DOWNGRADES numpy 2.5.1 -> 1.26.4 and scipy 1.18 -> 1.17 underneath
+# pandas 3.x. Use --no-deps and supply the real dependencies explicitly:
+#
+#   python -m pip install --ignore-requires-python --no-deps firthlogist
+#   python -m pip install "scikit-learn<1.6" tabulate
+#
+# (firthlogist's actual runtime deps are numpy, scipy, scikit-learn and
+# tabulate; the first two are already required by pandas/statsmodels here.)
+#
+# Confirmed working combination on this machine, 2026-08-07:
+#   Python 3.12  numpy 2.5.1  scipy 1.18.0  pandas 3.0.5  statsmodels 0.14.6
+#   scikit-learn 1.5.2  tabulate 0.8.10  firthlogist 0.5.0
+scikit-learn<1.6
+tabulate

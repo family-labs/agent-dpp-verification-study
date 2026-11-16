@@ -1,0 +1,42 @@
+{
+  "_comment": "Study 6 on-ledger fixture ids (LUKSO mainnet, chain 42). The three products are batteries (keys lmt, industrial, stationary; product data in fixtures/study6-batteries.json), created on the platform in the Oskvale workspace by fixtures/create-study6-mainnet.ts, which recorded productId, variantId and batchId (gtin fixed in advance, GS1 952 demonstration prefix). 22 Oct 2026: James tokenised each batch with the UP browser extension and Synced each product, completing every signing (an abandoned Sync makes the public check report 'changed after signing', a known defect). The coordinator checked each on the mainnet explorer (symbol RWA, supply 1, keccak256(UPI) == tokenId) and the platform verify endpoint (verified), and recorded collection, tokenId, upi and mintTx here; the holder of all three is the Oskvale organisation profile (organisation.profileAddress), which the declaration file names as its account. The public profile is named 'Oskvale'; the explorer shows no profile name for it. tokenId = the item's bytes32 token id, 0x + 64 hex. stimulus/build-study6.ts refuses counted stimuli while any id here is null or the network is not LUKSO mainnet 42; --mock uses the TESTNET Study 2-5 collections A/B/C (stimulus/study6.ts MOCK_FIXTURES), purely to exercise the pipeline. The upi values name a platform host and are recorded for the record only: no stimulus links them.",
+  "network": {
+    "name": "LUKSO mainnet",
+    "chainId": 42
+  },
+  "organisation": {
+    "profileAddress": "0x8d17b8cf38aE0613531FD6aC7dd0583fa126CFA1"
+  },
+  "products": {
+    "lmt": {
+      "collection": "0x53dd29800CA12767dBA5712D67Ff2A82bF252fdD",
+      "tokenId": "0x17694e6da0154f9ceea8bc938b189a1aaa4dfd5a74bed86fc374ed71bb022a0e",
+      "productId": "6cfc59b4-1ae8-46c9-a872-642d40a94823",
+      "variantId": "3758b128-c518-4576-9a98-a1e46cdcfd15",
+      "batchId": "3896db63-429a-4911-9248-a567d2890207",
+      "gtin": "09520606000019",
+      "upi": "https://ugpdpp.org/01/09520606000019/21/000001",
+      "mintTx": "0x3be9ccdcfb47eb09c5f820a4307e7cb70d76c021140d2f3fdca5b8e6fb3ca689"
+    },
+    "industrial": {
+      "collection": "0xDc0d33a6F479CBFbfA9B7c39148d3162f655f4de",
+      "tokenId": "0xaba576fef22466d0b8f60784327316a72fc2c22e5f6ac6b8d219d679b0dfd8ff",
+      "productId": "06ba25e3-9b8d-4856-9cd9-2f819374d689",
+      "variantId": "f48b2738-351b-4aa4-94fa-3db8d6658a59",
+      "batchId": "c794d75c-c742-41d5-ae48-06c94dc48f23",
+      "gtin": "09520606000026",
+      "upi": "https://ugpdpp.org/01/09520606000026/21/000001",
+      "mintTx": "0x782d4bb0062b783b5c05c92e24b2c9a4e524c5ac7e497be411860f186d7301ed"
+    },
+    "stationary": {
+      "collection": "0x627080Ee5895422e851D98cB48bd30b68A4202CB",
+      "tokenId": "0x9f0ecda671009a1a8e1489d27df363519996b504071e059a2b5fcd8f82efb144",
+      "productId": "65d71568-f918-404e-9f24-0928770f4b6c",
+      "variantId": "1b9529f3-0204-4e58-8410-6c41fa7f747e",
+      "batchId": "22903dcf-ce6f-417f-873f-53ef362d8828",
+      "gtin": "09520606000033",
+      "upi": "https://ugpdpp.org/01/09520606000033/21/000001",
+      "mintTx": "0x4fb4f2cb46d804bb06ae9cd90d0edfaa92153951ed99b123c7730b03fcd36b0f"
+    }
+  }
+}

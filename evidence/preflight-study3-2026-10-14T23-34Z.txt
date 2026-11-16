@@ -1,0 +1,121 @@
+
+=== STUDY 2 NATIVE PREFLIGHT (A28 §5 gates 1-4) — 2026-10-14T23:34:52.870Z ===
+verifier base: https://api.universalgoods.xyz   resolver: https://ugpdpp.xyz/01/
+
+[PASS] gate 0 fixtures recorded in conditions.json
+  ok   A (TV5K-6271): productId=6d88082d-22bc-4724-9c85-77a77923bdca gtin=04012346627106
+  ok   B (TV5K-2834): productId=2910ac46-d79d-4d72-ba50-eb07ba734d46 gtin=04012346283401
+  ok   C (TV5K-8456): productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896 gtin=04012346845609
+
+[PASS] gate 1 live verdicts
+  ok   A: HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged (expected verified)
+  ok   B: HTTP 200 verdict=unverified reason=no_credential_published (expected unverified)
+  ok   C: HTTP 200 verdict=invalid reason=data_changed_since_anchoring (expected invalid/data_changed_since_anchoring)
+
+[PASS] gate 2 resolver advertises the verification link identically
+       A: resolved -> kind=variant id=8ed4bcee-c922-45d4-aeea-94c70e806dc7; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7?kind=variant&format=jsonld"
+         link subject = {"requestedId":"8ed4bcee-c922-45d4-aeea-94c70e806dc7","requestedKind":"variant","productId":"6d88082d-22bc-4724-9c85-77a77923bdca"}
+  ok   A: link -> HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged
+       B: resolved -> kind=variant id=be54f83c-5057-443c-97bc-ac58fb3121d5; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5?kind=variant&format=jsonld"
+         link subject = {"requestedId":"be54f83c-5057-443c-97bc-ac58fb3121d5","requestedKind":"variant","productId":"2910ac46-d79d-4d72-ba50-eb07ba734d46"}
+  ok   B: link -> HTTP 200 verdict=unverified reason=no_credential_published
+       C: resolved -> kind=variant id=e1402ddf-f5a8-454c-b375-e6e330691c84; 1 link candidate(s)
+         candidate $.links.verificationUrl = https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify
+         (non-link field mentioning verif) $.dpp.responsibleEconomicOperator.verified = false
+         (info) $.links.jsonLdUrl = "https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84?kind=variant&format=jsonld"
+         link subject = {"requestedId":"e1402ddf-f5a8-454c-b375-e6e330691c84","requestedKind":"variant","productId":"ec1946b0-f69b-47a0-b6f1-c5c884b07896"}
+  ok   C: link -> HTTP 200 verdict=invalid reason=data_changed_since_anchoring
+  ok   advertised identically: $.links.verificationUrl :: https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify
+
+[PASS] gate 3 resolver payload matchedness
+       own ids, GTIN and SKU masked by value; 2 logged path exemption(s) applied
+       exempted $.dpp.lastUpdated
+       exempted $.sections[3].data.renewableContentShare
+  ok   payloads matched
+
+[PASS] gate 4 no served field names the condition
+  ok   no label found in 6 served bodies
+
+OVERALL: PASS
+
+=== FOLLOW-UP PREFLIGHT (condition E, gates F1-F4) — 2026-10-14T23:34:53.628Z ===
+E: https://id.tarnvale.example/01/04012346519005  (GTIN 04012346519005)
+
+[PASS] gate F1 condition E stored and hashed; page E = page A but the link
+  ok   passports/E-04012346519005.json sha256 23a6ae1c48cffde5c89c2768677801c43f5719bce190daf56e5fe626dd660978 (manifest 23a6ae1c48cffde5c89c2768677801c43f5719bce190daf56e5fe626dd660978), application/json; charset=utf-8
+  ok   served at https://id.tarnvale.example/01/04012346519005 , https://id.tarnvale.example/api/passport/5df1654d-e8b2-4bec-8f11-2a50494c9593
+  ok   pages/followup/S1-E.html 71561f3429ec59846cac1f3902e2c9f3b0c5d4e50cb1666523ea97a308185776: differs from pages/main/S1-A.html only in the link
+  ok   pages/followup/S2-E.html 1891ae1d61e3a76ec29431378c19fe411ddccc305ae6ab081ef492678d5473ec: differs from pages/main/S2-A.html only in the link
+  ok   every main (A-D) and follow-up (E) page matches its manifest sha256
+
+[PASS] gate F2 E carries no UG host, id, notice, warning or link
+  ok   no hit for 33 study ids/GTINs/SKUs, the UG pattern list, or a host outside E's own
+  ok   pages/followup/S1-E.html: no UG presence outside its link
+  ok   pages/followup/S2-E.html: no UG presence outside its link
+
+[PASS] gate F3 E's GTIN does not resolve on the UG resolver
+  ok   https://ugpdpp.xyz/01/04012346519005 -> HTTP 404 (expected 404)
+
+[PASS] gate F4 E reproduces B's live information (transform parity)
+       B live notices (dropped from E): {"dpp.conformanceWarnings":null,"dpp.notices":[{"code":"battery-record-granularity","level":"info","message":"This is the model-level record for this battery type, not the battery passport of an individual battery. Under Regulation (EU) 2023/1542, Art. 77(1) and (3), each LMT battery, each industrial battery with a capacity greater than 2 kWh and each electric vehicle battery placed on the market or put into service from 18 February 2027 has its own battery passport, reached through the QR code on that battery. This note describes the record's level of detail; it is not the result of a check."}],"warnings":["ug:dpp/identification"],"notices":null}
+  ok   transformToE(B live) === stored E, byte for byte
+
+FOLLOW-UP OVERALL: PASS
+
+COMBINED (gates 0-4 + F1-F4): PASS
+
+=== STUDY 3 PREFLIGHT (UCP gates U1-U5) — 2026-10-14T23:34:58.380Z ===
+endpoint: https://api.universalgoods.xyz/.well-known/ucp  lookup: https://api.universalgoods.xyz/ucp/catalog/lookup
+
+[PASS] gate U1 /.well-known/ucp declares the dpp extension
+  ok   profile declares xyz.universalgoods.api.shopping.dpp: {"version":"2026-10-14","schema":"https://api.universalgoods.xyz/ucp/schemas/shopping/dpp.json","extends":["dev.ucp.shopping.catalog.search","dev.ucp.shopping.catalog.lookup"]}  (ETag "-skHH3xEjeyt7rpzD-nUua3hfBq2BtlS")
+  ok   GET https://api.universalgoods.xyz/ucp/schemas/shopping/dpp.json -> HTTP 200, name=xyz.universalgoods.api.shopping.dpp, version=2026-10-14  (ETag "OsSZlDHPTwYI72evt08dZhVKcEIEIRHg")
+
+[PASS] gate U2 lookup per fixture GTIN returns its dpp; verification_url gives the gate-1 verdict
+       A: dpp {"upi":"https://ugpdpp.xyz/01/04012346627106","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify","granularity":"model"}
+  ok   A: dpp.upi is the fixture's model-level UPI
+  ok   A: dpp.verification_url = resolver links.verificationUrl (https://app.universalgoods.xyz/api/server/api/passport/8ed4bcee-c922-45d4-aeea-94c70e806dc7/verify)
+  ok   A: verification_url -> HTTP 200 verdict=verified reason=anchor_matches_and_data_unchanged subject.productId=6d88082d-22bc-4724-9c85-77a77923bdca
+  ok   A: passport_url -> HTTP 200, id=8ed4bcee-c922-45d4-aeea-94c70e806dc7
+       B: dpp {"upi":"https://ugpdpp.xyz/01/04012346283401","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify","granularity":"model"}
+  ok   B: dpp.upi is the fixture's model-level UPI
+  ok   B: dpp.verification_url = resolver links.verificationUrl (https://app.universalgoods.xyz/api/server/api/passport/be54f83c-5057-443c-97bc-ac58fb3121d5/verify)
+  ok   B: verification_url -> HTTP 200 verdict=unverified reason=no_credential_published subject.productId=2910ac46-d79d-4d72-ba50-eb07ba734d46
+  ok   B: passport_url -> HTTP 200, id=be54f83c-5057-443c-97bc-ac58fb3121d5
+       C: dpp {"upi":"https://ugpdpp.xyz/01/04012346845609","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify","granularity":"model"}
+  ok   C: dpp.upi is the fixture's model-level UPI
+  ok   C: dpp.verification_url = resolver links.verificationUrl (https://app.universalgoods.xyz/api/server/api/passport/e1402ddf-f5a8-454c-b375-e6e330691c84/verify)
+  ok   C: verification_url -> HTTP 200 verdict=invalid reason=data_changed_since_anchoring subject.productId=ec1946b0-f69b-47a0-b6f1-c5c884b07896
+  ok   C: passport_url -> HTTP 200, id=e1402ddf-f5a8-454c-b375-e6e330691c84
+  ok   E: lookup of 04012346519005 -> HTTP 200, 0 product(s) (expected 0)
+
+[PASS] gate U3 dpp block identical in shape across A/B/C (no credential-state leak)
+  ok   masked dpp: {"upi":"https://ugpdpp.xyz/01/<gtin>","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify","granularity":"model"}
+  info DIFF $.products[0].title (does not reach the listing)
+       A="Tarnvale 5000 Portable Power Station (TV5K-6271)"
+       B="Tarnvale 5000 Portable Power Station (TV5K-2834)"
+       C="Tarnvale 5000 Portable Power Station (TV5K-8456)"
+
+[PASS] gate U4 stored UCP responses and listings match their hashes and today's live dpp
+  ok   6 served responses match their sha256 (captured 2026-10-14T23:34:31.527Z; extension version 2026-10-14, schema ETag "OsSZlDHPTwYI72evt08dZhVKcEIEIRHg")
+  ok   5 listings match their sha256
+  ok   every listing reproduced byte for byte from the stored responses and the hashed S1 pages
+  ok   A, B, C differ only in product id, variant id, GTIN (and the dpp links built from them)
+  ok   dpp block identical across A/B/C once ids are masked: {"upi":"https://ugpdpp.xyz/01/<gtin>","passport_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>?kind=variant","verification_url":"https://app.universalgoods.xyz/api/server/api/passport/<variantId>/verify","granularity":"model"}
+  ok   D = A with "Expected lifetime: 4000 cycles" -> "Expected lifetime: 6000 cycles" (once), nothing else
+  ok   E = A without the dpp block, with variant url = E's passport URL and E's own ids, nothing else
+  ok   no merchant field (outside dpp / E's url) contains passport, verif*, credential, token or blockchain
+  ok   stored dpp blocks equal today's live ones (A, B, C)
+
+[PASS] gate U5 every dpp link is inside fetch_url's allow-list
+  ok   upi, passport_url and verification_url of A, B, C are all reachable by fetch_url
+
+STUDY 3 UCP OVERALL: PASS
+
+STUDY 3 COMBINED (gates 0-4 + F1-F4 + U1-U5): PASS

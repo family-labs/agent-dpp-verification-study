@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f7f7"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+<linearGradient id="alu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset=".45" stop-color="#1c1c1c"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
+<linearGradient id="grey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9fa3"/><stop offset="1" stop-color="#6e7377"/></linearGradient>
+<linearGradient id="white" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3e3e3"/></linearGradient>
+<radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="1200" fill="url(#bg)"/>
+<rect width="1200" height="1200" fill="#e7e5e1"/>
+<rect y="1010" width="1200" height="190" fill="#cfccc6"/>
+<rect x="150" y="260" width="300" height="560" rx="28" fill="url(#white)" stroke="#d2d2d2" stroke-width="4"/>
+<rect x="480" y="260" width="300" height="560" rx="28" fill="url(#white)" stroke="#d2d2d2" stroke-width="4"/>
+<circle cx="300" cy="380" r="13" fill="#2e8540"/><circle cx="630" cy="380" r="13" fill="#2e8540"/>
+<text x="300" y="480" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.84" fill="#9a9a9a" text-anchor="middle">TORVLUND</text><text x="630" y="480" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.84" fill="#9a9a9a" text-anchor="middle">TORVLUND</text>
+<rect x="830" y="300" width="230" height="380" rx="22" fill="#3a3d40"/>
+<rect x="870" y="350" width="150" height="80" rx="10" fill="#0f1a14"/>
+<g stroke="#555" stroke-width="12" fill="none" stroke-linecap="round"><path d="M300 820 v 80 h 650 v -220"/><path d="M630 820 v 50 h 340 v -190"/></g>
+</svg>

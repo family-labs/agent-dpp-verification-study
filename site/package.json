@@ -1,0 +1,8 @@
+{
+  "name": "oskvale-study6-site",
+  "private": true,
+  "devDependencies": {
+    "qrcode": "^1.5.4",
+    "wrangler": "4.149.0"
+  }
+}

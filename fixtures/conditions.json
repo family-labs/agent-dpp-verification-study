@@ -1,0 +1,64 @@
+{
+  "_comment": "SKU -> condition assignment. SKUs are neutral; nothing in the served product data encodes the condition. A30 (2026-10-12): rebuilt on the EU Industrial battery category; ids are filled in by create-fixtures.ts. The generic-category fixtures created earlier the same day are recorded in _retired_2026-10-12_generic (not deleted from the platform; deletion is James's call). The July ids (021fff14…, e0f830a8…, 5ddffae5…) were destroyed with that stack's database; see PREREGISTRATION A26.",
+  "assignments": {
+    "A": {
+      "sku": "TV5K-6271",
+      "condition": "verifiable",
+      "groundTruth": "verified",
+      "productId": "6d88082d-22bc-4724-9c85-77a77923bdca",
+      "variantId": "8ed4bcee-c922-45d4-aeea-94c70e806dc7",
+      "batchId": "1a716d8e-b081-4cc1-9b17-fd5bb74901ba",
+      "gtin": "04012346627106"
+    },
+    "B": {
+      "sku": "TV5K-2834",
+      "condition": "claimed_only",
+      "groundTruth": "unverified",
+      "productId": "2910ac46-d79d-4d72-ba50-eb07ba734d46",
+      "variantId": "be54f83c-5057-443c-97bc-ac58fb3121d5",
+      "batchId": "4f9e71ce-f7a3-424f-84e2-6e8fe6704f88",
+      "gtin": "04012346283401"
+    },
+    "C": {
+      "sku": "TV5K-8456",
+      "condition": "fraudulent",
+      "groundTruth": "invalid",
+      "productId": "ec1946b0-f69b-47a0-b6f1-c5c884b07896",
+      "variantId": "e1402ddf-f5a8-454c-b375-e6e330691c84",
+      "batchId": "9de6735c-d98f-4fb3-badf-dbe35e75d246",
+      "gtin": "04012346845609"
+    }
+  },
+  "_retired_2026-10-12_generic": {
+    "_comment": "Created 2026-10-12 in the study-only organisation on the generic DPP category (commit ae041a3), retired the same day before anything was signed, tokenised or run (A30). Still present on testnet; not used by any script. Their GTINs stay bound to them, which is why the battery fixtures use new GTINs.",
+    "assignments": {
+      "A": {
+        "sku": "PC5K-7301",
+        "condition": "verifiable",
+        "groundTruth": "verified",
+        "productId": "821a3640-028d-4272-90f0-c6ec43689030",
+        "variantId": "bffabded-aa89-4cb1-bc96-08ed73e853e8",
+        "batchId": "5b4ded47-c746-4a34-94e2-799dcf55ba15",
+        "gtin": "04012345730104"
+      },
+      "B": {
+        "sku": "PC5K-4189",
+        "condition": "claimed_only",
+        "groundTruth": "unverified",
+        "productId": "1e433dc7-8c33-4fdd-b813-f5f459e24496",
+        "variantId": "5bad296e-5716-45af-9331-2d6b0229d606",
+        "batchId": "a12f50f6-59d6-4afa-89ff-13d3aa52f1b4",
+        "gtin": "04012345418903"
+      },
+      "C": {
+        "sku": "PC5K-9052",
+        "condition": "fraudulent",
+        "groundTruth": "invalid",
+        "productId": "809cee78-bb04-4514-a755-b3938ecfd616",
+        "variantId": "4432b528-2e76-4c3a-a45b-6d9fcad2f8dc",
+        "batchId": "c5c94bb5-3a3d-4a28-b237-5e79248df61c",
+        "gtin": "04012345905205"
+      }
+    }
+  }
+}

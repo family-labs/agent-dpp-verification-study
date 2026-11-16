@@ -1,0 +1,24 @@
+# Study 6 live sites. Copy to site/wrangler.toml (git-ignored) and fill database_id after
+#   wrangler d1 create oskvale-study6
+# Deploy ONLY with James's yes (a public step). Secrets: wrangler secret put ADMIN_TOKEN
+name = "oskvale-study6"
+main = "worker.ts"
+compatibility_date = "2026-10-01"
+workers_dev = false
+
+routes = [
+  { pattern = "oskvale.com", custom_domain = true },
+  { pattern = "www.oskvale.com", custom_domain = true },
+  { pattern = "oskvale-store.com", custom_domain = true },
+  { pattern = "www.oskvale-store.com", custom_domain = true },
+  { pattern = "passportrecord.org", custom_domain = true },
+  { pattern = "www.passportrecord.org", custom_domain = true },
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oskvale-study6"
+database_id = "FILL-ME"
+
+[observability]
+enabled = true
